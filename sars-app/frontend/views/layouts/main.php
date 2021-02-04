@@ -29,14 +29,14 @@ CleanAsset::register($this);
 <body>
     <?php $this->beginBody() ?>
 
-    <div class="wrap">
+    <div>
         <?php
         NavBar::begin([
             'brandLabel' => Yii::$app->name,
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'id' => "mainNav",
-                'class' => 'navbar navbar-expand-lg navbar-light fixed-top',
+                'class' => 'navbar navbar-expand-md navbar-dark fixed-top bg-secondary',
             ],
         ]);
         $menuItems = [
