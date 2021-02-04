@@ -44,6 +44,15 @@ return [
             ],
         ],
         */
+        'view' => [ 
+            'theme' => [ 
+                'basePath' => '@app/themes/startbootstrap-clean-blog-gh-pages', 
+                'baseUrl' => '@web/themes/startbootstrap-clean-blog-gh-pages', 
+                'pathMap' => [ 
+                    '@app/views' => '@app/themes/startbootstrap-clean-blog-gh-pages ', 
+                ], 
+            ], 
+        ], 
     ],
     'params' => $params,
 ];
