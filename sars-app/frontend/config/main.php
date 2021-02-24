@@ -46,10 +46,10 @@ return [
         */
         'view' => [ 
             'theme' => [ 
-                'basePath' => '@app/themes/startbootstrap-clean-blog-gh-pages', 
-                'baseUrl' => '@web/themes/startbootstrap-clean-blog-gh-pages', 
+                'basePath' => '@app/themes/main', 
+                'baseUrl' => '@web/themes/main', 
                 'pathMap' => [ 
-                    '@app/views' => '@app/themes/startbootstrap-clean-blog-gh-pages ', 
+                    '@app/views' => '@app/themes/main', 
                 ], 
             ], 
         ], 

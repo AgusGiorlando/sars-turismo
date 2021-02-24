@@ -7,11 +7,11 @@ use yii\helpers\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\CleanAsset;
+use frontend\assets\MainAsset;
 use yii\helpers\Url;
 use common\widgets\Alert;
 
-CleanAsset::register($this);
+MainAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
