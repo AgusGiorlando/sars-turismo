@@ -10,6 +10,7 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\MainAsset;
 use yii\helpers\Url;
 use common\widgets\Alert;
+use yii\widgets\Menu;
 
 MainAsset::register($this);
 ?>
@@ -19,58 +20,48 @@ MainAsset::register($this);
 
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
     <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title>SARS turismo</title>
     <?php $this->head() ?>
 </head>
 
 <body>
     <?php $this->beginBody() ?>
+    <!-- BEGIN HEADER -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <?php
+            NavBar::begin([
+                'brandLabel' => Yii::$app->name,
+                'brandUrl' => Yii::$app->homeUrl,
+                'options' => [
+                    'id' => "mainNav",
+                    'class' => 'navbar nav-menu d-lg-block navbar-expand-md',
+                ],
+                'containerOptions' => [
+                    'class' => 'nav-menu'
+                ],
+            ]);
 
-    <div>
-        <?php
-        NavBar::begin([
-            'brandLabel' => Yii::$app->name,
-            'brandUrl' => Yii::$app->homeUrl,
-            'options' => [
-                'id' => "mainNav",
-                'class' => 'navbar navbar-expand-md navbar-dark fixed-top bg-secondary',
-            ],
-        ]);
-        $menuItems = [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-        ];
-        if (Yii::$app->user->isGuest) {
-            $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-            $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-        } else {
-            $menuItems[] = '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>';
-        }
-        echo Nav::widget([
-            'items' => $menuItems,
-        ]);
-        NavBar::end();
-        ?>
-
-        <div class="container">
-            <?= Breadcrumbs::widget([
-                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    ]) ?>
-        <?= Alert::widget() ?>
-            <?= $content ?>
+            echo Menu::widget([
+                'items' => [
+                    ['label' => 'Home', 'url' => ['/site/index'], 'options' => ['class' => "nav-link scrollto"]],
+                    ['label' => 'Mendoza', 'url' => ['/site/about'], 'options' => ['class' => "nav-link scrollto"]],
+                    ['label' => 'Sobre Nosotros', 'url' => ['/site/contact'], 'options' => ['class' => "nav-link scrollto"]],
+                    ['label' => 'Contacto', 'url' => ['/site/contact'], 'options' => ['class' => "nav-link scrollto"]],
+                ]
+            ]);
+            NavBar::end();
+            ?>
         </div>
-
+    </header> <!-- END HEADER -->
+    <div>
+        <?= Alert::widget() ?>
+        <?= $content ?>
     </div>
 
     <footer class="footer">

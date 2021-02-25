@@ -10,6 +10,8 @@ use yii\web\AssetBundle;
 class MainAsset extends AssetBundle
 {
     public $sourcePath = __DIR__ . '/../themes/main';
+    public $publishOptions = ['forceCopy' => true];
+
 
     public $css = [
         'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i',
@@ -36,4 +38,5 @@ class MainAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap4\BootstrapAsset',
     ];
+
 }

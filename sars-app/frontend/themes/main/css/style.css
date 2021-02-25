@@ -1,10 +1,3 @@
-/**
-* Template Name: Bikin - v2.2.1
-* Template URL: https://bootstrapmade.com/bikin-free-simple-landing-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -45,13 +38,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  background: #3b4ef8;
+  border-color: black;
+  background: #fe5000;
   color: #fff;
   transition: all 0.4s;
 }
 
 .back-to-top i:hover {
-  background: #0a22f6;
+  background: #cc4303;
   color: #fff;
 }
 
@@ -114,8 +108,8 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #f6f7ff;
-  border-bottom: 2px solid #eceefe;
+  background: #f59444;
+  border-bottom: 2px solid #ffbe7d;
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
@@ -162,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a {
   display: block;
   position: relative;
-  color: #2d405f;
+  color: black;
   transition: 0.3s;
   font-size: 14px;
   font-family: "Krub", sans-serif;
@@ -170,7 +164,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #3b4ef8;
+  color: white;
 }
 
 .nav-menu .drop-down ul {
@@ -429,11 +423,11 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
   transition: 0.5s;
   color: #fff;
-  background: #3b4ef8;
+  background: #fe5000;
 }
 
 #hero .btn-get-started:hover {
-  background: #0a22f6;
+  background: #cc4303;
 }
 
 #hero .hero-img {
@@ -501,7 +495,7 @@ section {
 # About
 --------------------------------------------------------------*/
 .about {
-  background: #466393;
+  background: #fe5000;
   background-size: cover;
   padding: 60px 0;
   position: relative;
@@ -679,7 +673,7 @@ section {
 # Services
 --------------------------------------------------------------*/
 .services {
-  background: #2d405f;
+  background: #fe5000;
   padding-bottom: 80px;
 }
 
