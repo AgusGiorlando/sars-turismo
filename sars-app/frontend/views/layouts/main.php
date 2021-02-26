@@ -50,8 +50,8 @@ MainAsset::register($this);
             echo Menu::widget([
                 'items' => [
                     ['label' => 'Home', 'url' => ['/site/index'], 'options' => ['class' => "nav-link scrollto"]],
-                    ['label' => 'Mendoza', 'url' => ['/site/about'], 'options' => ['class' => "nav-link scrollto"]],
-                    ['label' => 'Sobre Nosotros', 'url' => ['/site/contact'], 'options' => ['class' => "nav-link scrollto"]],
+                    ['label' => 'Mendoza', 'url' => ['/site/mendoza'], 'options' => ['class' => "nav-link scrollto"]],
+                    ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link scrollto"]],
                     ['label' => 'Contacto', 'url' => ['/site/contact'], 'options' => ['class' => "nav-link scrollto"]],
                 ]
             ]);
