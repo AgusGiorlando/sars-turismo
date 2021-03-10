@@ -4,11 +4,8 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
-use yii\widgets\Breadcrumbs;
 use frontend\assets\MainAsset;
-use yii\helpers\Url;
 use common\widgets\Alert;
 use yii\widgets\Menu;
 
@@ -49,10 +46,11 @@ MainAsset::register($this);
 
             echo Menu::widget([
                 'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index'], 'options' => ['class' => "nav-link scrollto"]],
-                    ['label' => 'Mendoza', 'url' => ['/site/mendoza'], 'options' => ['class' => "nav-link scrollto"]],
-                    ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link scrollto"]],
-                    ['label' => 'Contacto', 'url' => ['/site/contact'], 'options' => ['class' => "nav-link scrollto"]],
+                    ['label' => 'Home', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                    ['label' => 'Actividades', 'url' => ['/site/services'], 'options' => ['class' => "nav-link"]],
+                    ['label' => 'Mendoza', 'url' => ['/site/mendoza'], 'options' => ['class' => "nav-link"]],
+                    ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
+                    ['label' => 'Contacto', 'url' => ['/site/contact'], 'options' => ['class' => "nav-link"]],
                 ]
             ]);
             NavBar::end();

@@ -32,7 +32,7 @@ class SiteController extends Controller
                 'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['signup', 'mendoza', 'about', 'contact'],
+                        'actions' => ['signup', 'mendoza', 'about', 'contact', 'services'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -135,17 +135,6 @@ class SiteController extends Controller
             ]);
         }
     }
-
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
-
     /**
      * Displays Mendoza page.
      *
@@ -154,6 +143,25 @@ class SiteController extends Controller
     public function actionMendoza()
     {
         return $this->render('mendoza');
+    }
+
+    /**
+     * Displays Mendoza page.
+     *
+     * @return mixed
+     */
+    public function actionServices()
+    {
+        return $this->render('services');
+    }
+    /**
+     * Displays about page.
+     *
+     * @return mixed
+     */
+    public function actionAbout()
+    {
+        return $this->render('about');
     }
 
     /**
