@@ -718,6 +718,30 @@ section {
 
 
 /*--------------------------------------------------------------
+# Service
+--------------------------------------------------------------*/
+
+.service .carousel-img {
+    height: 300px;
+}
+
+.service .price {
+    color: #fe5000;
+    text-align: center;
+}
+
+.service .detail {
+    color: #fe5000;
+}
+
+.service .contact-card {
+    background-color: #fe5000;
+    color: white;
+    font-weight: bold;
+}
+
+
+/*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
 
