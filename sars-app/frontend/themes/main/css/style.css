@@ -723,6 +723,7 @@ section {
 
 .service .carousel-img {
     height: 300px;
+    vertical-align: middle;
 }
 
 .service .price {
@@ -788,7 +789,7 @@ section {
 }
 
 .services img {
-    /* max-width: 70%; */
+    max-width: 70%;
     transition: all 0.4s ease-in-out;
     display: inline-block;
     padding: 15px 0;

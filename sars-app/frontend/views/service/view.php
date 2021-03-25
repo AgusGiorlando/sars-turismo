@@ -5,7 +5,7 @@
 use yii\helpers\Html;
 use rmrevin\yii\fontawesome\FA;
 
-$this->title = 'Aconcagua';
+$this->title = $oService->name;
 ?>
 <div class="site-service">
     <section id="service" class="service">
@@ -13,7 +13,7 @@ $this->title = 'Aconcagua';
             <h1><?= Html::encode($this->title) ?></h1>
             <div class="row h-75">
                 <!-- CAROUSEL -->
-                <div class="col-6">
+                <div class="col-6 d-flex align-items-center">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -40,17 +40,17 @@ $this->title = 'Aconcagua';
                 <!-- DESCRIPCION -->
                 <div class="col-6">
                     <h2>Descripción</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente asperiores ad voluptatum eaque voluptates quia, sint officia? Itaque amet quia minima ipsa, quae hic necessitatibus, veritatis placeat neque blanditiis ab!</p>
-                    <h3 class="price">Desde AR$500</h3>
-                    <!-- RESERVA -->
+                    <p><?= $oService->description ?></p>
+                    <h3 class="price">Desde AR$<?= $oService->price ?></h3>
                 </div>
             </div>
             <hr>
+            <!-- RESERVA -->
             <div class="row align-center">
                 <div class="card text-center w-100">
                     <div class="card-body contact-card">
                         HACE TU RESERVA<br>
-                        <?php echo FA::icon('mobile'); ?> 2612543287 <br>
+                        <?php echo FA::icon('whatsapp'); ?> 2612543287 <br>
                         <?php echo FA::icon('envelope'); ?> reservas@sarsturismo.com.ar <br>
                     </div>
                 </div>
@@ -59,22 +59,22 @@ $this->title = 'Aconcagua';
             <!-- DETALLES -->
             <div class="row text-center">
                 <div class="col 4">
-                    <span class="detail">Duración</span><br>8hs
+                    <span class="detail">Duración</span><br><?= Yii::$app->formatter->asTime($oService->duration, 'short') ?>hs
                 </div>
                 <div class="col 4">
                     <span class="detail">Cancelación</span><br>2 dias antes
                 </div>
                 <div class="col 4">
-                    <span class="detail">Tipo de Actividad</span><br>Alpinismo
+                    <span class="detail">Tipo de Actividad</span><br><?= $oService->type ?>
                 </div>
             </div>
             <hr>
             <!-- INCLUYE -->
             <div class="container">
                 <h2>Incluye</h2>
-                <?php echo FA::icon('thumbs-up'); ?> Bicicleta personal y casco <br>
-                <?php echo FA::icon('thumbs-up'); ?> Agua mineral <br>
-                <?php echo FA::icon('thumbs-up'); ?> Seguro personal
+                <?php foreach ($oService->includes as $item) : ?>
+                <?php echo FA::icon('check-circle'); ?> <?= $item ?> <br>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
