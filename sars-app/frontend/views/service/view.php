@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-use rmrevin\yii\fontawesome\FA;
+use kartik\icons\Icon;
 
 $this->title = $oService->name;
 ?>
@@ -50,8 +50,8 @@ $this->title = $oService->name;
                 <div class="card text-center w-100">
                     <div class="card-body contact-card">
                         HACE TU RESERVA<br>
-                        <?php echo FA::icon('whatsapp'); ?> 2612543287 <br>
-                        <?php echo FA::icon('envelope'); ?> reservas@sarsturismo.com.ar <br>
+                        <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
+                        <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@ $this->title = $oService->name;
             <div class="container">
                 <h2>Incluye</h2>
                 <?php foreach ($oService->includes as $item) : ?>
-                <?php echo FA::icon('check-circle'); ?> <?= $item ?> <br>
+                    <?php echo Icon::show('check-circle')?> <?= $item ?> <br>
                 <?php endforeach; ?>
             </div>
         </div>

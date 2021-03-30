@@ -7,9 +7,12 @@ use yii\helpers\Html;
 use yii\bootstrap4\NavBar;
 use frontend\assets\MainAsset;
 use common\widgets\Alert;
+use kartik\icons\Icon;
 use yii\widgets\Menu;
 
 MainAsset::register($this);
+
+Icon::map($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -50,7 +53,7 @@ MainAsset::register($this);
                     ['label' => 'Actividades', 'url' => ['/service/index'], 'options' => ['class' => "nav-link"]],
                     ['label' => 'Mendoza', 'url' => ['/site/mendoza'], 'options' => ['class' => "nav-link"]],
                     ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
-                    ['label' => 'Contacto', 'url' => ['/site/contact'], 'options' => ['class' => "nav-link"]],
+                    // ['label' => 'Contacto', 'url' => ['/site/contact'], 'options' => ['class' => "nav-link"]],
                 ]
             ]);
             NavBar::end();
@@ -65,17 +68,20 @@ MainAsset::register($this);
     <footer class="footer">
         <div class="container d-md-flex py-4">
             <div class="mr-md-auto text-center text-md-left">
+                <h4><?= Yii::$app->name; ?></h4>
                 <div class="copyright">
                     <?= Yii::powered() ?> - Copyright &copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?>
                 </div>
             </div>
-            <!-- <div class="social-links text-center text-md-right pt-3 pt-md-0">
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
+                <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                 <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
                 <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div> -->
+            </div>
         </div>
     </footer>
 

@@ -13,7 +13,7 @@ $this->title = 'Contacto';
 <div class="site-contact">
     <div class="container" data-aos="fade-up">
         <h1><?= Html::encode($this->title) ?></h1>
-
+<!-- 
         <p>
             If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
         </p>
@@ -37,7 +37,7 @@ $this->title = 'Contacto';
 
                 <?php ActiveForm::end(); ?>
             </div>
-        </div>
+        </div> -->
     </div>
 
 </div>
