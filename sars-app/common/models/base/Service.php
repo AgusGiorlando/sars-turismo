@@ -55,6 +55,8 @@ class Service extends \yii\db\ActiveRecord
         $this->id = "1";
         $this->version = 0;
         $this->enabled = 1;
+        $this->price = 0.00;
+        $this->duration = Yii::$app->formatter->asTime(0, 'short');
     }
 
     /**
