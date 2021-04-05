@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use frontend\models\ResendVerificationEmailForm;
@@ -31,7 +32,7 @@ class SiteController extends Controller
                 'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
+                        'actions' => ['signup', 'mendoza', 'about', 'contact', 'services'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -134,7 +135,25 @@ class SiteController extends Controller
             ]);
         }
     }
+    /**
+     * Displays Mendoza page.
+     *
+     * @return mixed
+     */
+    public function actionMendoza()
+    {
+        return $this->render('mendoza');
+    }
 
+    /**
+     * Displays Mendoza page.
+     *
+     * @return mixed
+     */
+    public function actionServices()
+    {
+        return $this->render('services');
+    }
     /**
      * Displays about page.
      *
