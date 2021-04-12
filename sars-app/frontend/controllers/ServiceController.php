@@ -10,7 +10,6 @@ class ServiceController extends \yii\web\Controller
     {
         try {
             $aServices = ServiceManager::findAllServices();
-            highlight_string("<?php\n\$aServices =\n" . var_export($aServices, true) . ";\n?>");            
             return $this->render('index',[
                 'aServices' => $aServices
             ]);

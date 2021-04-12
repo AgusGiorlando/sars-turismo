@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\base\Image;
 use Yii;
 use common\models\base\Service;
 use common\models\base\ServiceManager;
@@ -10,6 +11,8 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+use yii\helpers\FileHelper;
 
 /**
  * ServiceController implements the CRUD actions for Service model.
@@ -54,9 +57,40 @@ class ServiceController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        $aImages = ServiceManager::getImages($model);
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'images' => $aImages
         ]);
+    }
+
+    public function actionUpload($id)
+    {
+
+        $oImage = new Image();
+        $post = Yii::$app->request->post();
+        try {
+            if ($oImage->load($post)) {
+                if ($oImage->validate()) {
+                    $aImages = UploadedFile::getInstances($oImage, 'filename');
+
+                    $folderPath = Yii::getAlias('@web/') . 'img/' . $id;
+
+                    ServiceManager::uploadImages($aImages, $folderPath, $id);
+
+                    return $this->redirect(['view', 'id' => $id]);
+                }
+            }
+            if ($oImage->hasErrors() == true) :
+                throw new \Exception(implode(". ", $oImage->getErrorSummary(true)));
+            endif;
+
+            return $this->render('upload-images', ['model' => $oImage]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**
@@ -70,12 +104,11 @@ class ServiceController extends Controller
 
         try {
             if ($model->load(Yii::$app->request->post())) {
-                
+
                 ServiceManager::createService($model);
 
                 return $this->redirect(['view', 'id' => $model->id]);
             }
-            
         } catch (\Throwable $th) {
             Yii::$app->session->setFlash('error', $th->getMessage());
         }
