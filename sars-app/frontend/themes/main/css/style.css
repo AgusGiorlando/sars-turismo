@@ -411,6 +411,55 @@ h6 {
 
 
 /*--------------------------------------------------------------
+# Coming Soon Section
+--------------------------------------------------------------*/
+
+#coming-soon {
+    padding-top: 0px;
+    vertical-align: middle;
+    background: #fe5000;
+    vertical-align: middle;
+    font-family: "Open Sans", sans-serif;
+}
+
+#coming-soon .jumbotron-fluid {
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 70%;
+    background: #fe5000;
+    color: white;
+}
+
+#coming-soon .logo {
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 70%;
+    background: white;
+}
+
+#coming-soon .img {
+    vertical-align: middle;
+    width: 80%;
+}
+
+#coming-soon .a {
+    color: white;
+}
+
+#coming-soon .facebook {
+    color: white;
+}
+
+#coming-soon .instagram {
+    color: white;
+}
+
+
+/*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 
