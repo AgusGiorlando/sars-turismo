@@ -415,35 +415,35 @@ h6 {
 --------------------------------------------------------------*/
 
 #coming-soon {
-    padding-top: 0px;
+    margin-top: -100px;
+    padding-top: -90px;
     vertical-align: middle;
-    background: #fe5000;
+    background: white;
     vertical-align: middle;
     font-family: "Open Sans", sans-serif;
 }
 
-#coming-soon .jumbotron-fluid {
+#coming-soon .container {
+    padding: 15px;
     vertical-align: middle;
-    position: absolute;
-    left: 0;
-    width: 50%;
-    height: 70%;
     background: #fe5000;
     color: white;
+    height: 50%;
+}
+
+#coming-soon .title {
+    color: #fe5000;
 }
 
 #coming-soon .logo {
     vertical-align: middle;
-    position: absolute;
-    right: 0;
-    width: 50%;
-    height: 70%;
     background: white;
+    max-height: 50%;
 }
 
 #coming-soon .img {
     vertical-align: middle;
-    width: 80%;
+    max-height: 200px;
 }
 
 #coming-soon .a {
