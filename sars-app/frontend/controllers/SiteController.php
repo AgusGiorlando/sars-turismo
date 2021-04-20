@@ -32,12 +32,12 @@ class SiteController extends Controller
                 'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['signup', 'mendoza', 'about', 'contact', 'services'],
+                        'actions' => ['index','signup', 'mendoza', 'about', 'contact', 'services'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['index','logout'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
