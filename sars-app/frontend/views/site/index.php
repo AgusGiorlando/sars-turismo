@@ -1,3 +1,8 @@
+<?php
+
+$this->title = 'SARS Turismo';
+?>
+
 <body>
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -794,5 +799,3 @@
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
   <div id="preloader"></div>
 </body>
-
-</html>

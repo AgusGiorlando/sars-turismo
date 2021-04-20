@@ -1,4 +1,5 @@
 <?php
+
 namespace backend\controllers;
 
 use Yii;
@@ -26,7 +27,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['frontend-index','logout', 'index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -61,6 +62,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionFrontendIndex()
+    {
+        $this->layout = '@frontend/views/layouts/main';
+        return $this->render('@frontend/views/site/index');
     }
 
     /**
