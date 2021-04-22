@@ -471,17 +471,13 @@ h6 {
     text-align: center;
 }
 
-#hero .container {
-    padding-top: 70px;
-}
-
 #hero h1 {
     margin: 0;
     font-size: 48px;
     font-weight: 700;
-    line-height: 56px;
+    line-height: 70px;
     color: #141d2b;
-    width: 60%;
+    width: 80%;
     color: #2d405f;
 }
 
@@ -511,8 +507,10 @@ h6 {
 }
 
 #hero .hero-img {
+    vertical-align: middle;
+    max-height: 300px;
     max-width: 60%;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 @media (max-width: 992px) {
@@ -553,6 +551,7 @@ section {
 .section-title {
     text-align: center;
     padding-bottom: 30px;
+    color: #fe5000;
 }
 
 .section-title h2 {
@@ -561,7 +560,7 @@ section {
     margin-bottom: 20px;
     padding-bottom: 20px;
     position: relative;
-    color: #2d405f;
+    color: #fe5000;
 }
 
 .section-title h2::after {
@@ -796,13 +795,13 @@ section {
 --------------------------------------------------------------*/
 
 .services {
-    background: #ffffff;
+    background: #fe5000;
     padding-bottom: 80px;
 }
 
 .services .section-title h2,
 .services .section-title p {
-    color: #fff;
+    color: #ffffff;
 }
 
 .services .section-title h2::after {
@@ -813,7 +812,7 @@ section {
     padding: 15px 5px;
     position: relative;
     overflow: hidden;
-    background: #fff;
+    background: #fe5000;
     transition: all 0.3s;
     border-radius: 5px;
     text-align: center;
@@ -851,8 +850,8 @@ section {
 }
 
 .services .title a {
-    color: #fe5000;
-    font-size: 40px;
+    color: #ffffff;
+    font-size: 25px;
     transition: 0.3s;
 }
 
