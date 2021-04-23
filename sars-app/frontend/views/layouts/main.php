@@ -73,14 +73,13 @@ Icon::map($this);
                     <?= Yii::powered() ?> - Copyright &copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?>
                 </div>
             </div>
-            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+            <div class="social-links text-md-right pt-3 pt-md-0">
+            <h4>Contacto</h4>
                 <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
                 <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <hr>
+                <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="facebook"><i class="bx bxl-facebook bx-md"></i></a>
+                <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="instagram"><i class="bx bxl-instagram bx-md"></i></a>
             </div>
         </div>
     </footer>
