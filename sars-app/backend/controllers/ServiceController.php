@@ -76,7 +76,7 @@ class ServiceController extends Controller
                 if ($oImage->validate()) {
                     $aImages = UploadedFile::getInstances($oImage, 'filename');
 
-                    $folderPath = Yii::getAlias('@web/') . 'img/' . $id;
+                    $folderPath = Yii::getAlias('@img/') . 'services/' . $id;
 
                     ServiceManager::uploadImages($aImages, $folderPath, $id);
 

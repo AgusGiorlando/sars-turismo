@@ -10,13 +10,33 @@ use yii\helpers\ArrayHelper;
 class ServiceManager {
     public static function findAllServices($only_enabled = true){
         try {
+            $aServices = [];
+
             $where = [];
             
             if ($only_enabled == true) {
                 $where['enabled'] = true;
             }
                         
-            return Service::findAll($where);
+            $aObjectServices = Service::findAll($where);
+
+            foreach ($aObjectServices as $oService) {
+                $oImage = ServiceManager::getCoverImage($oService);
+
+                if (empty($oImage) == true) {
+                    continue;
+                }
+
+                $aService = [
+                    'service' => $oService,
+                    'cover_filename' => $oImage->filename
+                ];
+
+                array_push($aServices, $aService);
+            }
+            
+            return $aServices;
+
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -68,6 +88,15 @@ class ServiceManager {
         $aServiceImages = ServiceImage::findAll(['service_id' => $oService->id]);
         $aImageIds = ArrayHelper::getColumn($aServiceImages, 'image_id');
         return Image::findAll(['id' => $aImageIds]);
+    }
+
+    public static function getCoverImage($oService) {
+        $oServiceImage = ServiceImage::findOne(['service_id' => $oService->id]);
+        if (empty($oServiceImage) == false) {
+            return Image::findOne(['id' => $oServiceImage->image_id]);
+        }
+
+        return null;
     }
 
     public static function uploadImages($aImages, $folderPath, $service_id) {

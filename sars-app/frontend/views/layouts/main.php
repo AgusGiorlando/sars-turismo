@@ -8,7 +8,7 @@ use yii\bootstrap4\NavBar;
 use frontend\assets\MainAsset;
 use common\widgets\Alert;
 use kartik\icons\Icon;
-use yii\widgets\Menu;
+use yii\bootstrap4\Nav;
 
 MainAsset::register($this);
 
@@ -36,8 +36,8 @@ Icon::map($this);
         <div class="container d-flex align-items-center justify-content-between">
             <?php
             NavBar::begin([
-                'brandLabel' => Yii::$app->name,
-                'brandUrl' => Yii::$app->homeUrl,
+                // 'brandLabel' => 'BrandLogo',
+                // 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'id' => "mainNav",
                     'class' => 'navbar nav-menu d-lg-block navbar-expand-md',
@@ -47,18 +47,42 @@ Icon::map($this);
                 ],
             ]);
 
-            echo Menu::widget([
-                'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
-                    // ['label' => 'Actividades', 'url' => ['/service/index'], 'options' => ['class' => "nav-link"]],
-                    // ['label' => 'Mendoza', 'url' => ['/site/mendoza'], 'options' => ['class' => "nav-link"]],
-                    // ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
-                    // ['label' => 'Contacto', 'url' => ['/site/contact'], 'options' => ['class' => "nav-link"]],
-                ]
-            ]);
+            $menuItems = [
+                [
+                    'label' => 'Actividades & Programas', 'url' => ['product/index'],
+                    'items' => [
+                        ['label' => 'Paseos', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Vinos', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Naturaleza & Aventura', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Malargue', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Paquetes', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                    ]
+                ],
+                [
+                    'label' => 'Escapadas en Argentina', 'url' => ['product/index'],
+                    'items' => [
+                        ['label' => 'Norte Argentino', 'url' => ['#1'] ,'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Iguazu y alrededores', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Sur Argentino', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'San Juan', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                    ],
+                ],
+                ['label' => 'Sobre Nosotros', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                ['label' => 'Contacto', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+            ];
+
+
+            if (count($menuItems)) {
+                echo Nav::widget([
+                    'options' => ['class' => 'navbar-nav'],
+                    'items' => $menuItems,
+                ]);
+            }
+
             NavBar::end();
             ?>
         </div>
+
     </header> <!-- END HEADER -->
     <div>
         <?= Alert::widget() ?>
@@ -74,7 +98,7 @@ Icon::map($this);
                 </div>
             </div>
             <div class="social-links text-md-right pt-3 pt-md-0">
-            <h4>Contacto</h4>
+                <h4>Contacto</h4>
                 <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
                 <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
                 <hr>
