@@ -6,29 +6,27 @@ $this->title = 'SARS Turismo';
 ?>
 <div class="site-index">
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
 
-    <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
-      <!-- CAROUSEL -->
+  <section id="hero" class="align-items-center">
+    <div data-aos="fade-up">
+      <img src='/img/site/logo.jpg' class="img-fluid hero-logo" alt="" data-aos="zoom-in" data-aos-delay="150">
+      <h1>VIAJÁ CON TODOS LOS SENTIDOS</h1>
+    </div>
+    <!-- CAROUSEL -->
+    <div data-aos="fade-up">
       <div id="homeCarousel" class="carousel slide z-depth-1-half" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-105" src="https://mdbootstrap.com/img/Photos/Slides/img%20(45).jpg" alt="First slide">
-            <div class="carousel-caption d-none d-md-block align-items-center">
-              <h1>EXPLORÁ</h1>
-            </div>
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_1.jpg" alt="First slide">
+            <div class="carousel-caption d-none d-md-block align-items-center">EXPLORÁ</div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-105" src="https://mdbootstrap.com/img/Photos/Slides/img%20(46).jpg" alt="Second slide">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>ESCUCHÁ</h1>
-            </div>
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_2.jpg" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block align-items-center">DESCUBRÍ</div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-105" src="https://mdbootstrap.com/img/Photos/Slides/img%20(47).jpg" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>SENTÍ</h1>
-            </div>
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_3.jpg" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block align-items-center">VIAJÁ</div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
@@ -40,9 +38,6 @@ $this->title = 'SARS Turismo';
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <!-- <img src='/img/site/logo.jpg' class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150"> -->
-      <!-- <h1>EXPLORÁ, ESCUCHÁ, SENTÍ, SABOREÁ, DISFRUTÁ, DESCUBRÍ, VIAJÁ</h1> -->
-      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
     </div>
 
   </section><!-- End Hero -->
@@ -58,35 +53,35 @@ $this->title = 'SARS Turismo';
         </div>
 
         <div class="row">
-          <div class="col-md" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><img src='/img/site/services-logos/SARS _1_.jpg' alt=""> </div>
               <h4 class="title"><a href="">Paseos</a></h4>
               <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
             </div>
           </div>
-          <div class="col-md" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><img src='/img/site/services-logos/SARS _2_.jpg' alt=""> </div>
               <h4 class="title"><a href="">Aventura</a></h4>
               <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
             </div>
           </div>
-          <div class="col-md" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><img src='/img/site/services-logos/SARS _3_.jpg' alt=""> </div>
               <h4 class="title"><a href="">Paquetes</a></h4>
               <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
             </div>
           </div>
-          <div class="col-md" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><img src='/img/site/services-logos/SARS _4_.jpg' alt=""> </div>
               <h4 class="title"><a href="">Gastronomía</a></h4>
               <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
             </div>
           </div>
-          <div class="col-md" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><img src='/img/site/services-logos/SARS _5_.jpg' alt=""> </div>
               <h4 class="title"><a href="">Alojamiento</a></h4>
@@ -97,11 +92,9 @@ $this->title = 'SARS Turismo';
       </div>
     </section><!-- End Services Section -->
     </section><!-- End About Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features" data-aos="fade-up">
+    <section id="hero" class="align-items-center">
       <div class="container">
-        <img src='/img/site/Puzzle-completo-alta.jpg' class="hero-img img-fluid" alt="" data-aos="zoom-in" data-aos-delay="150">
+        <!-- <img src="/img/site/Puzzle-completo-alta.jpg" class="hero-img img-fluid" alt="" data-aos="zoom-in" data-aos-delay="150"> -->
         <div class="section-title p-2">
           <h2>Sobre Nosotros</h2>
           <h4>
@@ -114,12 +107,12 @@ $this->title = 'SARS Turismo';
             <h3>Dicen que lo que no emociona no enseña, por eso diseñamos cada una de nuestras experiencias desde la <b> EMOCIÓN </b> y desde las <b> SENSACIONES.</b></h3>
           </div>
           <div class="col-md-6 pt-4" data-aos="fade-left" data-aos-delay="100">
-            <img src='/img/site/home-carousel/parque_rotonda.jpeg' class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+            <img src='/img/site/home/home2.jpg' class="hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
           </div>
         </div>
         <div class="row content d-flex">
           <div class="col-md-6 pt-4" data-aos="fade-right" data-aos-delay="200">
-            <img src='/img/site/home-carousel/vinedo_montana.jpeg' class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+            <img src='/img/site/home/home1.jpg' class="hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
           </div>
           <div class="col-md-6 about-text" data-aos="fade-right" data-aos-delay="200">
             <h3><b>Sars Turismo </b>tiene su propia filosofía, hacemos que nuestros pasajeros sean los protagonistas en cada lugar que estén.</h3>

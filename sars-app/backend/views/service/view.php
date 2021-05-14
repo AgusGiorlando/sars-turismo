@@ -31,9 +31,9 @@ Html::img(Yii::getAlias('@backend'. '/web/img/3b39507b-8c1c-11eb-8a77-2cd05ae0e5
         <?= DetailView::widget([
             'model' => $model,
             'attributes' => [
-                'id',
-                'enabled',
-                'version',
+                // 'id',
+                'enabled:boolean',
+                // 'version',
                 'name',
                 'price',
                 // 'images',
@@ -49,8 +49,8 @@ Html::img(Yii::getAlias('@backend'. '/web/img/3b39507b-8c1c-11eb-8a77-2cd05ae0e5
     <div class="row">
         <?php if (empty($images) == false) : ?>
             <?php foreach ($images as $image) : ?>
-                <div class="col-md-3">
-                    <?= Html::img('var/www/html/sars-turismo/sars-app/backend/web/img/3b39507b-8c1c-11eb-8a77-2cd05ae0e569/profile.jpg', ['class' => 'card-mg-top']); ?>
+                <div class="col-md-3 text-center">
+                    <?= Html::img('/img/services/'. $model->id . '/' . $image->filename, ['class' => 'card-mg-top', 'height' => '250px']); ?>
                     <div class="card-body">
                         <h5 class="card-title"><?= $image->filename; ?></h5>
                     </div>
