@@ -48,27 +48,30 @@ Icon::map($this);
             ]);
 
             $menuItems = [
+                ['label' => 'Home', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                ['label' => 'Sobre Nosotros', 'url' => ['@frontend/site/about'], 'options' => ['class' => "nav-link"]],
                 [
                     'label' => 'Actividades & Programas', 'url' => ['product/index'],
                     'items' => [
-                        ['label' => 'Paseos', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Vinos', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Naturaleza & Aventura', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Malargue', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Paquetes', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Paseos', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Vinos', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Naturaleza & Aventura', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Malargue', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Paquetes', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
                     ]
                 ],
                 [
                     'label' => 'Escapadas en Argentina', 'url' => ['product/index'],
                     'items' => [
-                        ['label' => 'Norte Argentino', 'url' => ['#1'] ,'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Iguazu y alrededores', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Sur Argentino', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'San Juan', 'url' => ['#1'],'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Norte Argentino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Iguazu y alrededores', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Sur Argentino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'San Juan', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
                     ],
                 ],
-                ['label' => 'Sobre Nosotros', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
-                ['label' => 'Contacto', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                ['label' => 'Gastronomia', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                ['label' => 'Protocolo covid', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                // ['label' => 'Contacto', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
             ];
 
 
@@ -90,22 +93,24 @@ Icon::map($this);
     </div>
 
     <footer class="footer">
-        <div class="container d-md-flex py-4">
-            <div class="mr-md-auto text-center text-md-left">
-                <h4><?= Yii::$app->name; ?></h4>
-                <div class="copyright">
-                    <?= Yii::powered() ?> - Copyright &copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?>
+        <section id="footer" class="footer">
+            <div class="container d-md-flex py-4">
+                <div class="mr-md-auto text-center text-md-left">
+                    <h4><?= Yii::$app->name; ?></h4>
+                    <div class="copyright">
+                        <?= Yii::powered() ?> - Copyright &copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?>
+                    </div>
+                </div>
+                <div class="social-links text-md-right pt-3 pt-md-0">
+                    <h4>Contacto</h4>
+                    <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
+                    <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
+                    <hr>
+                    <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="social-links"><i class="bx bxl-facebook bx-md"></i></a>
+                    <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="social-links"><i class="bx bxl-instagram bx-md"></i></a>
                 </div>
             </div>
-            <div class="social-links text-md-right pt-3 pt-md-0">
-                <h4>Contacto</h4>
-                <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
-                <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
-                <hr>
-                <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="facebook"><i class="bx bxl-facebook bx-md"></i></a>
-                <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="instagram"><i class="bx bxl-instagram bx-md"></i></a>
-            </div>
-        </div>
+        </section>
     </footer>
 
     <?php $this->endBody() ?>
