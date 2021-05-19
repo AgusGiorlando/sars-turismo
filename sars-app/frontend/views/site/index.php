@@ -8,16 +8,12 @@ $this->title = 'SARS Turismo';
   <!-- ======= Hero Section ======= -->
 
   <section id="hero" class="align-items-center">
-    <div data-aos="fade-up">
-      <img src='/img/site/logo.jpg' class="img-fluid hero-logo" alt="" data-aos="zoom-in" data-aos-delay="150">
-      <h1>VIAJÁ CON TODOS LOS SENTIDOS</h1>
-    </div>
     <!-- CAROUSEL -->
     <div data-aos="fade-up">
       <div id="homeCarousel" class="carousel slide z-depth-1-half" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_1.jpg" alt="First slide">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_1.jpeg" alt="First slide">
             <div class="carousel-caption d-none d-md-block align-items-center">EXPLORÁ</div>
           </div>
           <div class="carousel-item">
@@ -38,6 +34,11 @@ $this->title = 'SARS Turismo';
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <div class="main-text hidden-xs">
+        <div class="col-md-12 text-center">
+          <h1>VIAJÁ CON TODOS LOS SENTIDOS</h1>
+        </div>
+      </div>
     </div>
 
   </section><!-- End Hero -->
@@ -46,12 +47,10 @@ $this->title = 'SARS Turismo';
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Actividades</h2>
           <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
-
         <div class="row">
           <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
@@ -91,38 +90,6 @@ $this->title = 'SARS Turismo';
         </div>
       </div>
     </section><!-- End Services Section -->
-    </section><!-- End About Section -->
-    <section id="hero" class="align-items-center">
-      <div class="container">
-        <!-- <img src="/img/site/Puzzle-completo-alta.jpg" class="hero-img img-fluid" alt="" data-aos="zoom-in" data-aos-delay="150"> -->
-        <div class="section-title p-2">
-          <h2>Sobre Nosotros</h2>
-          <h4>
-            <p>Sars es una empresa joven, que nació cuando el mundo entero se detuvo, cuando el mundo cambio para siempre. Nacio para desafiar la tradicional manera de viajar y hacer de un simple viaje de turismo una <b> EXPERIENCIA UNICA E INOLVIDABLE.</b></p>
-          </h4>
-        </div>
-
-        <div class="row content">
-          <div class="col-md-6 about-text" data-aos="fade-left" data-aos-delay="100">
-            <h3>Dicen que lo que no emociona no enseña, por eso diseñamos cada una de nuestras experiencias desde la <b> EMOCIÓN </b> y desde las <b> SENSACIONES.</b></h3>
-          </div>
-          <div class="col-md-6 pt-4" data-aos="fade-left" data-aos-delay="100">
-            <img src='/img/site/home/home2.jpg' class="hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
-          </div>
-        </div>
-        <div class="row content d-flex">
-          <div class="col-md-6 pt-4" data-aos="fade-right" data-aos-delay="200">
-            <img src='/img/site/home/home1.jpg' class="hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
-          </div>
-          <div class="col-md-6 about-text" data-aos="fade-right" data-aos-delay="200">
-            <h3><b>Sars Turismo </b>tiene su propia filosofía, hacemos que nuestros pasajeros sean los protagonistas en cada lugar que estén.</h3>
-            <p>
-              Creamos itinerarios de acuerdo a los gustos y a cada sensación que cada uno de ellos se quiera llevar en ese viaje y permitiendo así una profunda interacción con los paisajes, las culturas y costumbres locales.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Features Section -->
   </main><!-- End #main -->
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>

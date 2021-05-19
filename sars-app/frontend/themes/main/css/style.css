@@ -476,7 +476,8 @@ h6 {
 --------------------------------------------------------------*/
 
 #hero {
-    padding-top: 90px;
+    padding-top: 80px;
+    padding-bottom: 0px;
     width: 100%;
     background: white;
     /* border-bottom: 2px solid white; */
@@ -516,7 +517,16 @@ h6 {
 }
 
 #hero .carousel-img {
-    max-height: 750px;
+    height: 570px;
+    align-self: center;
+}
+
+#hero .main-text {
+    position: absolute;
+    justify-self: center;
+    top: 50px;
+    width: 96.66666666666666%;
+    color: #FFF;
 }
 
 #hero .carousel-caption {
@@ -525,13 +535,6 @@ h6 {
     font-weight: bold;
     background: hsl(19, 100%, 50%, 0.7);
     justify-self: center;
-    width: 1000px;
-}
-
-#hero .hero-logo {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    max-height: 300px;
 }
 
 #hero .hero-img {
@@ -539,12 +542,6 @@ h6 {
     vertical-align: middle;
     margin-top: 0px;
     margin-bottom: 15px;
-}
-
-.about-text {
-    text-align: center;
-    padding-top: 100px;
-    vertical-align: middle;
 }
 
 @media (max-width: 992px) {
@@ -626,15 +623,11 @@ section {
 --------------------------------------------------------------*/
 
 .about {
-    background: #fe5000;
+    padding-top: 80px;
+    padding-bottom: 0px;
+    background: white;
     background-size: cover;
-    padding: 60px 0;
     position: relative;
-    color: #fff;
-}
-
-.about .content {
-    padding: 30px 30px 30px 0;
 }
 
 .about .content h3 {
@@ -642,6 +635,22 @@ section {
     font-size: 34px;
     color: #fff;
     margin-bottom: 30px;
+}
+
+.about .about-text {
+    text-align: center;
+    padding-top: 10px;
+    vertical-align: middle;
+}
+
+.about .bold {
+    color: #fe5000;
+}
+
+.about .hero-logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-height: 300px;
 }
 
 .about .content p {
@@ -1610,9 +1619,9 @@ section {
 --------------------------------------------------------------*/
 
 #footer {
-    background: #f59444;
-    border-bottom: 2px solid #ffbe7d;
-    color: #444444;
+    background: white;
+    border-top: #f59444;
+    color: black;
     font-size: 14px;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
@@ -1748,10 +1757,10 @@ section {
 #footer .social-links a {
     font-size: 18px;
     display: inline-block;
-    background: #e7eafe;
-    color: #3b4ef8;
+    background: #fff;
+    color: #fe5000;
     line-height: 1;
-    padding: 8px 0;
+    /* padding: 8px 0; */
     margin-right: 4px;
     border-radius: 5px;
     text-align: center;
@@ -1761,7 +1770,7 @@ section {
 }
 
 #footer .social-links a:hover {
-    background: #3b4ef8;
+    background: #fe5000;
     color: #fff;
     text-decoration: none;
 }
