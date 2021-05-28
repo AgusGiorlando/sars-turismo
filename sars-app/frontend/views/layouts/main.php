@@ -24,6 +24,8 @@ Icon::map($this);
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="img/favicon.png" rel="icon">
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <?php $this->registerCsrfMetaTags() ?>
     <title>SARS turismo</title>
     <?php $this->head() ?>
@@ -36,7 +38,7 @@ Icon::map($this);
         <div class="container d-flex align-items-center justify-content-between">
             <?php
             NavBar::begin([
-                // 'brandLabel' => 'BrandLogo',
+                'brandLabel' => Html::img('/img/site/logo.jpg', ['class' => 'logo', 'alt' => Yii::$app->name]),
                 // 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'id' => "mainNav",
@@ -48,12 +50,11 @@ Icon::map($this);
             ]);
 
             $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
-                ['label' => 'Sobre Nosotros', 'url' => ['@frontend/site/about'], 'options' => ['class' => "nav-link"]],
+                ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
                 [
-                    'label' => 'Actividades & Programas', 'url' => ['product/index'],
+                    'label' => 'Actividades & Programas', 'url' => ['service/index'],
                     'items' => [
-                        ['label' => 'Paseos', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ['label' => 'Paseos', 'url' => ['service/index'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ['label' => 'Vinos', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ['label' => 'Naturaleza & Aventura', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ['label' => 'Malargue', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
@@ -81,7 +82,10 @@ Icon::map($this);
                     'items' => $menuItems,
                 ]);
             }
-
+            ?>
+            <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="social-links"><i class="bx bxl-facebook bx-md"></i></a>
+            <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="social-links"><i class="bx bxl-instagram bx-md"></i></a>
+            <?php
             NavBar::end();
             ?>
         </div>
@@ -103,11 +107,8 @@ Icon::map($this);
                 </div>
                 <div class="social-links text-md-right pt-3 pt-md-0">
                     <h4>Contacto</h4>
-                    <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
+                    <i class="bx bxl-whatsapp"></i><?php echo ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
                     <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
-                    <hr>
-                    <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="social-links"><i class="bx bxl-facebook bx-md"></i></a>
-                    <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="social-links"><i class="bx bxl-instagram bx-md"></i></a>
                 </div>
             </div>
         </section>
