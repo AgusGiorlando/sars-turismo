@@ -123,25 +123,22 @@ h6 {
 --------------------------------------------------------------*/
 
 #header {
-    background: #f59444;
-    border-bottom: 2px solid #ffbe7d;
+    background: #ffffff;
+    border-bottom: 2px solid #fe5000;
     transition: all 0.5s;
     z-index: 997;
-    padding: 15px 0;
+    /* padding: 5px 0; */
 }
 
 #header .logo {
     font-size: 30px;
     margin: 0;
     padding: 0;
-    line-height: 1;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-family: "Poppins", sans-serif;
+    width: 100px;
 }
 
 #header .logo a {
-    color: #2d405f;
+    color: #fe5000;
 }
 
 #header .logo img {
@@ -154,6 +151,27 @@ h6 {
 
 .dropdown-menu {
     background-color: #f59444;
+}
+
+#header .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #fff;
+    color: #fe5000;
+    line-height: 1;
+    /* padding: 8px 0; */
+    margin-right: 4px;
+    border-radius: 5px;
+    text-align: right;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#header .social-links a:hover {
+    background: #fe5000;
+    color: #fff;
+    text-decoration: none;
 }
 
 
@@ -193,7 +211,7 @@ h6 {
 .nav-menu a:hover,
 .nav-menu .active>a,
 .nav-menu li:hover>a {
-    color: #ffffff;
+    color: #fe5000;
 }
 
 .nav-menu .drop-down ul {
@@ -233,11 +251,11 @@ h6 {
 .nav-menu .drop-down ul a:hover,
 .nav-menu .drop-down ul .active>a,
 .nav-menu .drop-down ul li:hover>a {
-    color: #fe5000;
+    color: #ffffff;
 }
 
 .nav-menu .dropdown-item :hover {
-    color: #fe5000;
+    color: #ffffff;
 }
 
 .nav-menu .drop-down>a:after {
@@ -329,7 +347,7 @@ h6 {
 }
 
 .mobile-nav-toggle i {
-    color: #2d405f;
+    color: #fe5000;
 }
 
 .mobile-nav {
@@ -357,7 +375,7 @@ h6 {
 .mobile-nav a {
     display: block;
     position: relative;
-    color: #2d405f;
+    color: black;
     padding: 10px 20px;
     font-weight: 500;
     outline: none;
@@ -366,7 +384,7 @@ h6 {
 .mobile-nav a:hover,
 .mobile-nav .active>a,
 .mobile-nav li:hover>a {
-    color: #3b4ef8;
+    color: #fe5000;
     text-decoration: none;
 }
 
@@ -427,8 +445,8 @@ h6 {
 --------------------------------------------------------------*/
 
 #coming-soon {
-    margin-top: -100px;
-    padding-top: -90px;
+    /* margin-top: 100px; */
+    padding-top: 90px;
     vertical-align: middle;
     background: white;
     vertical-align: middle;
@@ -491,6 +509,17 @@ h6 {
     color: #fe5000;
 }
 
+#hero .activities-menu {
+    padding: 30px;
+    background-color: #fe5000;
+    width: 100%;
+}
+
+#hero .section-title h2,
+#hero .section-title p {
+    color: #ffffff;
+}
+
 #hero h2 {
     color: #466393;
     margin: 15px 0 0 0;
@@ -521,11 +550,133 @@ h6 {
     align-self: center;
 }
 
+#hero .bottom-text {
+    font-size: 10vmax;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    background: hsl(19, 100%, 50%, 0.7);
+    padding: 10px;
+    margin: 0;
+    justify-self: center;
+    bottom: 0px;
+    color: rgb(0, 0, 0);
+}
+
+#hero span.change-content::after {
+    content: '';
+    margin-top: 35px;
+    animation: changetext 8s infinite linear;
+    font-size: 5vw;
+    color: #fe5000;
+    font-family: "Kaushan Script", cursive;
+    font-weight: bold;
+    /* border-bottom: 13px solid #fe5000; */
+    /* border-top: 13px solid #fe5000; */
+}
+
+@keyframes changetext {
+    0% {
+        content: 'E';
+        color: hsla(19, 100%, 50%, 0.226);
+        border-color: hsla(19, 100%, 50%, 0.226);
+    }
+    4% {
+        content: 'EX';
+    }
+    8% {
+        content: 'EXP';
+    }
+    12% {
+        content: 'EXPL';
+    }
+    16% {
+        content: 'EXPLO';
+    }
+    20% {
+        content: 'EXPLOR';
+    }
+    24% {
+        content: 'EXPLORÁ';
+        color: #fe5000;
+        border-color: #fe5000;
+    }
+    28% {
+        content: 'EXPLORÁ';
+        color: hsla(19, 100%, 50%, 0.226);
+        border-color: hsla(19, 100%, 50%, 0.226);
+    }
+    32% {
+        content: 'D';
+        color: hsla(19, 100%, 50%, 0.226);
+        border-color: hsla(19, 100%, 50%, 0.226);
+    }
+    36% {
+        content: 'DE';
+    }
+    40% {
+        content: 'DES';
+    }
+    44% {
+        content: 'DESC';
+    }
+    48% {
+        content: 'DESCU';
+    }
+    52% {
+        content: 'DESCUB';
+    }
+    56% {
+        content: 'DESCUBR';
+    }
+    60% {
+        content: 'DESCUBRÍ';
+        color: #fe5000;
+        border-color: #fe5000;
+    }
+    64% {
+        content: 'DESCUBRÍ';
+        color: hsla(19, 100%, 50%, 0.226);
+        border-color: hsla(19, 100%, 50%, 0.226);
+    }
+    68% {
+        content: 'V';
+        color: hsla(19, 100%, 50%, 0.226);
+        border-color: hsla(19, 100%, 50%, 0.226);
+    }
+    72% {
+        content: 'VI';
+    }
+    76% {
+        content: 'VIA';
+    }
+    80% {
+        content: 'VIAJ';
+    }
+    84% {
+        content: 'VIAJÁ';
+        color: #fe5000;
+        border-color: #fe5000;
+    }
+    100% {
+        content: 'VIAJÁ';
+        color: hsla(19, 100%, 50%, 0.226);
+        border-color: hsla(19, 100%, 50%, 0.226);
+    }
+}
+
+#hero .activities-img {
+    max-width: 70%;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    padding: 15px 0;
+}
+
 #hero .main-text {
     position: absolute;
     justify-self: center;
     top: 50px;
     width: 96.66666666666666%;
+    height: max-content;
     color: #FFF;
 }
 
@@ -542,6 +693,36 @@ h6 {
     vertical-align: middle;
     margin-top: 0px;
     margin-bottom: 15px;
+}
+
+#hero .icon-box {
+    width: 170px;
+    padding: 15px 5px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    transition: all 0.3s;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#hero .icon-box:hover {
+    transform: scale(1.08);
+}
+
+#hero .icon {
+    margin-bottom: 15px;
+}
+
+#hero .icon i {
+    font-size: 32px;
+    line-height: 1;
+    color: #2d405f;
+    background: #eff2f8;
+    padding: 10px;
+    border-radius: 50px;
+    transition: all 0.3s;
 }
 
 @media (max-width: 992px) {
@@ -820,6 +1001,16 @@ section {
 # Service
 --------------------------------------------------------------*/
 
+.service {
+    background: white;
+    padding-top: 100px;
+}
+
+.service .activity-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
 .service .carousel-img {
     height: 300px;
     vertical-align: middle;
@@ -846,7 +1037,7 @@ section {
 --------------------------------------------------------------*/
 
 .services {
-    background: #fe5000;
+    background: white;
     padding-bottom: 80px;
 }
 
@@ -860,7 +1051,7 @@ section {
 }
 
 .services .icon-box {
-    width: 170px;
+    width: 400px;
     padding: 15px 5px;
     margin-bottom: 15px;
     position: relative;
@@ -1620,7 +1811,7 @@ section {
 
 #footer {
     background: white;
-    border-top: #f59444;
+    border-top: 2px solid #fe5000;
     color: black;
     font-size: 14px;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
@@ -1752,25 +1943,4 @@ section {
     padding-top: 5px;
     font-size: 13px;
     color: #444444;
-}
-
-#footer .social-links a {
-    font-size: 18px;
-    display: inline-block;
-    background: #fff;
-    color: #fe5000;
-    line-height: 1;
-    /* padding: 8px 0; */
-    margin-right: 4px;
-    border-radius: 5px;
-    text-align: center;
-    width: 36px;
-    height: 36px;
-    transition: 0.3s;
-}
-
-#footer .social-links a:hover {
-    background: #fe5000;
-    color: #fff;
-    text-decoration: none;
 }
