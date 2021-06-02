@@ -4,7 +4,7 @@
 
 body {
     padding-top: 20px;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     color: #444444;
 }
 
@@ -134,15 +134,27 @@ h6 {
     font-size: 30px;
     margin: 0;
     padding: 0;
-    width: 100px;
+    width: 200px;
 }
 
 #header .logo a {
     color: #fe5000;
 }
 
+#header .nav-menu {
+    background: #ff5100;
+    color: white;
+}
+
 #header .logo img {
-    max-height: 40px;
+    max-height: 100px;
+    padding-left: 20px 0;
+    padding-bottom: 0;
+}
+
+#header span.slogan {
+    font-weight: 900;
+    padding: 0;
 }
 
 #header .nav-dropdown {
@@ -153,22 +165,18 @@ h6 {
     background-color: #f59444;
 }
 
-#header .social-links a {
-    font-size: 18px;
-    display: inline-block;
+#header .social-links {
+    font-size: 58px;
     background: #fff;
     color: #fe5000;
-    line-height: 1;
-    /* padding: 8px 0; */
-    margin-right: 4px;
-    border-radius: 5px;
-    text-align: right;
-    width: 36px;
-    height: 36px;
+    padding: 8px 0;
+    width: 150px;
+    height: 150px;
     transition: 0.3s;
+    border-radius: 5px;
 }
 
-#header .social-links a:hover {
+#header .social-links :hover {
     background: #fe5000;
     color: #fff;
     text-decoration: none;
@@ -211,7 +219,7 @@ h6 {
 .nav-menu a:hover,
 .nav-menu .active>a,
 .nav-menu li:hover>a {
-    color: #fe5000;
+    color: white;
 }
 
 .nav-menu .drop-down ul {
@@ -509,6 +517,13 @@ h6 {
     color: #fe5000;
 }
 
+#hero span.carousel-text {
+    font-size: 48px;
+    font-size: 3vw;
+    color: #fe5000;
+    font-style: normal;
+}
+
 #hero .activities-menu {
     padding: 30px;
     background-color: #fe5000;
@@ -546,8 +561,9 @@ h6 {
 }
 
 #hero .carousel-img {
-    height: 570px;
+    height: 480px;
     align-self: center;
+    ;
 }
 
 #hero .bottom-text {
@@ -562,105 +578,55 @@ h6 {
     color: rgb(0, 0, 0);
 }
 
-#hero span.change-content::after {
-    content: '';
-    margin-top: 35px;
-    animation: changetext 8s infinite linear;
-    font-size: 5vw;
-    color: #fe5000;
-    font-family: "Kaushan Script", cursive;
-    font-weight: bold;
-    /* border-bottom: 13px solid #fe5000; */
-    /* border-top: 13px solid #fe5000; */
+#hero div.carousel-section {
+    background-image: linear-gradient(to right, white, #fe5000, white);
 }
 
-@keyframes changetext {
+#hero span.change-content::after {
+    content: '';
+    font-weight: 400;
+    margin-top: 35px;
+    animation: fadeIn 8s infinite;
+    font-size: 3vw;
+    color: #fe5000;
+}
+
+@keyframes fadeIn {
     0% {
-        content: 'E';
-        color: hsla(19, 100%, 50%, 0.226);
-        border-color: hsla(19, 100%, 50%, 0.226);
+        content: 'Descubrí';
+        opacity: 0;
     }
-    4% {
-        content: 'EX';
+    12.5% {
+        content: 'Descubrí';
+        opacity: 1;
     }
-    8% {
-        content: 'EXP';
+    25% {
+        content: 'Descubrí';
+        opacity: 0;
     }
-    12% {
-        content: 'EXPL';
+    37.5% {
+        content: 'Sentí';
+        opacity: 0;
     }
-    16% {
-        content: 'EXPLO';
+    50% {
+        content: 'Sentí';
+        opacity: 1;
     }
-    20% {
-        content: 'EXPLOR';
+    62.5% {
+        content: 'Sentí';
+        opacity: 0;
     }
-    24% {
-        content: 'EXPLORÁ';
-        color: #fe5000;
-        border-color: #fe5000;
+    75% {
+        content: 'Explorá';
+        opacity: 0;
     }
-    28% {
-        content: 'EXPLORÁ';
-        color: hsla(19, 100%, 50%, 0.226);
-        border-color: hsla(19, 100%, 50%, 0.226);
-    }
-    32% {
-        content: 'D';
-        color: hsla(19, 100%, 50%, 0.226);
-        border-color: hsla(19, 100%, 50%, 0.226);
-    }
-    36% {
-        content: 'DE';
-    }
-    40% {
-        content: 'DES';
-    }
-    44% {
-        content: 'DESC';
-    }
-    48% {
-        content: 'DESCU';
-    }
-    52% {
-        content: 'DESCUB';
-    }
-    56% {
-        content: 'DESCUBR';
-    }
-    60% {
-        content: 'DESCUBRÍ';
-        color: #fe5000;
-        border-color: #fe5000;
-    }
-    64% {
-        content: 'DESCUBRÍ';
-        color: hsla(19, 100%, 50%, 0.226);
-        border-color: hsla(19, 100%, 50%, 0.226);
-    }
-    68% {
-        content: 'V';
-        color: hsla(19, 100%, 50%, 0.226);
-        border-color: hsla(19, 100%, 50%, 0.226);
-    }
-    72% {
-        content: 'VI';
-    }
-    76% {
-        content: 'VIA';
-    }
-    80% {
-        content: 'VIAJ';
-    }
-    84% {
-        content: 'VIAJÁ';
-        color: #fe5000;
-        border-color: #fe5000;
+    87.5% {
+        content: 'Explorá';
+        opacity: 1;
     }
     100% {
-        content: 'VIAJÁ';
-        color: hsla(19, 100%, 50%, 0.226);
-        border-color: hsla(19, 100%, 50%, 0.226);
+        content: 'Explorá';
+        opacity: 0;
     }
 }
 

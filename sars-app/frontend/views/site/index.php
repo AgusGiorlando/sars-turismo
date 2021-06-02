@@ -8,20 +8,26 @@ $this->title = 'SARS Turismo';
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="align-items-center">
     <!-- CAROUSEL -->
-    <div data-aos="fade-up">
+    <div class="carousel-section d-flex justify-content-center" data-aos="fade-up">
       <div id="homeCarousel" class="carousel slide z-depth-1-half" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_1.jpeg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_2.jpg" alt="Second slide">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_2.JPG" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_3.jpg" alt="Third slide">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_3.jpeg" alt="Third slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block carousel-img" src="https://www.adnrionegro.com.ar/wp-content/uploads/2016/08/r%C3%ADo-Colorado.jpg" alt="Third slide">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_4.jpeg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_5.jpeg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_6.jpeg" alt="Third slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
@@ -35,7 +41,7 @@ $this->title = 'SARS Turismo';
       </div>
       <div class="main-text hidden-xs">
         <div class="col-md-12 p-5 text-center">
-          <h1 class="carousel-text">VIAJÁ CON TODOS LOS SENTIDOS</h1>
+          <span class="carousel-text">Encontrá las vacaciones perfectas</span>
         </div>
         <div class="col-md-12 p-5 text-center">
           <span class="change-content"></span>
