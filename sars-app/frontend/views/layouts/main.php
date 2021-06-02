@@ -9,6 +9,7 @@ use frontend\assets\MainAsset;
 use common\widgets\Alert;
 use kartik\icons\Icon;
 use yii\bootstrap4\Nav;
+use yii\helpers\Url;
 
 MainAsset::register($this);
 
@@ -25,7 +26,7 @@ Icon::map($this);
     <link href="img/favicon.png" rel="icon">
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <?php $this->registerCsrfMetaTags() ?>
     <title>SARS turismo</title>
     <?php $this->head() ?>
@@ -35,61 +36,70 @@ Icon::map($this);
     <?php $this->beginBody() ?>
     <!-- BEGIN HEADER -->
     <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center justify-content-between">
-            <?php
-            NavBar::begin([
-                'brandLabel' => Html::img('/img/site/logo.jpg', ['class' => 'logo', 'alt' => Yii::$app->name]),
-                // 'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'id' => "mainNav",
-                    'class' => 'navbar nav-menu d-lg-block navbar-expand-md',
-                ],
-                'containerOptions' => [
-                    'class' => 'nav-menu'
-                ],
-            ]);
-
-            $menuItems = [
-                ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
-                [
-                    'label' => 'Actividades & Programas', 'url' => ['service/index'],
-                    'items' => [
-                        ['label' => 'Paseos', 'url' => ['service/index'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Vinos', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Naturaleza & Aventura', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Malargue', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Paquetes', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                    ]
-                ],
-                [
-                    'label' => 'Escapadas en Argentina', 'url' => ['product/index'],
-                    'items' => [
-                        ['label' => 'Norte Argentino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Iguazu y alrededores', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'Sur Argentino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ['label' => 'San Juan', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                    ],
-                ],
-                ['label' => 'Gastronomia', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
-                ['label' => 'Protocolo covid', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
-                // ['label' => 'Contacto', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
-            ];
-
-
-            if (count($menuItems)) {
-                echo Nav::widget([
-                    'options' => ['class' => 'navbar-nav'],
-                    'items' => $menuItems,
-                ]);
-            }
-            ?>
-            <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="social-links"><i class="bx bxl-facebook bx-md"></i></a>
-            <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="social-links"><i class="bx bxl-instagram bx-md"></i></a>
-            <?php
-            NavBar::end();
-            ?>
+        <div class="row d-flex justify-content-between">
+            <div class="col-md-10">
+                <a href="<?= Url::to(['site/index']) ?> " class="logo"><img src="/img/site/logo.jpg" alt=""></i></a>
+                <span class="slogan">Viajá con todos los sentidos</span>
+            </div>
+            <div class="col-md-2">
+                <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="social-links"><i class="bx bxl-facebook bx-md"></i></a>
+                <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="social-links"><i class="bx bxl-instagram bx-md"></i></a>
+            </div>
         </div>
+        <div class="row nav-menu">
+            <div class="container d-flex align-items-center justify-content-between">
+                <?php
+                NavBar::begin([
+                    // 'brandLabel' => Html::img('/img/site/logo.jpg', ['class' => 'logo', 'alt' => Yii::$app->name]),
+                    // 'brandUrl' => Yii::$app->homeUrl,
+                    'options' => [
+                        'id' => "mainNav",
+                        'class' => 'navbar nav-menu d-lg-block navbar-expand-md',
+                    ],
+                    'containerOptions' => [
+                        'class' => 'nav-menu'
+                    ],
+                ]);
 
+                $menuItems = [
+                    ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
+                    [
+                        'label' => 'Actividades & Programas', 'url' => ['service/index'],
+                        'items' => [
+                            ['label' => 'Paseos', 'url' => ['service/index'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Vinos', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Naturaleza & Aventura', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Malargue', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Paquetes', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ]
+                    ],
+                    [
+                        'label' => 'Escapadas en Argentina', 'url' => ['product/index'],
+                        'items' => [
+                            ['label' => 'Norte Argentino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Iguazu y alrededores', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Sur Argentino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'San Juan', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ],
+                    ],
+                    ['label' => 'Gastronomia', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                    ['label' => 'Protocolo covid', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                    // ['label' => 'Contacto', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                ];
+
+
+                if (count($menuItems)) {
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav'],
+                        'items' => $menuItems,
+                    ]);
+                }
+                ?>
+                <?php
+                NavBar::end();
+                ?>
+            </div>
+        </div>
     </header> <!-- END HEADER -->
     <div>
         <?= Alert::widget() ?>
