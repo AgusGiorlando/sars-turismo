@@ -36,10 +36,14 @@ Icon::map($this);
     <?php $this->beginBody() ?>
     <!-- BEGIN HEADER -->
     <header id="header" class="fixed-top">
-        <div class="row d-flex justify-content-between">
-            <div class="col-md-10">
+        <div class="row d-flex justify-content-between align-items-center">
+            <div class="col-md-7">
                 <a href="<?= Url::to(['site/index']) ?> " class="logo"><img src="/img/site/logo.jpg" alt=""></i></a>
                 <span class="slogan">Viajá con todos los sentidos</span>
+            </div>
+            <div class="col-md-3">
+                <i class="bx bxl-whatsapp"></i><?php echo ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
+                <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
             </div>
             <div class="col-md-2">
                 <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="social-links"><i class="bx bxl-facebook bx-md"></i></a>
@@ -64,27 +68,26 @@ Icon::map($this);
                 $menuItems = [
                     ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
                     [
-                        'label' => 'Actividades & Programas', 'url' => ['service/index'],
+                        'label' => 'Experiencias en Mendoza', 'url' => ['service/index'],
                         'items' => [
-                            ['label' => 'Paseos', 'url' => ['service/index'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Vinos', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Paseos', 'url' => ['service/index'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Naturaleza & Aventura', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'San Rafael', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Malargue', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Paquetes', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ]
                     ],
                     [
-                        'label' => 'Escapadas en Argentina', 'url' => ['product/index'],
+                        'label' => 'Argentina Tierra de sensaciones', 'url' => ['product/index'],
                         'items' => [
-                            ['label' => 'Norte Argentino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Iguazu y alrededores', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Sur Argentino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'San Juan', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Buenos Aires, La Puerta Grande y los Dominios del Gaucho', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Cuyo, donde nace el vino y vive el Sol', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Norte, El refugio de las tradiciones y el Arte Precolombino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Litoral, la tierra de los grandes rios', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Patagonia, Entre los Andes y el Atlantico', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ],
                     ],
-                    ['label' => 'Gastronomia', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
-                    ['label' => 'Protocolo covid', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
-                    // ['label' => 'Contacto', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                    ['label' => 'Contacto', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
                 ];
 
 
@@ -114,11 +117,6 @@ Icon::map($this);
                     <div class="copyright">
                         <?= Yii::powered() ?> - Copyright &copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?>
                     </div>
-                </div>
-                <div class="social-links text-md-right pt-3 pt-md-0">
-                    <h4>Contacto</h4>
-                    <i class="bx bxl-whatsapp"></i><?php echo ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
-                    <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
                 </div>
             </div>
         </section>

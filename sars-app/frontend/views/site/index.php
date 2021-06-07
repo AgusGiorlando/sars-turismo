@@ -12,22 +12,19 @@ $this->title = 'SARS Turismo';
       <div id="homeCarousel" class="carousel slide z-depth-1-half" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_1.jpeg" alt="First slide">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_1.jpg">
           </div>
           <div class="carousel-item">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_2.JPG" alt="Second slide">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_2.jpg">
           </div>
           <div class="carousel-item">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_3.jpeg" alt="Third slide">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_3.jpg">
           </div>
           <div class="carousel-item">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_4.jpeg" alt="Third slide">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_4.jpg">
           </div>
           <div class="carousel-item">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_5.jpeg" alt="Third slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_6.jpeg" alt="Third slide">
+            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_5.jpg">
           </div>
         </div>
         <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
@@ -39,53 +36,20 @@ $this->title = 'SARS Turismo';
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div class="main-text hidden-xs">
-        <div class="col-md-12 p-5 text-center">
-          <span class="carousel-text">Encontrá las vacaciones perfectas</span>
-        </div>
-        <div class="col-md-12 p-5 text-center">
-          <span class="change-content"></span>
-        </div>
-      </div>
     </div>
     <div class="activities-menu" data-aos="fade-up">
-      <div class="section-title">
-        <h2>Actividades</h2>
-        <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
-      </div>
       <div class="row">
         <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
           <div class="icon-box">
-            <div class="icon"><img src='/img/site/services-logos/SARS _1_.jpg' class="activities-img" alt=""> </div>
-            <h4 class="title"><a href="">Paseos</a></h4>
+            <div class="icon"><img src='/img/site/WhatsApp Image 2021-04-06 at 13.27.40.jpeg' class="activities-img"> </div>
+            <h4 class="title"><a href="">Aconcagua</a></h4>
+            <span>Desde AR$ 45000</span>
             <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
           </div>
-        </div>
-        <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <div class="icon-box">
-            <div class="icon"><img src='/img/site/services-logos/SARS _2_.jpg' class="activities-img" alt=""> </div>
-            <h4 class="title"><a href="">Aventura</a></h4>
-            <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
-          </div>
-        </div>
-        <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="300">
-          <div class="icon-box">
-            <div class="icon"><img src='/img/site/services-logos/SARS _3_.jpg' class="activities-img" alt=""> </div>
-            <h4 class="title"><a href="">Paquetes</a></h4>
-            <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
-          </div>
-        </div>
-        <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="400">
-          <div class="icon-box">
-            <div class="icon"><img src='/img/site/services-logos/SARS _4_.jpg' class="activities-img" alt=""> </div>
-            <h4 class="title"><a href="">Gastronomía</a></h4>
-            <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
-          </div>
-        </div>
-        <div class="col-md d-flex justify-content-center" data-aos="fade-up" data-aos-delay="500">
-          <div class="icon-box">
-            <div class="icon"><img src='/img/site/services-logos/SARS _5_.jpg' class="activities-img" alt=""> </div>
-            <h4 class="title"><a href="">Alojamiento</a></h4>
+            <div class="icon"><img src='/img/site/WhatsApp Image 2021-04-06 at 13.27.40.jpeg' class="activities-img"> </div>
+            <h4 class="title"><a href="">Aconcagua</a></h4>
+            <span>Desde AR$ 45000</span>
             <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
           </div>
         </div>
