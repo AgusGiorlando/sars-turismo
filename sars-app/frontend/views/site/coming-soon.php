@@ -25,5 +25,6 @@ $imgUrl = Yii::getAlias('@webroot/img/site/logo.jpg');
             <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br> <br>
             <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="instagram"><i class="bx bxl-instagram bx-md"></i></a>
             <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="facebook"><i class="bx bxl-facebook bx-md"></i></a>
+            <a href="<?= Yii::$app->params['tripadvisorUrl'] ?>" class="tripAdvisor"><i class="fab fa-tripadvisor fa-2x"></i></a>
         </div>
 </div>

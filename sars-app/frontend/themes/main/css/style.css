@@ -174,7 +174,7 @@ h6 {
     font-size: 58px;
     background: #fff;
     color: #fe5000;
-    padding: 8px 0;
+    padding: 0;
     width: 150px;
     height: 150px;
     transition: 0.3s;
@@ -497,6 +497,10 @@ h6 {
     color: white;
 }
 
+#coming-soon .tripAdvisor {
+    color: white;
+}
+
 #coming-soon .instagram {
     color: white;
 }
@@ -529,8 +533,7 @@ h6 {
 }
 
 #hero .activities-menu {
-    padding: 30px;
-    background-color: #fe5000;
+    padding: 0;
     width: 100%;
 }
 
@@ -541,7 +544,7 @@ h6 {
 
 #hero h2 {
     color: #466393;
-    margin: 15px 0 0 0;
+    margin: 5px 0 0 0;
     font-size: 24px;
     color: #2d405f;
 }
@@ -630,10 +633,32 @@ h6 {
 }
 
 #hero .activities-img {
-    max-width: 95%;
+    max-width: 90%;
     transition: all 0.4s ease-in-out;
     display: inline-block;
     padding: 10px 0;
+}
+
+#hero .activities-logo {
+    max-width: 90%;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+    #hero .activities-logo {
+        max-width: 50px;
+        transition: all 0.4s ease-in-out;
+        display: inline-block;
+        padding: 10px 0;
+    }
+    #hero .category {
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+        padding: 10px 0;
+    }
 }
 
 #hero .main-text {
@@ -657,12 +682,12 @@ h6 {
     max-width: 100%;
     vertical-align: middle;
     margin-top: 0px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 #hero .icon-box {
-    width: 300px;
-    padding: 10px 5px;
+    width: 200px;
+    min-width: 150px;
     margin-bottom: 15px;
     position: relative;
     overflow: hidden;
@@ -678,7 +703,7 @@ h6 {
 }
 
 #hero .icon {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 #hero .icon i {
@@ -689,6 +714,28 @@ h6 {
     padding: 10px;
     border-radius: 50px;
     transition: all 0.3s;
+}
+
+#hero .row-grey {
+    background-color: hsl(0, 0%, 63%);
+    padding: 30px;
+}
+
+#hero .row-orange {
+    background-color: #fe5000;
+    padding: 30px;
+}
+
+#hero .category {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+#hero .category .icon {
+    width: 90%;
 }
 
 @media (max-width: 992px) {
@@ -969,7 +1016,7 @@ section {
 
 .service {
     background: white;
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 .service .activity-title {
@@ -995,6 +1042,162 @@ section {
     background-color: #fe5000;
     color: white;
     font-weight: bold;
+}
+
+.service .cover-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.service .row>.column {
+    padding: 0 8px;
+}
+
+.service .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.service .column {
+    float: left;
+    width: 25%;
+    height: 100px;
+}
+
+.service .hover-shadow {
+    padding-top: 5px;
+    padding-bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* The Modal (background) */
+
+.service .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 20px;
+    left: 0px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+
+/* Modal Content */
+
+.service .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+
+/* The Close Button */
+
+.service .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.service .close:hover,
+.service .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Hide the slides by default */
+
+.service .mySlides {
+    display: none;
+}
+
+
+/* Next & previous buttons */
+
+.service .prev,
+.service .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* Position the "next button" to the right */
+
+.service .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.service .prev:hover,
+.service .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* Number text (1/3 etc) */
+
+.service .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+
+/* Caption text */
+
+.service .caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+
+.service img.demo {
+    opacity: 0.6;
+}
+
+.service .active,
+.service .demo:hover {
+    opacity: 1;
+}
+
+.service img.hover-shadow {
+    transition: 0.3s;
+}
+
+.service .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
