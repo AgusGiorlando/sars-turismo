@@ -7,74 +7,141 @@ use kartik\icons\Icon;
 
 $this->title = $oService->name;
 $activeFlag = true;
+
 ?>
 <div class="site-service">
     <section id="service" class="service">
         <div class="container" data-aos="fade-up">
             <h1 class="activity-title"><?= Html::encode($this->title) ?></h1>
-            <div class="row h-75">
-                <!-- CAROUSEL -->
-                <div class="col-6 d-flex align-items-center">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <?php foreach ($images as $image) : ?>
-                                <?php if ($activeFlag == true) :  $activeFlag = false; ?>
-                                    <div class="carousel-item active">
-                                    <?php else : ?>
-                                        <div class="carousel-item">
-                                        <?php endif; ?>
-                                        <img class="d-block carousel-img" src='<?= '/img/services/' . $oService->id . '/' . $image->filename ?>' alt="First slide">
-                                        </div>
-                                    <?php endforeach; ?>
-                                    </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
+            <!-- GALERIA -->
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <img class="cover-img" src="/img/site/home-carousel/carousel_1.jpg" onclick="openModal();currentSlide(1)">
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <img src="/img/site/home-carousel/carousel_2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
                         </div>
-                    </div>
-                    <!-- DESCRIPCION -->
-                    <div class="col-6">
-                        <p><?= $oService->description ?></p>
-                        <h3 class="price">Desde AR$<?= $oService->price ?></h3>
-                    </div>
-                </div>
-                <hr>
-                <!-- RESERVA -->
-                <div class="row align-center">
-                    <div class="card text-center w-100">
-                        <div class="card-body contact-card">
-                            HACE TU RESERVA<br>
-                            <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
-                            <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
+                        <div class="column">
+                            <img src="/img/site/home-carousel/carousel_3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                        </div>
+                        <div class="column">
+                            <img src="/img/site/home-carousel/carousel_4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+                        </div>
+                        <div class="column">
+                            <img src="/img/site/home-carousel/carousel_5.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow">
                         </div>
                     </div>
                 </div>
-                <hr>
-                <!-- DETALLES -->
-                <div class="row text-center">
-                    <div class="col 4">
-                        <span class="detail">Duración</span><br><?= Yii::$app->formatter->asTime($oService->duration, 'short') ?>hs
-                    </div>
-                    <div class="col 4">
-                        <span class="detail">Cancelación</span><br>2 dias antes
-                    </div>
-                    <div class="col 4">
-                        <span class="detail">Tipo de Actividad</span><br><?= $oService->type ?>
+                <!-- The Modal/Lightbox -->
+                <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+
+                        <div class="mySlides">
+                            <img src="/img/site/home-carousel/carousel_1.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <img src="/img/site/home-carousel/carousel_2.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <img src="/img/site/home-carousel/carousel_3.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <img src="/img/site/home-carousel/carousel_4.jpg" style="width:100%">
+                        </div>
+
+                        <div class="mySlides">
+                            <img src="/img/site/home-carousel/carousel_5.jpg" style="width:100%">
+                        </div>
+
+                        <!-- Next/previous controls -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
                 </div>
-                <hr>
-                <!-- INCLUYE -->
-                <div class="container">
-                    <h2>Incluye</h2>
-                    <?php foreach ($oService->includes as $item) : ?>
-                        <?php echo Icon::show('check-circle') ?> <?= $item ?> <br>
-                    <?php endforeach; ?>
+                <!-- DESCRIPCION -->
+                <div class="col-6">
+                    <p><?= $oService->description ?></p>
+                    <h3 class="price d-flex align-self-bottom">Desde AR$<?= $oService->price ?></h3>
                 </div>
             </div>
-    </section>
+        </div>
+        <hr>
+        <!-- DETALLES -->
+        <div class="row text-center">
+            <div class="col 4">
+                <span class="detail">Duración</span><br>2 Horas
+            </div>
+            <div class="col 4">
+                <span class="detail">Cancelación</span><br>2 dias antes
+            </div>
+            <div class="col 4">
+                <span class="detail">Tipo de Actividad</span><br><?= $oService->type ?>
+            </div>
+        </div>
+        <br>
+        <!-- RESERVA -->
+        <div class="row align-center">
+            <div class="card text-center w-100">
+                <div class="card-body contact-card">
+                    HACE TU RESERVA<br>
+                    <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
+                    <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
+                </div>
+            </div>
+        </div>
 </div>
+</section>
+</div>
+
+<script>
+    // Open the Modal
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    // Close the Modal
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
