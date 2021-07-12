@@ -15,7 +15,7 @@ $activeFlag = true;
             <h1 class="activity-title"><?= Html::encode($this->title) ?></h1>
             <!-- GALERIA -->
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="row">
                         <img class="cover-img" src="/img/site/home-carousel/carousel_1.jpg" onclick="openModal();currentSlide(1)">
                     </div>
@@ -65,22 +65,22 @@ $activeFlag = true;
                     </div>
                 </div>
                 <!-- DESCRIPCION -->
-                <div class="col-6">
+                <div class="col-md-6 description">
                     <p><?= $oService->description ?></p>
-                    <h3 class="price d-flex align-self-bottom">Desde AR$<?= $oService->price ?></h3>
+                    <h2 class="price">Desde AR$<?= $oService->price ?></h2>
                 </div>
             </div>
         </div>
         <hr>
         <!-- DETALLES -->
         <div class="row text-center">
-            <div class="col 4">
+            <div class="col-md-4">
                 <span class="detail">Duración</span><br>2 Horas
             </div>
-            <div class="col 4">
+            <div class="col-md-4">
                 <span class="detail">Cancelación</span><br>2 dias antes
             </div>
-            <div class="col 4">
+            <div class="col-md-4">
                 <span class="detail">Tipo de Actividad</span><br><?= $oService->type ?>
             </div>
         </div>

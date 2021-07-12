@@ -48,7 +48,7 @@ Icon::map($this);
             <div class="col-md-2">
                 <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="social-links"><i class="bx bxl-facebook bx-md"></i></a>
                 <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="social-links"><i class="bx bxl-instagram bx-md"></i></a>
-                <a href="<?= Yii::$app->params['tripadvisorUrl'] ?>" class="social-links p-1"><i class="fab fa-tripadvisor fa-xs"></i></a>
+                <a href="<?= Yii::$app->params['tripadvisorUrl'] ?>" class="social-links"><i class="fab fa-tripadvisor fa-xs"></i></a>
             </div>
         </div>
         <div class="row nav-menu">
