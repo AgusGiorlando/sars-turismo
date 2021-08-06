@@ -45,7 +45,7 @@ $this->title = 'SARS Turismo';
       <div class="row row-orange d-flex justify-content-center">
         <div class="col-md-2 d-flex category" data-aos="fade-up" data-aos-delay="100">
           <div class="row d-flex justify-content-center">
-            <div class="icon"><img src='/img/site/services-logos/SARS _2_.jpg' class="activities-logo"> </div>
+            <div class="icon"><img src='/img/site/services-logoss/SARS _2_.jpg' class="activities-logo"> </div>
             <h2>Paseos</h2>
           </div>
         </div>

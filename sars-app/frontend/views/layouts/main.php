@@ -108,6 +108,7 @@ Icon::map($this);
     <div>
         <?= Alert::widget() ?>
         <?= $content ?>
+        <a href='https://api.whatsapp.com/send?phone=<?= Yii::$app->params['contactPhoneNumber'] ?>' class="wp-icon" style="display: inline;"><i class="bx bxl-whatsapp"></i></a>
     </div>
 
     <footer class="footer">
