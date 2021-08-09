@@ -21,8 +21,9 @@ $imgUrl = Yii::getAlias('@webroot/img/site/logo.jpg');
             <p class="lead"><b>Estamos trabajando en nuestro nuevo sitio web... <br>Muy pronto estará listo!</b></p>
         </div>
         <div class="container text-center">
-            <i class="bx bxl-whatsapp"></i><?php echo ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
+            <h3>Contactanos</h3>
             <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br> <br>
+            <a href='https://api.whatsapp.com/send?phone=<?= Yii::$app->params['contactPhoneNumber']?>' class="instagram"><i class="bx bxl-whatsapp bx-md"></i></a>
             <a href="<?= Yii::$app->params['instagramUrl'] ?>" class="instagram"><i class="bx bxl-instagram bx-md"></i></a>
             <a href="<?= Yii::$app->params['facebookUrl'] ?>" class="facebook"><i class="bx bxl-facebook bx-md"></i></a>
             <a href="<?= Yii::$app->params['tripadvisorUrl'] ?>" class="tripAdvisor"><i class="fab fa-tripadvisor fa-2x"></i></a>
