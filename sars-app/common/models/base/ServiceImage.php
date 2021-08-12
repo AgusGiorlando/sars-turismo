@@ -10,8 +10,8 @@ use Yii;
  * @property string $service_id
  * @property string $image_id
  *
- * @property BaseService $service
- * @property BaseImage $image
+ * @property Service $service
+ * @property Image $image
  */
 class ServiceImage extends \yii\db\ActiveRecord
 {
@@ -58,7 +58,7 @@ class ServiceImage extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[Image]].
+     * Gets query for [[Category]].
      *
      * @return \yii\db\ActiveQuery
      */

@@ -28,7 +28,7 @@ Icon::map($this);
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <?php $this->registerCsrfMetaTags() ?>
-    <title>SARS turismo</title>
+    <title>SARS Turismo</title>
     <?php $this->head() ?>
 </head>
 

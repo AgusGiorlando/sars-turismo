@@ -2,23 +2,17 @@
 
 namespace backend\controllers;
 
-use common\models\base\Category;
-use common\models\base\Image;
 use Yii;
-use common\models\base\Service;
-use common\models\base\ServiceManager;
-use common\widgets\Alert;
+use common\models\base\Category;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\web\UploadedFile;
-use yii\helpers\FileHelper;
 
 /**
- * ServiceController implements the CRUD actions for Service model.
+ * CategoryController implements the CRUD actions for Category model.
  */
-class ServiceController extends Controller
+class CategoryController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -36,13 +30,13 @@ class ServiceController extends Controller
     }
 
     /**
-     * Lists all Service models.
+     * Lists all Category models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Service::find(),
+            'query' => Category::find(),
         ]);
 
         return $this->render('index', [
@@ -51,79 +45,38 @@ class ServiceController extends Controller
     }
 
     /**
-     * Displays a single Service model.
+     * Displays a single Category model.
      * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($id)
     {
-        $model = $this->findModel($id);
-        $aImages = ServiceManager::getImages($model);
-
         return $this->render('view', [
-            'model' => $model,
-            'images' => $aImages
+            'model' => $this->findModel($id),
         ]);
     }
 
-    public function actionUpload($id)
-    {
-
-        $oImage = new Image();
-        $post = Yii::$app->request->post();
-        try {
-            if ($oImage->load($post)) {
-                if ($oImage->validate()) {
-                    $aImages = UploadedFile::getInstances($oImage, 'filename');
-
-                    $folderPath = Yii::getAlias('@img/') . 'services/' . $id;
-
-                    ServiceManager::uploadImages($aImages, $folderPath, $id);
-
-                    return $this->redirect(['view', 'id' => $id]);
-                }
-            }
-            if ($oImage->hasErrors() == true) :
-                throw new \Exception(implode(". ", $oImage->getErrorSummary(true)));
-            endif;
-
-            return $this->render('upload-images', ['model' => $oImage]);
-        } catch (\Throwable $th) {
-            throw $th;
-        }
-    }
-
     /**
-     * Creates a new Service model.
+     * Creates a new Category model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Service();
+        $model = new Category();
 
-        try {
-            if ($model->load(Yii::$app->request->post())) {
-
-                ServiceManager::createService($model);
-
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-        } catch (\Throwable $th) {
-            Yii::$app->session->setFlash('error', $th->getMessage());
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
-
-        $aCategories = Category::findAll(['enabled' => true]);
 
         return $this->render('create', [
             'model' => $model,
-            'categories' => $aCategories
         ]);
     }
 
     /**
-     * Updates an existing Service model.
+     * Updates an existing Category model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id
      * @return mixed
@@ -143,7 +96,7 @@ class ServiceController extends Controller
     }
 
     /**
-     * Deletes an existing Service model.
+     * Deletes an existing Category model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id
      * @return mixed
@@ -157,15 +110,15 @@ class ServiceController extends Controller
     }
 
     /**
-     * Finds the Service model based on its primary key value.
+     * Finds the Category model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id
-     * @return Service the loaded model
+     * @return Category the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Service::findOne($id)) !== null) {
+        if (($model = Category::findOne($id)) !== null) {
             return $model;
         }
 

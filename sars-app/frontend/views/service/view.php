@@ -6,7 +6,13 @@ use yii\helpers\Html;
 use kartik\icons\Icon;
 
 $this->title = $oService->name;
+
 $activeFlag = true;
+
+$oCategory = $oService->getCategory()->one();
+
+// Calcula el ancho de las imagenes dentro de la galeria en funcion de su cantidad
+$column_size = 100/(count($images)-1);
 
 ?>
 <div class="site-service">
@@ -17,48 +23,23 @@ $activeFlag = true;
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
-                        <img class="cover-img" src="/img/site/home-carousel/carousel_1.jpg" onclick="openModal();currentSlide(1)">
+                        <img class="cover-img" src="<?= '/img/services/' . $oService->id . '/' . $images[0]->filename ?>" onclick="openModal();currentSlide(1)">
                     </div>
-                    <div class="row">
-                        <div class="column">
-                            <img src="/img/site/home-carousel/carousel_2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                    <?php for ($index = 1; $index < count($images); $index++) : ?>
+                        <div class="column" style="--column-size: <?= $column_size ?>%;">
+                            <img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" onclick="openModal();currentSlide(<?= $index ?>)" class="hover-shadow">
                         </div>
-                        <div class="column">
-                            <img src="/img/site/home-carousel/carousel_3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
-                        </div>
-                        <div class="column">
-                            <img src="/img/site/home-carousel/carousel_4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
-                        </div>
-                        <div class="column">
-                            <img src="/img/site/home-carousel/carousel_5.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow">
-                        </div>
-                    </div>
+                    <?php endfor; ?>
                 </div>
                 <!-- The Modal/Lightbox -->
                 <div id="myModal" class="modal">
                     <span class="close cursor" onclick="closeModal()">&times;</span>
                     <div class="modal-content">
-
-                        <div class="mySlides">
-                            <img src="/img/site/home-carousel/carousel_1.jpg" style="width:100%">
-                        </div>
-
-                        <div class="mySlides">
-                            <img src="/img/site/home-carousel/carousel_2.jpg" style="width:100%">
-                        </div>
-
-                        <div class="mySlides">
-                            <img src="/img/site/home-carousel/carousel_3.jpg" style="width:100%">
-                        </div>
-
-                        <div class="mySlides">
-                            <img src="/img/site/home-carousel/carousel_4.jpg" style="width:100%">
-                        </div>
-
-                        <div class="mySlides">
-                            <img src="/img/site/home-carousel/carousel_5.jpg" style="width:100%">
-                        </div>
-
+                        <?php foreach ($images as $image) : ?>
+                            <div class="mySlides">
+                                <?= Html::img('/img/services/' . $oService->id . '/' . $image->filename, ['width' => '100%']); ?>
+                            </div>
+                        <?php endforeach; ?>
                         <!-- Next/previous controls -->
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -75,30 +56,60 @@ $activeFlag = true;
         <!-- DETALLES -->
         <div class="row text-center">
             <div class="col-md-4">
-                <span class="detail">Duración</span><br>2 Horas
+                <span class="detail">Salidas</span><br><?= $oService->start ?>
             </div>
             <div class="col-md-4">
-                <span class="detail">Cancelación</span><br>2 dias antes
+                <span class="detail">Regreso</span><br><?= $oService->return ?>
             </div>
             <div class="col-md-4">
-                <span class="detail">Tipo de Actividad</span><br><?= $oService->type ?>
+                <span class="detail">Tipo de Actividad</span><br><?= $oCategory->name ?>
             </div>
         </div>
         <br>
         <!-- RESERVA -->
         <div class="row align-center">
-            <div class="card text-center w-100">
-                <div class="card-body contact-card">
-                    HACE TU RESERVA<br>
-                    <?php echo Icon::show('phone') . ' ' . Yii::$app->params['contactPhoneNumber']; ?><br>
+            <div class="card text-center w-100 contact-card">
+                <div class="card-body">
+                    RESERVA AQUI<br>
+                    <i class="bx bxl-whatsapp"></i><?= Yii::$app->params['contactPhoneNumber']; ?><br>
                     <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
                 </div>
             </div>
         </div>
+        <!-- INCLUYE -->
+        <div class="container" data-aos="fade-up">
+            <div class="row d-flex justify-content-center m-3">
+                <div class="col-md-6">
+                    <div class="row d-flex">
+                        <h3>Incluye</h3>
+                    </div>
+                    <div class="row d-flex align-items-center">
+                        <i class="bx bx-check-square bx-md"></i> <?= $oService->includes ?>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row d-flex">
+                        <h3>No incluye</h3>
+                    </div>
+                    <div class="row d-flex align-items-center">
+                        <i class="bx bx-x-circle bx-md"></i> <?= $oService->not_includes ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- RECOMENDACIONES -->
+        <div class="container" data-aos="fade-up">
+            <div class="row d-flex m-3">
+                <h3>Recomendaciones</h3>
+            </div>
+            <div class="row d-flex align-items-center m-3">
+            <i class="bx bx-radio-circle"></i> <?= $oService->observations ?>
+            </div>
+        </div>
+    </section>
 </div>
-</section>
-</div>
-
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 <script>
     // Open the Modal
     function openModal() {

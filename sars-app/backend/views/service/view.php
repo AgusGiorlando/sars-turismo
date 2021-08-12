@@ -31,18 +31,19 @@ Html::img(Yii::getAlias('@backend'. '/web/img/3b39507b-8c1c-11eb-8a77-2cd05ae0e5
         <?= DetailView::widget([
             'model' => $model,
             'attributes' => [
-                // 'id',
-                'enabled:boolean',
-                // 'version',
+                'id',
                 'name',
                 'price',
-                // 'images',
                 'description:ntext',
-                // 'observations:ntext',
-                // 'includes',
-                'duration',
-                'languages:ntext',
+                'observations:ntext',
+                // 'version',
+                // 'images',
+                'includes',
+                'not_includes',
+                'return',
+                'start',
                 'type',
+                'enabled:boolean',
             ],
         ]) ?>
 
