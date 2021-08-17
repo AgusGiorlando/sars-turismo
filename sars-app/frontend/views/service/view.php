@@ -12,7 +12,7 @@ $activeFlag = true;
 $oCategory = $oService->getCategory()->one();
 
 // Calcula el ancho de las imagenes dentro de la galeria en funcion de su cantidad
-$column_size = 100/(count($images)-1);
+$column_size = 100 / (count($images) - 1);
 
 ?>
 <div class="site-service">
@@ -48,7 +48,7 @@ $column_size = 100/(count($images)-1);
                 <!-- DESCRIPCION -->
                 <div class="col-md-6 description">
                     <p><?= $oService->description ?></p>
-                    <h2 class="price">Desde AR$<?= $oService->price ?></h2>
+                    <h2 class="price">AR$ <?= $oService->price ?></h2>
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@ $column_size = 100/(count($images)-1);
                 <h3>Recomendaciones</h3>
             </div>
             <div class="row d-flex align-items-center m-3">
-            <i class="bx bx-radio-circle"></i> <?= $oService->observations ?>
+                <i class="bx bx-radio-circle"></i> <?= $oService->observations ?>
             </div>
         </div>
     </section>
@@ -131,7 +131,7 @@ $column_size = 100/(count($images)-1);
 
     // Thumbnail image controls
     function currentSlide(n) {
-        showSlides(slideIndex = n);
+        showSlides(slideIndex = n + 1);
     }
 
     function showSlides(n) {

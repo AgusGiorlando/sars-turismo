@@ -19,7 +19,7 @@ $this->title = 'Actividades';
                             <?= Html::img('/img/services/'. $item['service']->id . '/' . $item['cover_filename'], ['class' => 'img']); ?>
                             <h4 class="title"><?= Html::a($item['service']->name, ['service/view', 'id' =>$item['service']->id]) ?></h4>
                             <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
-                            desde<h1 class="price">AR$<?= $item['service']->price ?></h1>
+                            <h1 class="price">AR$<?= $item['service']->price ?></h1>
                         </div>
                     </div>
                 <?php endforeach; ?>

@@ -108,8 +108,7 @@ Icon::map($this);
     <div>
         <?= Alert::widget() ?>
         <?= $content ?>
-        <a href='https://api.whatsapp.com/send?phone=<?= Yii::$app->params['contactPhoneNumber'] ?>' class="wp-icon" style="display: inline;"><i class="bx bxl-whatsapp"></i></a>
-    </div>
+        <a id="wp-icon" href='https://api.whatsapp.com/send?phone=<?= Yii::$app->params['contactPhoneNumber'] ?>' data-toggle="popover" data-content="Escribinos aqui cualquier consulta..." class="wp-icon" style="display: inline;"><i class="bx bxl-whatsapp"></i></a>    </div>
 
     <footer class="footer">
         <section id="footer" class="footer">
@@ -129,3 +128,17 @@ Icon::map($this);
 
 </html>
 <?php $this->endPage() ?>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover('show');   
+    $('body').on('click', function (e) {
+    $('[data-toggle=popover]').each(function () {
+        // hide any open popovers when the anywhere else in the body is clicked
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+        }
+    });
+});
+});
+</script>

@@ -1057,8 +1057,15 @@ section {
 }
 
 .service .activity-title {
+    /* padding-top: 100px; */
     text-align: center;
     padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .service .activity-title {
+        padding-top: 120px;
+    }
 }
 
 .service .carousel-img {

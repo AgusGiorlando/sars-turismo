@@ -50,9 +50,24 @@ $this->title = 'SARS Turismo';
           </div>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/services/66ef392d-034b-3890-a9ea-865eb64b10eb/6.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => '66ef392d-034b-3890-a9ea-865eb64b10eb']), ['class' => 'title']); ?></h4>
-          <span>Desde AR$ 1250</span>
+          <div class="icon"><img src='/img/services/fa669f47-50e9-36d9-90ea-4c76386562e7/6.jpg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7']), ['class' => 'title']); ?></h4>
+          <span>AR$ 1250</span>
+        </div>
+        <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon"><img src='/img/services/fa669f47-50e9-36d9-90ea-4c76386562e7/6.jpg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7']), ['class' => 'title']); ?></h4>
+          <span>AR$ 1250</span>
+        </div>
+        <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon"><img src='/img/services/fa669f47-50e9-36d9-90ea-4c76386562e7/6.jpg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7']), ['class' => 'title']); ?></h4>
+          <span>AR$ 1250</span>
+        </div>
+        <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
+          <div class="icon"><img src='/img/services/fa669f47-50e9-36d9-90ea-4c76386562e7/6.jpg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7']), ['class' => 'title']); ?></h4>
+          <span>AR$ 1250</span>
         </div>
       </div>
       <div class="row row-grey d-flex justify-content-center">
@@ -65,17 +80,17 @@ $this->title = 'SARS Turismo';
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
           <div class="icon"><img src='/img/site/WhatsApp Image 2021-04-06 at 13.27.40.jpeg' class="activities-img"> </div>
           <h4 class="title"><a href="">Aconcagua</a></h4>
-          <span>Desde AR$ 45000</span>
+          <span>AR$ 45000</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="200">
           <div class="icon"><img src='/img/site/WhatsApp Image 2021-04-06 at 13.27.40.jpeg' class="activities-img"> </div>
           <h4 class="title"><a href="">Aconcagua</a></h4>
-          <span>Desde AR$ 45000</span>
+          <span>AR$ 45000</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="300">
           <div class="icon"><img src='/img/site/WhatsApp Image 2021-04-06 at 13.27.40.jpeg' class="activities-img"> </div>
           <h4 class="title"><a href="">Aconcagua</a></h4>
-          <span>Desde AR$ 45000</span>
+          <span>AR$ 45000</span>
         </div>
       </div>
     </div>
