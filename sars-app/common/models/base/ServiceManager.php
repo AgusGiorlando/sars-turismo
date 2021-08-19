@@ -7,6 +7,7 @@ use common\models\base\Service;
 use common\models\base\ServiceImage;
 use Faker\Provider\Uuid;
 use yii\helpers\ArrayHelper;
+use yii\helpers\StringHelper;
 
 class ServiceManager
 {
@@ -73,6 +74,11 @@ class ServiceManager
             $oNewService->id = Uuid::uuid();
             Yii::$app->session->setFlash('info', 'Service ID: ' . $oNewService->id);
 
+            // Formatea arrays
+            $oNewService->observations = self::__StringGroupToJSON($oNewService->observations);
+            $oNewService->includes = self::__StringGroupToJSON($oNewService->includes);
+            $oNewService->not_includes = self::__StringGroupToJSON($oNewService->not_includes);
+
             // Guarda el objeto
             $oNewService->save();
             if ($oNewService->hasErrors() == true) :
@@ -81,6 +87,10 @@ class ServiceManager
         } catch (\Throwable $th) {
             throw $th;
         }
+    }
+
+    private static function __StringGroupToJSON($string){
+        return json_encode(StringHelper::explode($string, ';', true, true));
     }
 
     public static function getImages($oService)

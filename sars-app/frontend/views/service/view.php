@@ -4,6 +4,7 @@
 
 use yii\helpers\Html;
 use kartik\icons\Icon;
+use yii\bootstrap4\Html as Bootstrap4Html;
 
 $this->title = $oService->name;
 
@@ -27,7 +28,7 @@ $column_size = 100 / (count($images) - 1);
                     </div>
                     <?php for ($index = 1; $index < count($images); $index++) : ?>
                         <div class="column" style="--column-size: <?= $column_size ?>%;">
-                            <img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" onclick="openModal();currentSlide(<?= $index ?>)" class="hover-shadow">
+                            <img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" onclick="openModal();currentSlide(<?= $index + 1 ?>)" class="hover-shadow">
                         </div>
                     <?php endfor; ?>
                 </div>
@@ -48,7 +49,9 @@ $column_size = 100 / (count($images) - 1);
                 <!-- DESCRIPCION -->
                 <div class="col-md-6 description">
                     <p><?= $oService->description ?></p>
-                    <h2 class="price">AR$ <?= $oService->price ?></h2>
+                    <div class="price-box">
+                        <h2>AR$ <?= $oService->price ?></h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,7 +70,7 @@ $column_size = 100 / (count($images) - 1);
         </div>
         <br>
         <!-- RESERVA -->
-        <div class="row align-center">
+        <div class="row align-center booking">
             <div class="card text-center w-100 contact-card">
                 <div class="card-body">
                     RESERVA AQUI<br>
@@ -78,33 +81,43 @@ $column_size = 100 / (count($images) - 1);
         </div>
         <!-- INCLUYE -->
         <div class="container" data-aos="fade-up">
-            <div class="row d-flex justify-content-center m-3">
+            <div class="row d-flex m-3">
                 <div class="col-md-6">
                     <div class="row d-flex">
                         <h3>Incluye</h3>
                     </div>
-                    <div class="row d-flex align-items-center">
-                        <i class="bx bx-check-square bx-md"></i> <?= $oService->includes ?>
+                    <div class="row d-flex">
+                        <ul class="list-group">
+                            <?php foreach (json_decode($oService->includes) as $item) : ?>
+                                <li class="list-group-item d-flex align-items-center"><i class="bx bx-check-square bx-md"></i><?= Bootstrap4Html::encode($item) ?></li>
+                            <?php endforeach; ?>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="row d-flex">
                         <h3>No incluye</h3>
                     </div>
-                    <div class="row d-flex align-items-center">
-                        <i class="bx bx-x-circle bx-md"></i> <?= $oService->not_includes ?>
+                    <div class="row d-flex">
+                        <ul class="list-group">
+                            <?php foreach (json_decode($oService->not_includes) as $item) : ?>
+                                <li class="list-group-item d-flex align-items-center"> <i class="bx bx-x-circle bx-md"></i><?= Bootstrap4Html::encode($item) ?></li>
+                            <?php endforeach; ?>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <hr>
         <!-- RECOMENDACIONES -->
         <div class="container" data-aos="fade-up">
             <div class="row d-flex m-3">
                 <h3>Recomendaciones</h3>
             </div>
-            <div class="row d-flex align-items-center m-3">
-                <i class="bx bx-radio-circle"></i> <?= $oService->observations ?>
+            <div class="row m-3">
+                <?php foreach (json_decode($oService->observations) as $item) : ?>
+                    <li class="list-group-item d-flex align-items-center"><i class="bx bx-radio-circle"></i><?= Bootstrap4Html::encode($item) ?></li>
+                <?php endforeach; ?>
+                </ul>
             </div>
         </div>
     </section>
@@ -131,10 +144,11 @@ $column_size = 100 / (count($images) - 1);
 
     // Thumbnail image controls
     function currentSlide(n) {
-        showSlides(slideIndex = n + 1);
+        showSlides(slideIndex = n);
     }
 
     function showSlides(n) {
+        console.log(n);
         var i;
         var slides = document.getElementsByClassName("mySlides");
         var dots = document.getElementsByClassName("demo");

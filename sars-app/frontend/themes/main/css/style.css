@@ -1073,8 +1073,10 @@ section {
     vertical-align: middle;
 }
 
-.service .price {
-    color: #fe5000;
+.service .price-box {
+    background-color: #fe5000;
+    color: #FFF;
+    padding: 5px;
 }
 
 .service h3 {
