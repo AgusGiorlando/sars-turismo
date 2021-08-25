@@ -69,15 +69,20 @@ Icon::map($this);
                 $menuItems = [
                     ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
                     [
-                        'label' => 'Experiencias en Mendoza', 'url' => ['service/index'],
+                        'label' => 'Paseos', 'url' => ['service/index'],
                         'items' => [
-                            ['label' => 'Vinos', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Paseos', 'url' => ['service/index'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Naturaleza & Aventura', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'San Rafael', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Malargue', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'City Tour', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Walking City Tour', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Alta Montaña por Villavicencio', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Ciudad Fantasmal', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Cañón de Atuel', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Valle de Uco por Cordon del Plata' , 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ]
                     ],
+                    ['label' => 'Vinos', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                    ['label' => 'Aventura', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
                     [
                         'label' => 'Argentina Tierra de sensaciones', 'url' => ['product/index'],
                         'items' => [

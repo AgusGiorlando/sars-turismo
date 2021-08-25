@@ -50,24 +50,24 @@ $this->title = 'SARS Turismo';
           </div>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/services/fa669f47-50e9-36d9-90ea-4c76386562e7/6.jpg' class="activities-img"> </div>
+          <div class="icon"><img src='/img/services/fa669f47-50e9-36d9-90ea-4c76386562e7/3.jpg' class="activities-img"> </div>
           <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7']), ['class' => 'title']); ?></h4>
           <span>AR$ 1250</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/services/fa669f47-50e9-36d9-90ea-4c76386562e7/6.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7']), ['class' => 'title']); ?></h4>
-          <span>AR$ 1250</span>
+          <div class="icon"><img src='/img/services/da1db3c6-14e4-3652-a2cb-66934f00a798/1.jpeg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('Alta Monta単a', Url::to(['service/view', 'id' => 'da1db3c6-14e4-3652-a2cb-66934f00a798']), ['class' => 'title']); ?></h4>
+          <span>AR$ 3250</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/services/fa669f47-50e9-36d9-90ea-4c76386562e7/6.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7']), ['class' => 'title']); ?></h4>
-          <span>AR$ 1250</span>
+          <div class="icon"><img src='/img/services/bc458894-dc33-341d-9dab-5afaed631c3e/3.jpg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('Ca単on del Atuel', Url::to(['service/view', 'id' => 'bc458894-dc33-341d-9dab-5afaed631c3e']), ['class' => 'title']); ?></h4>
+          <span>AR$ 3900</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/services/fa669f47-50e9-36d9-90ea-4c76386562e7/6.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7']), ['class' => 'title']); ?></h4>
-          <span>AR$ 1250</span>
+          <div class="icon"><img src='/img/services/17ec7d2c-ff84-3bda-887b-e2c56e2fe8e3/1.png' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('Valle de Uco', Url::to(['service/view', 'id' => '17ec7d2c-ff84-3bda-887b-e2c56e2fe8e3']), ['class' => 'title']); ?></h4>
+          <span>AR$ 4500</span>
         </div>
       </div>
       <div class="row row-grey d-flex justify-content-center">
