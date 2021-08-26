@@ -71,9 +71,9 @@ Icon::map($this);
                     [
                         'label' => 'Paseos', 'url' => ['service/index'],
                         'items' => [
-                            ['label' => 'City Tour', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'City Tour', 'url' => ['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Walking City Tour', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => 'a9259d11-42bf-3f39-8aee-bf0f1d0835be'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Alta Montaña por Villavicencio', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Ciudad Fantasmal', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
