@@ -26,11 +26,13 @@ $column_size = 100 / (count($images) - 1);
                     <div class="row">
                         <img class="cover-img" src="<?= '/img/services/' . $oService->id . '/' . $images[0]->filename ?>" onclick="openModal();currentSlide(1)">
                     </div>
-                    <?php for ($index = 1; $index < count($images); $index++) : ?>
-                        <div class="column" style="--column-size: <?= $column_size ?>%;">
-                            <img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" onclick="openModal();currentSlide(<?= $index + 1 ?>)" class="hover-shadow">
-                        </div>
-                    <?php endfor; ?>
+                    <div class="row gallery">
+                        <?php for ($index = 1; $index < count($images); $index++) : ?>
+                            <div class="column" style="--column-size: <?= $column_size ?>%;">
+                                <img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" onclick="openModal();currentSlide(<?= $index + 1 ?>)" class="hover-shadow">
+                            </div>
+                        <?php endfor; ?>
+                    </div>
                 </div>
                 <!-- The Modal/Lightbox -->
                 <div id="myModal" class="modal">

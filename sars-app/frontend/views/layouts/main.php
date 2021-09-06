@@ -73,12 +73,12 @@ Icon::map($this);
                         'items' => [
                             ['label' => 'City Tour', 'url' => ['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Walking City Tour', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => 'a9259d11-42bf-3f39-8aee-bf0f1d0835be'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => 'ab2003cc-a098-3f25-b9e2-d21342ccaa26'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => 'da1db3c6-14e4-3652-a2cb-66934f00a798'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Alta Montaña por Villavicencio', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Ciudad Fantasmal', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cañón de Atuel', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco por Cordon del Plata' , 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Cañón de Atuel', 'url' => ['service/view', 'id' => 'bc458894-dc33-341d-9dab-5afaed631c3e'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Valle de Uco por Cordon del Plata' , 'url' => ['service/view', 'id' => '17ec7d2c-ff84-3bda-887b-e2c56e2fe8e3'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ]
                     ],
                     ['label' => 'Vinos', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
