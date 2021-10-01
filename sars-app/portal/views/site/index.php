@@ -17,10 +17,10 @@ $nowDate = new DateTime();
         <h5><?php echo $data->timezone; ?></h5>
         <div class="row">
             <div class="col-4">
-                <div class="time" style="background-color: #fe5000; border-radius:5%;">
+                <div class="card border-primary" style="border-radius:5%;">
                     <div><?= $nowDate->format('d/m') ?></div>
                     <div><?php echo ucwords($data->current->weather[0]->description); ?></div>
-                    <div class="weather-forecast" style="background-color: #fe5000;">
+                    <div class="weather-forecast">
                         <img src="http://openweathermap.org/img/wn/<?php echo $data->current->weather[0]->icon; ?>@2x.png" class="weather-icon" />
                     </div>
                     <div><?php echo $data->current->temp; ?>°C</div>
@@ -28,7 +28,7 @@ $nowDate = new DateTime();
                 </div>
             </div>
             <div class="col-4">
-                <div class="time" style="background-color: #fe5000; border-radius:5%;">
+                <div class="card border-primary" style="border-radius:5%;">
                     <div>
                         <?php
                         $nowDate->modify('+1 day');
@@ -36,14 +36,14 @@ $nowDate = new DateTime();
                         ?>
                     </div>
                     <div><?php echo ucwords($data->daily[0]->weather[0]->description); ?></div>
-                    <div class="weather-forecast" style="background-color: #fe5000;">
+                    <div class="weather-forecast">
                         <img src="http://openweathermap.org/img/wn/<?php echo $data->daily[0]->weather[0]->icon; ?>@2x.png" class="weather-icon" />
                     </div>
                     <div><?php echo $data->daily[0]->temp->day; ?>°C</div>
                 </div>
             </div>
             <div class="col-4">
-                <div class="time" style="background-color: #fe5000; border-radius:5%;">
+                <div class="card border-primary" style="border-radius:5%;">
                     <div>
                         <?php
                         $nowDate->modify('+1 day');

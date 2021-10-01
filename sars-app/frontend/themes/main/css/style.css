@@ -1077,6 +1077,7 @@ section {
     background-color: #fe5000;
     color: #FFF;
     padding: 5px;
+    width: 100%;
 }
 
 .service h3 {

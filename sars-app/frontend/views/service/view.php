@@ -48,39 +48,35 @@ $column_size = 100 / (count($images) - 1);
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
                 </div>
-                <!-- DESCRIPCION -->
-                <div class="col-md-6 description">
-                    <p><?= $oService->description ?></p>
-                    <div class="price-box">
-                        <h2>AR$ <?= $oService->price ?></h2>
-                    </div>
+                <div class="col-md-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3363.951268580529!2d-69.01833968507106!3d-32.52744845812002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDMxJzM4LjgiUyA2OcKwMDAnNTguMSJX!5e0!3m2!1ses!2sar!4v1630525422429!5m2!1ses!2sar" width="100%" height="400px" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-        </div>
-        <hr>
-        <!-- DETALLES -->
-        <div class="row text-center">
-            <div class="col-md-4">
-                <span class="detail">Salidas</span><br><?= $oService->start ?>
+            <hr>
+            <!-- DETALLES -->
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="detail">Salidas</span><br><?= $oService->start ?>
+                </div>
+                <div class="col-md-4">
+                    <span class="detail">Regreso</span><br><?= $oService->return ?>
+                </div>
+                <div class="col-md-4">
+                    <span class="detail">Tipo de Actividad</span><br><?= $oCategory->name ?>
+                </div>
             </div>
-            <div class="col-md-4">
-                <span class="detail">Regreso</span><br><?= $oService->return ?>
+            <hr>
+            <!-- DESCRIPCION -->
+            <div class="row text-center">
+                <p><?= $oService->description ?></p>
             </div>
-            <div class="col-md-4">
-                <span class="detail">Tipo de Actividad</span><br><?= $oCategory->name ?>
+            <div class="row text-center">
+                <div class="price-box">
+                    <h2>AR$ <?= $oService->price ?></h2>
+                </div>
             </div>
         </div>
         <br>
-        <!-- RESERVA -->
-        <div class="row align-center booking">
-            <div class="card text-center w-100 contact-card">
-                <div class="card-body">
-                    RESERVA AQUI<br>
-                    <i class="bx bxl-whatsapp"></i><?= Yii::$app->params['contactPhoneNumber']; ?><br>
-                    <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
-                </div>
-            </div>
-        </div>
         <!-- INCLUYE -->
         <div class="container" data-aos="fade-up">
             <div class="row d-flex m-3">
@@ -120,6 +116,16 @@ $column_size = 100 / (count($images) - 1);
                     <li class="list-group-item d-flex align-items-center"><i class="bx bx-radio-circle"></i><?= Bootstrap4Html::encode($item) ?></li>
                 <?php endforeach; ?>
                 </ul>
+            </div>
+        </div>
+        <!-- RESERVA -->
+        <div class="row align-center booking">
+            <div class="card text-center w-100 contact-card">
+                <div class="card-body">
+                    RESERVA AQUI<br>
+                    <i class="bx bxl-whatsapp"></i><?= Yii::$app->params['contactPhoneNumber']; ?><br>
+                    <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
+                </div>
             </div>
         </div>
     </section>
