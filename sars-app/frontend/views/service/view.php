@@ -20,6 +20,69 @@ $column_size = 100 / (count($images) - 1);
     <section id="service" class="service">
         <div class="container" data-aos="fade-up">
             <h1 class="activity-title"><?= Html::encode($this->title) ?></h1>
+            <hr>
+            <!-- DETALLES -->
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="detail">Salidas</span><br><?= $oService->start ?>
+                </div>
+                <div class="col-md-4">
+                    <span class="detail">Regreso</span><br><?= $oService->return ?>
+                </div>
+                <div class="col-md-4">
+                    <span class="detail">Tipo de Actividad</span><br><?= $oCategory->name ?>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <!-- INCLUYE -->
+            <div class="container" data-aos="fade-up">
+                <div class="row d-flex">
+                    <h3>Incluye</h3>
+                </div>
+                <div class="row d-flex">
+                    <ul class="list-group">
+                        <?php foreach (json_decode($oService->includes) as $item) : ?>
+                            <li class="list-group-item d-flex align-items-center"><i class="bx bx-check-square bx-md"></i><?= Bootstrap4Html::encode($item) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <br>
+                <div class="row d-flex">
+                    <h3>No incluye</h3>
+                </div>
+                <div class="row d-flex">
+                    <ul class="list-group">
+                        <?php foreach (json_decode($oService->not_includes) as $item) : ?>
+                            <li class="list-group-item d-flex align-items-center"> <i class="bx bx-x-circle bx-md"></i><?= Bootstrap4Html::encode($item) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <br>
+                <!-- RECOMENDACIONES -->
+                <div class="row d-flex">
+                    <h3>Recomendaciones</h3>
+                </div>
+                <div class="row d-flex">
+                    <?php foreach (json_decode($oService->observations) as $item) : ?>
+                        <li class="list-group-item d-flex align-items-center"><i class="bx bx-radio-circle"></i><?= Bootstrap4Html::encode($item) ?></li>
+                    <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="container" data-aos="fade-up">
+            <!-- DESCRIPCION -->
+            <div class="row text-center">
+                <p><?= $oService->description ?></p>
+            </div>
+            <div class="row text-center">
+                <div class="price-box">
+                    <h2>AR$ <?= $oService->price ?></h2>
+                </div>
+            </div>
+            <hr>
             <!-- GALERIA -->
             <div class="row">
                 <div class="col-md-6">
@@ -52,72 +115,8 @@ $column_size = 100 / (count($images) - 1);
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3363.951268580529!2d-69.01833968507106!3d-32.52744845812002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDMxJzM4LjgiUyA2OcKwMDAnNTguMSJX!5e0!3m2!1ses!2sar!4v1630525422429!5m2!1ses!2sar" width="100%" height="400px" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            <hr>
-            <!-- DETALLES -->
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="detail">Salidas</span><br><?= $oService->start ?>
-                </div>
-                <div class="col-md-4">
-                    <span class="detail">Regreso</span><br><?= $oService->return ?>
-                </div>
-                <div class="col-md-4">
-                    <span class="detail">Tipo de Actividad</span><br><?= $oCategory->name ?>
-                </div>
-            </div>
-            <hr>
-            <!-- DESCRIPCION -->
-            <div class="row text-center">
-                <p><?= $oService->description ?></p>
-            </div>
-            <div class="row text-center">
-                <div class="price-box">
-                    <h2>AR$ <?= $oService->price ?></h2>
-                </div>
-            </div>
         </div>
         <br>
-        <!-- INCLUYE -->
-        <div class="container" data-aos="fade-up">
-            <div class="row d-flex m-3">
-                <div class="col-md-6">
-                    <div class="row d-flex">
-                        <h3>Incluye</h3>
-                    </div>
-                    <div class="row d-flex">
-                        <ul class="list-group">
-                            <?php foreach (json_decode($oService->includes) as $item) : ?>
-                                <li class="list-group-item d-flex align-items-center"><i class="bx bx-check-square bx-md"></i><?= Bootstrap4Html::encode($item) ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row d-flex">
-                        <h3>No incluye</h3>
-                    </div>
-                    <div class="row d-flex">
-                        <ul class="list-group">
-                            <?php foreach (json_decode($oService->not_includes) as $item) : ?>
-                                <li class="list-group-item d-flex align-items-center"> <i class="bx bx-x-circle bx-md"></i><?= Bootstrap4Html::encode($item) ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- RECOMENDACIONES -->
-        <div class="container" data-aos="fade-up">
-            <div class="row d-flex m-3">
-                <h3>Recomendaciones</h3>
-            </div>
-            <div class="row m-3">
-                <?php foreach (json_decode($oService->observations) as $item) : ?>
-                    <li class="list-group-item d-flex align-items-center"><i class="bx bx-radio-circle"></i><?= Bootstrap4Html::encode($item) ?></li>
-                <?php endforeach; ?>
-                </ul>
-            </div>
-        </div>
         <!-- RESERVA -->
         <div class="row align-center booking">
             <div class="card text-center w-100 contact-card">
