@@ -15,11 +15,18 @@ $oCategory = $oService->getCategory()->one();
 // Calcula el ancho de las imagenes dentro de la galeria en funcion de su cantidad
 $column_size = 100 / (count($images) - 1);
 
+// Mensaje a enviar por Whatsapp
+$wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name);
 ?>
 <div class="site-service">
     <section id="service" class="service">
         <div class="container" data-aos="fade-up">
             <h1 class="activity-title"><?= Html::encode($this->title) ?></h1>
+            <div class="row text-center">
+                <div class="price-box">
+                    <h2>AR$ <?= $oService->price ?></h2>
+                </div>
+            </div>
             <hr>
             <!-- DETALLES -->
             <div class="row text-center">
@@ -36,34 +43,26 @@ $column_size = 100 / (count($images) - 1);
             <hr>
             <br>
             <!-- INCLUYE -->
-            <div class="container" data-aos="fade-up">
-                <div class="row d-flex">
+            <div class="row">
+                <div class="col-md-4">
                     <h3>Incluye</h3>
-                </div>
-                <div class="row d-flex">
                     <ul class="list-group">
                         <?php foreach (json_decode($oService->includes) as $item) : ?>
-                            <li class="list-group-item d-flex align-items-center"><i class="bx bx-check-square bx-md"></i><?= Bootstrap4Html::encode($item) ?></li>
+                            <li class="list-group-item d-flex align-items-center"><i class="bx bx-check-square"></i><?= Bootstrap4Html::encode($item) ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
-                <br>
-                <div class="row d-flex">
+                <div class="col-md-4">
                     <h3>No incluye</h3>
-                </div>
-                <div class="row d-flex">
                     <ul class="list-group">
                         <?php foreach (json_decode($oService->not_includes) as $item) : ?>
-                            <li class="list-group-item d-flex align-items-center"> <i class="bx bx-x-circle bx-md"></i><?= Bootstrap4Html::encode($item) ?></li>
+                            <li class="list-group-item d-flex align-items-center"> <i class="bx bx-x-circle"></i><?= Bootstrap4Html::encode($item) ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
-                <br>
                 <!-- RECOMENDACIONES -->
-                <div class="row d-flex">
+                <div class="col-md-4">
                     <h3>Recomendaciones</h3>
-                </div>
-                <div class="row d-flex">
                     <?php foreach (json_decode($oService->observations) as $item) : ?>
                         <li class="list-group-item d-flex align-items-center"><i class="bx bx-radio-circle"></i><?= Bootstrap4Html::encode($item) ?></li>
                     <?php endforeach; ?>
@@ -73,18 +72,9 @@ $column_size = 100 / (count($images) - 1);
             <br>
         </div>
         <div class="container" data-aos="fade-up">
-            <!-- DESCRIPCION -->
-            <div class="row text-center">
-                <p><?= $oService->description ?></p>
-            </div>
-            <div class="row text-center">
-                <div class="price-box">
-                    <h2>AR$ <?= $oService->price ?></h2>
-                </div>
-            </div>
             <hr>
-            <!-- GALERIA -->
             <div class="row">
+                <!-- GALERIA -->
                 <div class="col-md-6">
                     <div class="row">
                         <img class="cover-img" src="<?= '/img/services/' . $oService->id . '/' . $images[0]->filename ?>" onclick="openModal();currentSlide(1)">
@@ -97,36 +87,36 @@ $column_size = 100 / (count($images) - 1);
                         <?php endfor; ?>
                     </div>
                 </div>
-                <!-- The Modal/Lightbox -->
-                <div id="myModal" class="modal">
-                    <span class="close cursor" onclick="closeModal()">&times;</span>
-                    <div class="modal-content">
-                        <?php foreach ($images as $image) : ?>
-                            <div class="mySlides">
-                                <?= Html::img('/img/services/' . $oService->id . '/' . $image->filename, ['width' => '100%']); ?>
-                            </div>
-                        <?php endforeach; ?>
-                        <!-- Next/previous controls -->
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="col-md-6">
+                    <!-- DESCRIPCION -->
+                    <div class="text-center">
+                        <p><?= $oService->description ?></p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3363.951268580529!2d-69.01833968507106!3d-32.52744845812002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDMxJzM4LjgiUyA2OcKwMDAnNTguMSJX!5e0!3m2!1ses!2sar!4v1630525422429!5m2!1ses!2sar" width="100%" height="400px" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <!-- RESERVA -->
+            <div class="row align-center booking">
+                <div class="card text-center w-50 contact-card">
+                    <?= Bootstrap4Html::a("Reserva por whatsapp", 'https://wa.me/' . Yii::$app->params['contactPhoneNumber'] . '?text=' . $wp_message, ['class' => 'btn btn-success']); ?>
+                </div>
+            </div>
+            <!-- The Modal/Lightbox -->
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <?php foreach ($images as $image) : ?>
+                        <div class="mySlides">
+                            <?= Html::img('/img/services/' . $oService->id . '/' . $image->filename, ['width' => '100%']); ?>
+                        </div>
+                    <?php endforeach; ?>
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
             </div>
         </div>
         <br>
-        <!-- RESERVA -->
-        <div class="row align-center booking">
-            <div class="card text-center w-100 contact-card">
-                <div class="card-body">
-                    RESERVA AQUI<br>
-                    <i class="bx bxl-whatsapp"></i><?= Yii::$app->params['contactPhoneNumber']; ?><br>
-                    <?php echo Icon::show('envelope') . ' ' . Yii::$app->params['contactEmail']; ?><br>
-                </div>
-            </div>
-        </div>
+
     </section>
 </div>
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
