@@ -95,10 +95,8 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
                 </div>
             </div>
             <!-- RESERVA -->
-            <div class="row align-center booking">
-                <div class="card text-center w-50 contact-card">
-                    <?= Bootstrap4Html::a("Reserva por whatsapp", 'https://wa.me/' . Yii::$app->params['contactPhoneNumber'] . '?text=' . $wp_message, ['class' => 'btn btn-success']); ?>
-                </div>
+            <div class="row booking">
+                <?= Bootstrap4Html::a("Reserva por whatsapp", 'https://wa.me/' . Yii::$app->params['contactPhoneNumber'] . '?text=' . $wp_message, ['class' => 'btn btn-success btn-lg w-50']); ?>
             </div>
             <!-- The Modal/Lightbox -->
             <div id="myModal" class="modal">
