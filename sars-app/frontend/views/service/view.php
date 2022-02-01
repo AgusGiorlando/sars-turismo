@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-use kartik\icons\Icon;
+use yii\bootstrap4\ActiveForm;
 use yii\bootstrap4\Html as Bootstrap4Html;
 
 $this->title = $oService->name;
@@ -15,13 +15,11 @@ $oCategory = $oService->getCategory()->one();
 // Calcula el ancho de las imagenes dentro de la galeria en funcion de su cantidad
 $column_size = 100 / (count($images) - 1);
 
-// Mensaje a enviar por Whatsapp
-$wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name);
 ?>
 <div class="site-service">
     <section id="service" class="service">
         <div class="container" data-aos="fade-up">
-            <h1 class="activity-title"><?= Html::encode($this->title) ?></h1>
+            <h1 class="activity-title" id="activity"><?= Html::encode($this->title) ?></h1>
             <div class="row text-center">
                 <div class="price-box">
                     <h2>AR$ <?= $oService->price ?></h2>
@@ -96,7 +94,27 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
             </div>
             <!-- RESERVA -->
             <div class="row booking">
-                <?= Bootstrap4Html::a("Reserva por whatsapp", 'https://wa.me/' . Yii::$app->params['contactPhoneNumber'] . '?text=' . $wp_message, ['class' => 'btn btn-success btn-lg w-50']); ?>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Adultos (+18)</label><br>
+                        <input type="number" id="adultsNum" min="1" data-bind="value:adultsNum" value="1"/>
+                    </div>
+<!--                     
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div> -->
+                    <button type="button" class="btn btn-success btn-lg align-center" onclick="sendWspMessage()">Reserva por whatsapp</button>
+                </form>
             </div>
             <!-- The Modal/Lightbox -->
             <div id="myModal" class="modal">
@@ -163,5 +181,17 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
         captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+
+    function sendWspMessage() {
+        contactNumber = 5492612189550;
+
+        let activity = '<?= $oService->name ?>';
+        let adultsNum = document.getElementById("adultsNum").value;
+
+        text = `Hola! Quisera reservar para el tour ${activity}. Somos ${adultsNum} adultos`;
+        var encoded_text = encodeURIComponent(text);
+
+        var win = window.open(`https://wa.me/${contactNumber}?text=${encoded_text}`, '_blank');
     }
 </script>
