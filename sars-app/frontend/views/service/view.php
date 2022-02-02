@@ -97,9 +97,13 @@ $column_size = 100 / (count($images) - 1);
                 <form>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Adultos (+18)</label><br>
-                        <input type="number" id="adultsNum" min="1" data-bind="value:adultsNum" value="1"/>
+                        <input type="number" id="adultsNum" min="1" data-bind="value:adultsNum" value="1" />
                     </div>
-<!--                     
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Niños</label><br>
+                        <input type="number" id="kidsNum" min="1" data-bind="kidsNum" value="1" />
+                    </div>
+                    <!--                     
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -184,12 +188,13 @@ $column_size = 100 / (count($images) - 1);
     }
 
     function sendWspMessage() {
-        contactNumber = 5492612189550;
+        contactNumber = <?= Yii::$app->params['contactPhoneNumber'] ?>;
 
         let activity = '<?= $oService->name ?>';
         let adultsNum = document.getElementById("adultsNum").value;
+        let kidsNum = document.getElementById("kidsNum").value;
 
-        text = `Hola! Quisera reservar para el tour ${activity}. Somos ${adultsNum} adultos`;
+        text = `Hola! Quisera reservar para el tour ${activity}. Somos ${adultsNum} adultos y ${kidsNum} niños.`;
         var encoded_text = encodeURIComponent(text);
 
         var win = window.open(`https://wa.me/${contactNumber}?text=${encoded_text}`, '_blank');
