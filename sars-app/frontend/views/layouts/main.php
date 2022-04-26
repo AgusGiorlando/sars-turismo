@@ -28,7 +28,7 @@ Icon::map($this);
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <?php $this->registerCsrfMetaTags() ?>
-    <title>SARS turismo</title>
+    <title>SARS Turismo</title>
     <?php $this->head() ?>
 </head>
 
@@ -69,26 +69,45 @@ Icon::map($this);
                 $menuItems = [
                     ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
                     [
-                        'label' => 'Experiencias en Mendoza', 'url' => ['service/index'],
+                        'label' => 'Experiencias Diferentes', 'url' => ['service/index'],
                         'items' => [
-                            ['label' => 'Vinos', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Paseos', 'url' => ['service/index'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Naturaleza & Aventura', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'San Rafael', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Malargue', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Alta Montaña por Villavicencio', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Ciudad Fantasmal', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Valle de Uco por Cordon del Plata', 'url' => ['service/view', 'id' => '17ec7d2c-ff84-3bda-887b-e2c56e2fe8e3'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Walking City Tour', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ]
                     ],
                     [
-                        'label' => 'Argentina Tierra de sensaciones', 'url' => ['product/index'],
+                        'label' => 'Experiencias en Bodegas', 'url' => ['service/index'],
                         'items' => [
-                            ['label' => 'Buenos Aires, La Puerta Grande y los Dominios del Gaucho', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cuyo, donde nace el vino y vive el Sol', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Norte, El refugio de las tradiciones y el Arte Precolombino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Litoral, la tierra de los grandes rios', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Patagonia, Entre los Andes y el Atlantico', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ],
+                        ]
                     ],
-                    ['label' => 'Contacto', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                    [
+                        'label' => 'Experiencias Tradicionales', 'url' => ['service/index'],
+                        'items' => [
+                            ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => 'da1db3c6-14e4-3652-a2cb-66934f00a798'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Cañón de Atuel', 'url' => ['service/view', 'id' => 'bc458894-dc33-341d-9dab-5afaed631c3e'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'City Tour', 'url' => ['service/view', 'id' => 'fa669f47-50e9-36d9-90ea-4c76386562e7'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => 'ab2003cc-a098-3f25-b9e2-d21342ccaa26'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ]
+                    ],
+                    [
+                        'label' => 'Naturaleza & Aventura', 'url' => ['service/index'],
+                        'items' => [
+                        ]
+                    ],
+                    // ['label' => 'Vinos', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                    // ['label' => 'Aventura', 'url' => ['/site/index'], 'options' => ['class' => "nav-link"]],
+                    // [
+                    //     'label' => 'Argentina Tierra de sensaciones', 'url' => ['product/index'],
+                    //     'items' => [
+                    //         ['label' => 'Buenos Aires, La Puerta Grande y los Dominios del Gaucho', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                    //         ['label' => 'Cuyo, donde nace el vino y vive el Sol', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                    //         ['label' => 'Norte, El refugio de las tradiciones y el Arte Precolombino', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                    //         ['label' => 'Litoral, la tierra de los grandes rios', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                    //         ['label' => 'Patagonia, Entre los Andes y el Atlantico', 'url' => ['#1'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                    //     ],
+                    // ],
                 ];
 
 
@@ -108,6 +127,7 @@ Icon::map($this);
     <div>
         <?= Alert::widget() ?>
         <?= $content ?>
+        <a id="wp-icon" href='https://api.whatsapp.com/send?phone=<?= Yii::$app->params['contactPhoneNumber'] ?>' data-toggle="popover" data-content="Escribinos aqui cualquier consulta..." class="wp-icon" style="display: inline;"><i class="bx bxl-whatsapp"></i></a>
     </div>
 
     <footer class="footer">
@@ -128,3 +148,17 @@ Icon::map($this);
 
 </html>
 <?php $this->endPage() ?>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="popover"]').popover('show');
+        $('body').on('click', function(e) {
+            $('[data-toggle=popover]').each(function() {
+                // hide any open popovers when the anywhere else in the body is clicked
+                if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                    $(this).popover('hide');
+                }
+            });
+        });
+    });
+</script>

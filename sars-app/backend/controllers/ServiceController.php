@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\base\Category;
 use common\models\base\Image;
 use Yii;
 use common\models\base\Service;
@@ -113,8 +114,11 @@ class ServiceController extends Controller
             Yii::$app->session->setFlash('error', $th->getMessage());
         }
 
+        $aCategories = Category::findAll(['enabled' => true]);
+
         return $this->render('create', [
             'model' => $model,
+            'categories' => $aCategories
         ]);
     }
 

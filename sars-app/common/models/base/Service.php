@@ -17,9 +17,12 @@ use Yii;
  * @property string|null $description
  * @property string|null $observations
  * @property string|null $includes
- * @property string|null $duration
- * @property string|null $languages
  * @property string|null $type
+ * @property string|null $not_includes
+ * @property string|null $start
+ * @property string|null $return
+ 
+ * @property Category $category
  */
 class Service extends \yii\db\ActiveRecord
 {
@@ -40,8 +43,9 @@ class Service extends \yii\db\ActiveRecord
             [['enabled', 'version'], 'integer'],
             [['name', 'price'], 'required'],
             [['price'], 'number'],
-            [['images', 'duration'], 'safe'],
-            [['description', 'observations', 'includes', 'languages'], 'string'],
+            [['images'], 'safe'],
+            [['description', 'observations', 'includes', 'not_includes', 'start', 'return'], 'string'],
+            [['type'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['type' => 'id']],
             [['name', 'type'], 'string', 'max' => 255],
         ];
     }
@@ -56,7 +60,6 @@ class Service extends \yii\db\ActiveRecord
         $this->version = 0;
         $this->enabled = 1;
         $this->price = 0.00;
-        $this->duration = Yii::$app->formatter->asTime(0, 'short');
     }
 
     /**
@@ -109,5 +112,10 @@ class Service extends \yii\db\ActiveRecord
             'languages' => 'Idiomas',
             'type' => 'Tipo de actividad',
         ];
+    }
+
+    public function getCategory()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'type']);
     }
 }
