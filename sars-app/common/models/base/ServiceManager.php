@@ -89,7 +89,8 @@ class ServiceManager
         }
     }
 
-    private static function __StringGroupToJSON($string){
+    private static function __StringGroupToJSON($string)
+    {
         return json_encode(StringHelper::explode($string, ';', true, true));
     }
 
@@ -110,7 +111,7 @@ class ServiceManager
         return null;
     }
 
-    public static function uploadImages($aImages, $folderPath, $service_id)
+    public static function uploadImages($aImages, $folderPath, $service_id, $is_cover = false)
     {
         try {
             // Crea la carpeta si no existe
@@ -120,12 +121,25 @@ class ServiceManager
 
             foreach ($aImages as $name) {
                 // Ruta en el server
-                $path =  $folderPath . '/' . $name->baseName . '.' . $name->extension;
+                $oNewImage = new Image();
+                    
+                $strBaseName = $name->basename;
+                if ($is_cover == true) {
+                    $strBaseName = 'cover';
+                }
+
+                $path =  $folderPath . '/' . $strBaseName . '.' . $name->extension;
 
                 if ($name->saveAs($path)) {
                     // Guarda la imagen
                     $oNewImage = new Image();
-                    $oNewImage->filename = $name->baseName . '.' . $name->extension;
+                    
+                    $strBaseName = $name->basename;
+                    if ($is_cover == true) {
+                        $strBaseName = 'cover';
+                    }
+
+                    $oNewImage->filename = $strBaseName . '.' . $name->extension;
                     $oNewImage->filepath = $path;
 
                     $oNewImage->save();

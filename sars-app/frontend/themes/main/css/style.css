@@ -1103,10 +1103,18 @@ span.detail {
     clear: both;
 }
 
+
+/* .service .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 180px;
+} */
+
 .service .column {
     float: left;
     width: var(--column-size);
-    height: 100px;
+    /* max-height: 500px; */
 }
 
 .service .hover-shadow {

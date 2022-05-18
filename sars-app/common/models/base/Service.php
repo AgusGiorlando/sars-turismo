@@ -108,7 +108,6 @@ class Service extends \yii\db\ActiveRecord
             'description' => 'Descripcion',
             'observations' => 'Observaciones',
             'includes' => 'Incluye',
-            'duration' => 'Duracion',
             'languages' => 'Idiomas',
             'type' => 'Tipo de actividad',
         ];
