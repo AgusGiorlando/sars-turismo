@@ -1,6 +1,7 @@
 <?php
 
-use yii\helpers\Html;
+use yii\bootstrap4\ActiveForm;
+use yii\bootstrap4\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -8,6 +9,7 @@ use yii\widgets\DetailView;
 
 $this->title = $model->name;
 
+$coverName = null;
 \yii\web\YiiAsset::register($this);
 
 
@@ -27,6 +29,7 @@ Html::img(Yii::getAlias('@backend'. '/web/img/3b39507b-8c1c-11eb-8a77-2cd05ae0e5
             ],
         ]) ?>
         <?= Html::a('Cargar Fotos', ['upload', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Cargar Placa', ['upload-cover', 'id' => $model->id], ['class' => 'btn btn-success']) ?>
 
         <?= DetailView::widget([
             'model' => $model,

@@ -69,7 +69,6 @@ class ServiceController extends Controller
 
     public function actionUpload($id)
     {
-
         $oImage = new Image();
         $post = Yii::$app->request->post();
         try {
@@ -89,6 +88,33 @@ class ServiceController extends Controller
             endif;
 
             return $this->render('upload-images', ['model' => $oImage]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+
+    public function actionUploadCover($id)
+    {
+       
+        $oImage = new Image();
+        $post = Yii::$app->request->post();
+        try {
+            if ($oImage->load($post)) {
+                if ($oImage->validate()) {
+                    $aImages = UploadedFile::getInstances($oImage, 'filename');
+
+                    $folderPath = Yii::getAlias('@img/') . 'services/' . $id;
+                    
+                    ServiceManager::uploadImages($aImages, $folderPath, $id, true);
+
+                    return $this->redirect(['view', 'id' => $id]);
+                }
+            }
+            if ($oImage->hasErrors() == true) :
+                throw new \Exception(implode(". ", $oImage->getErrorSummary(true)));
+            endif;
+
+            return $this->render('upload-cover', ['model' => $oImage]);
         } catch (\Throwable $th) {
             throw $th;
         }
