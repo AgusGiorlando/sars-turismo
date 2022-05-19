@@ -59,7 +59,7 @@ Icon::map($this);
                     // 'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
                         'id' => "mainNav",
-                        'class' => 'navbar nav-menu d-lg-block navbar-expand-md',
+                        'class' => 'navbar nav-menu d-sm-block navbar-expand-sm',
                     ],
                     'containerOptions' => [
                         'class' => 'nav-menu'
@@ -68,7 +68,7 @@ Icon::map($this);
 
                 $menuItems = [
                     [
-                        'label' => 'ENOTURISMO, GASTRONOMIA & MARIDAJES' ,
+                        'label' => 'ENOTURISMO, GASTRONOMIA & MARIDAJES',
                         'items' => [
                             ['label' => 'Bodegas medio dia', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Bodegas premium', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
@@ -155,7 +155,14 @@ Icon::map($this);
                             ['label' => 'Cabalgata 2', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ]
                     ],
-                    ['label' => 'SOBRE NOSOTROS', 'url' => ['/site/about'], 'options' => ['class' => "nav-link"]],
+                    [
+                        'label' => 'INSTITUCIONAL', 'url' => ['/site/about'],
+                        'items' => [
+                            ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Condiciones Generales', 'url' => ['/site/conditions'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ]
+                    ],
+
                 ];
 
 
