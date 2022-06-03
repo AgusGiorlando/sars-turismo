@@ -21,7 +21,8 @@ class MainAsset extends AssetBundle
         'vendor/owl.carousel/assets/owl.carousel.min.css',
         'vendor/venobox/venobox.css',
         'vendor/aos/aos.css',
-        'css/style.css'
+        'css/style.css',
+        'css/lightbox.min.css'
     ];
     public $js = [
         'vendor/jquery/jquery.min.js',
@@ -32,7 +33,8 @@ class MainAsset extends AssetBundle
         'vendor/isotope-layout/isotope.pkgd.min.js',
         'vendor/venobox/venobox.min.js',
         'vendor/aos/aos.js',
-        'js/main.js'
+        'js/main.js',
+        'js/lightbox-plus-jquery.min.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
