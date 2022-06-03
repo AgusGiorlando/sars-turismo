@@ -22,6 +22,9 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
     <section id="service" class="service">
         <div class="container" data-aos="fade-up">
             <h1 class="activity-title"><?= Html::encode($this->title) ?></h1>
+            <div class="row">
+                <img class="cover-img" src="<?= '/img/services/' . $oService->id . '/' . 'cover.jpeg' ?>">
+            </div>
             <div class="row text-center">
                 <div class="price-box">
                     <h2>AR$ <?= $oService->price ?></h2>
@@ -71,51 +74,75 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
             </div>
             <br>
         </div>
-        <div class="container" data-aos="fade-up">
+        <div class="container justify-content-center" data-aos="fade-up">
             <hr>
             <div class="row">
                 <!-- GALERIA -->
-                <div class="col-md-6">
-                    <div class="row">
-                        <img class="cover-img" src="<?= '/img/services/' . $oService->id . '/' . $images[0]->filename ?>" onclick="openModal();currentSlide(1)">
-                    </div>
-                    <div class="row gallery">
-                        <?php for ($index = 1; $index < count($images); $index++) : ?>
-                            <div class="column" style="--column-size: <?= $column_size ?>%;">
-                                <img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" onclick="openModal();currentSlide(<?= $index + 1 ?>)" class="hover-shadow">
+                <div class="row gallery" style="--column-num: <?= (count($images) - 2) ?>;">
+                    <?php for ($index = 0; $index < count($images); $index++) : ?>
+                        <?php if ($images[$index]->filename != 'cover.jpeg') :  ?>
+                            <div class="column">
+                                <!-- <img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" onclick="openModal();currentSlide(<?= $index + 1 ?>)" class="hover-shadow"> -->
+                                <a href="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" data-lightbox="galeria"><img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" class="hover-shadow"></a>
                             </div>
-                        <?php endfor; ?>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <!-- DESCRIPCION -->
-                    <div class="text-center">
-                        <p><?= $oService->description ?></p>
-                    </div>
+                        <?php endif; ?>
+                    <?php endfor; ?>
                 </div>
             </div>
-            <!-- RESERVA -->
-            <div class="row booking">
-                <?= Bootstrap4Html::a("Reserva por whatsapp", 'https://wa.me/' . Yii::$app->params['contactPhoneNumber'] . '?text=' . $wp_message, ['class' => 'btn btn-success btn-lg w-50']); ?>
-            </div>
-            <!-- The Modal/Lightbox -->
-            <div id="myModal" class="modal">
-                <span class="close cursor" onclick="closeModal()">&times;</span>
-                <div class="modal-content">
-                    <?php foreach ($images as $image) : ?>
-                        <div class="mySlides">
-                            <?= Html::img('/img/services/' . $oService->id . '/' . $image->filename, ['width' => '100%']); ?>
-                        </div>
-                    <?php endforeach; ?>
-                    <!-- Next/previous controls -->
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <hr>
+            <div class="row">
+                <!-- DESCRIPCION -->
+                <div class="text-center">
+                    <p><?= $oService->description ?></p>
                 </div>
             </div>
         </div>
-        <br>
+        <!-- RESERVA -->
+        <div class="row booking">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Adultos (+18)</label><br>
+                    <input type="number" id="adultsNum" min="1" data-bind="value:adultsNum" value="1" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Niños</label><br>
+                    <input type="number" id="kidsNum" min="1" data-bind="kidsNum" value="1" />
+                </div>
+                <!--                     
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div> -->
+                <button type="button" class="btn btn-success btn-lg align-center w-100" onclick="sendWspMessage()">Reserva por whatsapp</button>
+            </form>
+        </div>
+        <!-- The Modal/Lightbox -->
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <?php foreach ($images as $image) : ?>
+                    <div class="mySlides">
+                        <?= Html::img('/img/services/' . $oService->id . '/' . $image->filename, ['width' => '100%']); ?>
+                    </div>
+                <?php endforeach; ?>
+                <!-- Next/previous controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+</div>
+<br>
 
-    </section>
+</section>
 </div>
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 <script>
@@ -163,5 +190,19 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
         captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+
+
+    function sendWspMessage() {
+        contactNumber = <?= Yii::$app->params['contactPhoneNumber'] ?>;
+
+        let activity = '<?= $oService->name ?>';
+        let adultsNum = document.getElementById("adultsNum").value;
+        let kidsNum = document.getElementById("kidsNum").value;
+
+        text = `Hola! Quisiera reservar para el tour ${activity}. Somos ${adultsNum} adultos y ${kidsNum} niños.`;
+        var encoded_text = encodeURIComponent(text);
+
+        var win = window.open(`https://wa.me/${contactNumber}?text=${encoded_text}`, '_blank');
     }
 </script>

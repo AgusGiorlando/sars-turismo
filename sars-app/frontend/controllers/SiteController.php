@@ -32,7 +32,7 @@ class SiteController extends Controller
                 'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['index','signup', 'mendoza', 'about', 'contact', 'services'],
+                        'actions' => ['index','signup', 'conditions', 'about', 'contact', 'services'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -142,9 +142,9 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionMendoza()
+    public function actionConditions()
     {
-        return $this->render('mendoza');
+        return $this->render('conditions');
     }
 
     /**
