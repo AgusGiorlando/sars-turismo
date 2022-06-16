@@ -119,7 +119,46 @@ Icon::map($this);
                         ]
                     ],
                     [
-                        'label' => 'NATURALEZA & AVENTURA', 'url' => ['service/index'],
+                        'label' => 'INSTITUCIONAL', 'url' => ['/site/about'],
+                        'items' => [
+                            ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Condiciones Generales', 'url' => ['/site/conditions'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ]
+                    ],
+
+                ];
+
+
+                if (count($menuItems)) {
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav'],
+                        'items' => $menuItems,
+                    ]);
+                }
+                ?>
+                <?php
+                NavBar::end();
+                ?>
+            </div>
+        </div>
+        <div class="row nat-adv-menu">
+            <div class="container d-flex align-items-center justify-content-between">
+                <?php
+                NavBar::begin([
+                    'brandLabel' => 'NATURALEZA & AVENTURA',
+                    // 'brandUrl' => Yii::$app->homeUrl,
+                    'options' => [
+                        'id' => "mainNav",
+                        'class' => 'navbar nat-adv-menu d-md-block navbar-expand',
+                    ],
+                    'containerOptions' => [
+                        'class' => 'nat-adv-menu'
+                    ],
+                ]);
+
+                $menuItems = [
+                    [
+                        'label' => 'AGUA',
                         'items' => [
                             ['label' => 'Rafting Rio Mendoza', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Rafting Cerro Negro', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
@@ -127,6 +166,11 @@ Icon::map($this);
                             ['label' => 'Kayak full day dique Potrerillos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Kayak half day estación aforadora Rio Mendoza', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Stand Up Paddle circuito Potrerillos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ]
+                    ],
+                    [
+                        'label' => 'AIRE',
+                        'items' => [
                             ['label' => 'Parapente', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Vuelo en Globo “VIÑEDOS y MONTAÑAS 360”', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Paracaidismo', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
@@ -134,6 +178,11 @@ Icon::map($this);
                             ['label' => 'Canopy adrenalina lago Potrerillos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Arborismo  Cacheuta', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Villavicencio Park', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ]
+                    ],
+                    [
+                        'label' => 'TIERRA',
+                        'items' => [
                             ['label' => 'Cerro Aconcagua “Trekking & Paisajismo”', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Bike por los Viñedos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Winebeetle', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
@@ -155,14 +204,6 @@ Icon::map($this);
                             ['label' => 'Cabalgata 2', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ]
                     ],
-                    [
-                        'label' => 'INSTITUCIONAL', 'url' => ['/site/about'],
-                        'items' => [
-                            ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Condiciones Generales', 'url' => ['/site/conditions'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ]
-                    ],
-
                 ];
 
 
