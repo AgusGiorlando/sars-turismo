@@ -59,7 +59,7 @@ Icon::map($this);
                     // 'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
                         'id' => "mainNav",
-                        'class' => 'navbar nav-menu d-lg-block navbar-expand-md',
+                        'class' => 'navbar nav-menu d-sm-block navbar-expand-sm',
                     ],
                     'containerOptions' => [
                         'class' => 'nav-menu'

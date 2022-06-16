@@ -74,18 +74,15 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
             </div>
             <br>
         </div>
-        <div class="container justify-content-center" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
             <hr>
             <div class="row">
                 <!-- GALERIA -->
-                <div class="row gallery" style="--column-num: <?= (count($images) - 2) ?>;">
-                    <?php for ($index = 0; $index < count($images); $index++) : ?>
-                        <?php if ($images[$index]->filename != 'cover.jpeg') :  ?>
-                            <div class="column">
-                                <!-- <img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" onclick="openModal();currentSlide(<?= $index + 1 ?>)" class="hover-shadow"> -->
-                                <a href="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" data-lightbox="galeria"><img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" class="hover-shadow"></a>
-                            </div>
-                        <?php endif; ?>
+                <div class="row gallery" style="--column-num: <?= (count($images) - 1) ?>;">
+                    <?php for ($index = 1; $index < count($images); $index++) : ?>
+                        <div class="column" style="--column-size: <?= $column_size ?>%;">
+                            <img src="<?= '/img/services/' . $oService->id . '/' . $images[$index]->filename ?>" onclick="openModal();currentSlide(<?= $index + 1 ?>)" class="hover-shadow">
+                        </div>
                     <?php endfor; ?>
                 </div>
             </div>
