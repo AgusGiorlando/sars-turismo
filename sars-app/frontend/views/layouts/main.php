@@ -141,7 +141,7 @@ Icon::map($this);
                 ?>
             </div>
         </div>
-        <div class="row nat-adv-menu">
+        <div class="row adventure-menu">
             <div class="container d-flex align-items-center justify-content-between">
                 <?php
                 NavBar::begin([
@@ -149,10 +149,10 @@ Icon::map($this);
                     // 'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
                         'id' => "mainNav",
-                        'class' => 'navbar nat-adv-menu d-md-block navbar-expand',
+                        'class' => 'navbar nav-menu adventure-menu d-sm-block navbar-expand-sm',
                     ],
                     'containerOptions' => [
-                        'class' => 'nat-adv-menu'
+                        'class' => 'nav-menu adventure-menu'
                     ],
                 ]);
 
@@ -201,7 +201,6 @@ Icon::map($this);
                             ['label' => 'Cabalgata luna llena', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Cabalgata full day', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Cabalgata por los viñedos Bodega Renacer', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cabalgata 2', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ]
                     ],
                 ];
