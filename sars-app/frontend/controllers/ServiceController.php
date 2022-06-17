@@ -24,7 +24,18 @@ class ServiceController extends \yii\web\Controller
     {
         try {
             $oService = ServiceManager::findService($id);
-            $aImages = ServiceManager::getImages($oService);
+            $aObjectImages = ServiceManager::getImages($oService);
+            
+
+            
+            $aImages = [];
+
+            for ($index = 0; $index < count($aObjectImages); $index++) {
+                $aImages[$index] = [
+                    'src' => '/img/services/' . $oService->id . '/' . $aObjectImages[$index]->filename,
+                    'title' => 'Imagen ' . $index,
+                ];
+            }
 
             return $this->render('view', [
                 'oService' => $oService,
