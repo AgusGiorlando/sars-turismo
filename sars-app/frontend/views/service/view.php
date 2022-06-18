@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap4\Html as Bootstrap4Html;
-use slavkovrn\lightbox\LightBoxWidget;
+// use slavkovrn\lightbox\LightBoxWidget;
 
 
 $this->title = $oService->name;
@@ -78,8 +78,7 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
             <hr>
             <div class="row justify-content-center">
                 <!-- GALERIA -->
-                <?php
-                echo LightBoxWidget::widget([
+                <?= \slavkovrn\lightbox\LightBoxWidget::widget([
                     'id'     => 'lightbox',  // id of plugin should be unique at page
                     'class'  => 'galary',    // class of plugin to define style
                     'height' => '0px',     // height of image visible in widget
