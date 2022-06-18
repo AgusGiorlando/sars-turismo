@@ -490,11 +490,19 @@ h6 {
 --------------------------------------------------------------*/
 
 .row.adventure-menu {
-    background-color: hsl(0, 0%, 63%);
+    background-color: #ffffff;
+}
+
+.row.adventure-menu .nav-link:hover {
+    color: #fe5000;
+}
+
+.row.adventure-menu .navbar-brand:hover {
+    color: #fe5000;
 }
 
 #header .adventure-menu {
-    background-color: hsl(0, 0%, 63%);
+    background-color: #ffffff;
 }
 
 
@@ -1144,9 +1152,7 @@ span.detail {
 }
 
 .row.booking {
-    align-content: center;
     justify-content: center;
-    width: 50%;
 }
 
 

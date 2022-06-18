@@ -78,14 +78,6 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
             <hr>
             <div class="row justify-content-center">
                 <!-- GALERIA -->
-                <?= \slavkovrn\lightbox\LightBoxWidget::widget([
-                    'id'     => 'lightbox',  // id of plugin should be unique at page
-                    'class'  => 'galary',    // class of plugin to define style
-                    'height' => '0px',     // height of image visible in widget
-                    'width' => '0px',      // width of image visible in widget
-                    'images' => [],
-                ]);
-                ?>
                 <?php for ($index = 0; $index < count($images); $index++) : ?>
                     <?php if ($images[$index]['src'] != $cover_img_src) :  ?>
                         <a href="<?= $images[$index]['src'] ?>" data-lightbox="galeria"><img src="<?= $images[$index]['src'] ?>" class="hover-shadow"></a>
