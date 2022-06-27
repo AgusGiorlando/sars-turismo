@@ -98,6 +98,35 @@ Icon::map($this);
 
                 $menuItems = [
                     [
+                        'label' => 'TRADICIONALES',
+                        'items' => [
+                            ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Alta Montaña por Villavicencio', 'url' => ['service/view', 'id' => '59c04ac5-4910-3951-8557-c78e52cf841c'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Bodega 1/2 dia Tradicional', 'url' => ['service/view', 'id' => 'd62c66ef-e3e4-35c8-9a8b-40d83d234c12'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Cañón de Atuel', 'url' => ['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'City Tour', 'url' => ['service/view', 'id' => '9a8be6b3-065a-3ce2-9ff9-4d4ecdd130c3'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => 'f3f7d803-c98a-3ade-bf2f-6dbfcc2462f5'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Parque Acuatico Cacheuta', 'url' => ['service/view', 'id' => 'ccd5af14-1c86-3359-9708-25e20edc66dc'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Hotel Spa Termas de Cacheuta', 'url' => ['service/view', 'id' => '535b85c7-0f11-398c-8bda-4666b46dd564'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Valle de Uco', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ]
+                    ],
+                    [
+                        'label' => 'INNOVADORAS',
+                        'items' => [
+                            ['label' => 'Arte & Naturaleza “Parque de las Artes Marañón”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Walking City Tour', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'La gesta del vino', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Ciudad fantasmal de Paramillos', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Winebeetle', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Cerro Aconcagua “Trekking & Paisajismo”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Valle de Uco alta gama “Catedrales del Vino”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Valle de Uco “Cordón del Plata por Vallecitos y La Carrera”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Villavicencio Park', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ]
+                    ],
+                    [
                         'label' => 'ENOTURISMO, GASTRONOMIA & MARIDAJES',
                         'items' => [
                             ['label' => 'Bodegas medio dia', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
@@ -119,43 +148,6 @@ Icon::map($this);
                             ['label' => 'Sunsets', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ]
                     ],
-                    [
-                        'label' => 'INNOVADORAS',
-                        'items' => [
-                            ['label' => 'Arte & Naturaleza “Parque de las Artes Marañón”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Walking City Tour', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'La gesta del vino', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Ciudad fantasmal de Paramillos', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Winebeetle', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cerro Aconcagua “Trekking & Paisajismo”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco alta gama “Catedrales del Vino”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco “Cordón del Plata por Vallecitos y La Carrera”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Villavicencio Park', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ]
-                    ],
-                    [
-                        'label' => 'TRADICIONALES',
-                        'items' => [
-                            ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Alta Montaña por Villavicencio', 'url' => ['service/view', 'id' => '59c04ac5-4910-3951-8557-c78e52cf841c'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Bodega 1/2 dia Tradicional', 'url' => ['service/view', 'id' => 'd62c66ef-e3e4-35c8-9a8b-40d83d234c12'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cañón de Atuel', 'url' => ['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'City Tour', 'url' => ['service/view', 'id' => '9a8be6b3-065a-3ce2-9ff9-4d4ecdd130c3'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => 'f3f7d803-c98a-3ade-bf2f-6dbfcc2462f5'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Parque Acuatico Cacheuta', 'url' => ['service/view', 'id' => 'ccd5af14-1c86-3359-9708-25e20edc66dc'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Hotel Spa Termas de Cacheuta', 'url' => ['service/view', 'id' => '535b85c7-0f11-398c-8bda-4666b46dd564'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ]
-                    ],
-                    [
-                        'label' => 'INSTITUCIONAL', 'url' => ['/site/about'],
-                        'items' => [
-                            ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Condiciones Generales', 'url' => ['/site/conditions'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                        ]
-                    ],
-
                 ];
 
 
@@ -232,6 +224,14 @@ Icon::map($this);
                             ['label' => 'Cabalgata full day', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Cabalgata por los viñedos Bodega Renacer', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
                         ]
+                    ],
+                    [
+                        'label' => 'INSTITUCIONAL', 'url' => ['/site/about'],
+                        'items' => [
+                            ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Condiciones Generales', 'url' => ['/site/conditions'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ],
+                        'linkOptions' => ['class' => 'institution']
                     ],
                 ];
 

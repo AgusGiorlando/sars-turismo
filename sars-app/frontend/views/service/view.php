@@ -6,17 +6,10 @@ use yii\helpers\Html;
 use yii\bootstrap4\Html as Bootstrap4Html;
 // use slavkovrn\lightbox\LightBoxWidget;
 
-
 $this->title = $oService->name;
-
 $activeFlag = true;
-
 $oCategory = $oService->getCategory()->one();
-
 $cover_img_src = '/img/services/' . $oService->id . '/' . 'cover.jpeg';
-
-// Mensaje a enviar por Whatsapp
-$wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name);
 ?>
 <div class="site-service">
     <section id="service" class="service">
