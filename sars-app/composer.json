@@ -21,7 +21,8 @@
         "rmrevin/yii2-fontawesome": "~3.5",
         "kartik-v/yii2-icons": "dev-master",
         "slavkovrn/yii2-lightbox": "*",
-        "kartik-v/yii2-grid": "@dev"
+        "kartik-v/yii2-grid": "@dev",
+        "buttflattery/yii2-multimenu": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

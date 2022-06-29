@@ -1,0 +1,42 @@
+    .multimenu-bigdrop-container div {
+        background: #fe5000 !important;
+    }
+    
+    .multimenu-bigdrop div.container-fluid .navbar {
+        width: 100% !important;
+    }
+    
+    .multimenu-bigdrop-container,
+    .multimenu-bigdrop-container nav,
+    .multimenu-bigdrop .bigdrop-sub,
+    .multimenu-bigdrop .normal-sub,
+    .multimenu-bigdrop .infinite-sub,
+    .bigdrop-sub>li:hover,
+    .bigdrop-mobile {
+        background: #fe5000 !important;
+    }
+    
+    .multimenu-bigdrop ul li a {
+        padding: 0.5em 1em !important;
+    }
+    
+    ul.bigdrop-sub {
+        background: #fe5000 !important;
+    }
+    
+    .multimenu-bigdrop ul li a,
+    .multimenu-bigdrop div.container-fluid .navbar>li>ul>li a,
+    .multimenu-bigdrop div.container-fluid .navbar>li.has-children>a:first-child::after,
+    .multimenu-bigdrop div.container-fluid .navbar>li>ul>li.has-children>a:first-child::after,
+    .multimenu-bigdrop .bigdrop-sub li ul li.has-children>a:first-child::before,
+    .multimenu-bigdrop .infinite-sub li a {
+        color: #fff;
+    }
+    
+    a.waves-effect.waves-effect:hover {
+        background-color: #fe5000;
+    }
+    
+    ul {
+        font-size: 14px;
+    }

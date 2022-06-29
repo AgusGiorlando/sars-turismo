@@ -45,15 +45,19 @@ return [
             ],
         ],
         */
-        'view' => [ 
-            'theme' => [ 
-                'basePath' => '@app/themes/main', 
-                'baseUrl' => '@web/themes/main', 
-                'pathMap' => [ 
-                    '@app/views' => '@app/themes/main', 
-                ], 
-            ], 
-        ], 
+        'view' => [
+            'theme' => [
+                'basePath' => '@app/themes/main',
+                'baseUrl' => '@web/themes/main',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/main',
+                ],
+            ],
+        ],
+        'menuhelper' => [
+            'class' => 'buttflattery\multimenu\helpers\MenuHelper',
+            'model' => 'buttflattery\multimenu\models\Menu',
+        ],
     ],
     'params' => $params,
 ];

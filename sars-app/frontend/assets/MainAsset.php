@@ -22,6 +22,7 @@ class MainAsset extends AssetBundle
         'vendor/venobox/venobox.css',
         'vendor/aos/aos.css',
         'css/style.css',
+        'css/menu.css',
     ];
     public $js = [
         'lightbox/lightbox.js',
