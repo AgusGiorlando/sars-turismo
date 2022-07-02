@@ -6,6 +6,16 @@
     padding: 0.5em 1em !important;
 }
 
+.multimenu-bigdrop-container,
+.multimenu-bigdrop-container nav,
+.multimenu-bigdrop .bigdrop-sub,
+.multimenu-bigdrop .normal-sub,
+.multimenu-bigdrop .infinite-sub,
+.bigdrop-sub>li:hover,
+.bigdrop-mobile {
+    background: #fe5000 !important;
+}
+
 
 /*
 .multimenu-bigdrop ul li a,
