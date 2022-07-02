@@ -13,8 +13,8 @@ use buttflattery\multimenu\MultiMenu;
 
 MainAsset::register($this);
 MenuAsset::register($this);
-
 Icon::map($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

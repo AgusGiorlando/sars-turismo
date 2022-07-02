@@ -9,7 +9,7 @@ use yii\web\AssetBundle;
 class MainAsset extends AssetBundle
 {
     public $sourcePath = __DIR__ . '/../themes/main';
-    public $publishOptions = ['forceCopy' => true];
+    // public $publishOptions = ['forceCopy' => true];
 
 
     public $css = [

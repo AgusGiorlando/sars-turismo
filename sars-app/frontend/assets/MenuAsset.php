@@ -10,6 +10,5 @@ class MenuAsset extends ThemeBigDropAsset
     public function init()
     {
         parent::init();
-        // array_push($this->css, 'css/menu.css');
     }
 }

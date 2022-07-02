@@ -58,6 +58,9 @@ return [
             'class' => 'buttflattery\multimenu\helpers\MenuHelper',
             'model' => 'buttflattery\multimenu\models\Menu',
         ],
+        'assetManager' => [
+            'forceCopy' => true,
+        ]
     ],
     'params' => $params,
 ];
