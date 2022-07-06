@@ -620,9 +620,12 @@ h6 {
     background: #cc4303;
 }
 
+#hero .slide {
+    margin-top: auto;
+}
+
 #hero .carousel-img {
-    height: 700px;
-    align-self: center;
+    height: 70vh;
 }
 
 #hero .bottom-text {

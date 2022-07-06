@@ -11,22 +11,25 @@ $this->title = 'SARS Turismo';
   <section id="hero" class="align-items-center">
     <!-- CAROUSEL -->
     <div data-aos="fade-up">
-      <div id="homeCarousel" class="carousel slide z-depth-1-half" data-ride="carousel">
+      <div id="homeCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="150">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_1.jpg">
+            <img class="d-block w-100 carousel-img " src="/img/site/home-carousel/carousel_1.jpg">
           </div>
           <div class="carousel-item" data-bs-interval="150">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_2.jpg">
+            <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_2.jpg">
           </div>
           <div class="carousel-item" data-bs-interval="150">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_3.jpg">
+            <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_3.jpg">
           </div>
           <div class="carousel-item" data-bs-interval="150">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_4.jpg">
+            <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_4.jpg">
           </div>
           <div class="carousel-item" data-bs-interval="150">
-            <img class="d-block carousel-img" src="/img/site/home-carousel/carousel_5.jpg">
+            <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_5.jpg">
+          </div>
+          <div class="carousel-item" data-bs-interval="150">
+            <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_6.jpeg">
           </div>
         </div>
         <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
@@ -56,12 +59,12 @@ $this->title = 'SARS Turismo';
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
           <div class="icon"><img src='/img/services/af53895d-6d09-3e29-a2c3-381d21242e8a/5.jpeg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('Alta Monta単a', Url::to(['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a']), ['class' => 'title']); ?></h4>
+          <h4><?= Bootstrap4Html::a('Alta Montaña', Url::to(['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a']), ['class' => 'title']); ?></h4>
           <span>AR$ 4200</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
           <div class="icon"><img src='/img/services/3aa0bb36-53c1-300f-9bb1-e854a086d782/valle grande.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('Ca単on del Atuel', Url::to(['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782']), ['class' => 'title']); ?></h4>
+          <h4><?= Bootstrap4Html::a('Cañon del Atuel', Url::to(['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782']), ['class' => 'title']); ?></h4>
           <span>AR$ 5000</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
