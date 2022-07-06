@@ -29,7 +29,10 @@ $this->title = 'SARS Turismo';
             <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_5.jpg">
           </div>
           <div class="carousel-item" data-bs-interval="150">
-            <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_6.jpeg">
+            <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_6.jpg">
+          </div>
+          <div class="carousel-item" data-bs-interval="150">
+            <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_7.jpg">
           </div>
         </div>
         <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
@@ -49,51 +52,28 @@ $this->title = 'SARS Turismo';
         <div class="col-md-2 d-flex category">
           <div class="row d-flex justify-content-center">
             <div class="icon"><img src='/img/site/services-logos/SARS _2_.jpg' class="activities-logo"> </div>
-            <h2>Tradicionales</h2>
+            <h2>Combos</h2>
           </div>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/services/9a8be6b3-065a-3ce2-9ff9-4d4ecdd130c3/WhatsApp Image 2021-08-19 at 18.24.22 (2).jpeg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('City Tour', Url::to(['service/view', 'id' => '9a8be6b3-065a-3ce2-9ff9-4d4ecdd130c3']), ['class' => 'title']); ?></h4>
-          <span>AR$ 1600</span>
+          <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('MENDOZA CLASICA', Url::to(['service/view', 'id' => '9a8be6b3-065a-3ce2-9ff9-4d4ecdd130c3']), ['class' => 'title']); ?></h4>
+          <span>AR$ 12000</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/services/af53895d-6d09-3e29-a2c3-381d21242e8a/5.jpeg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('Alta Montaña', Url::to(['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a']), ['class' => 'title']); ?></h4>
-          <span>AR$ 4200</span>
+          <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('MENDOZA EXPRESS', Url::to(['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a']), ['class' => 'title']); ?></h4>
+          <span>AR$ 6800</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/services/3aa0bb36-53c1-300f-9bb1-e854a086d782/valle grande.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('Cañon del Atuel', Url::to(['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782']), ['class' => 'title']); ?></h4>
-          <span>AR$ 5000</span>
+          <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('MENDOZA NATURAL', Url::to(['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782']), ['class' => 'title']); ?></h4>
+          <span>AR$ 7000</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/services/2ec187b3-6e7c-3c16-a6a0-49bcf69b942f/9304.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('Valle de Uco', Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f']), ['class' => 'title']); ?></h4>
-          <span>AR$ 4200</span>
-        </div>
-      </div>
-      <div class="row row-grey d-flex justify-content-center">
-        <div class="col-md-2 d-flex category">
-          <div class="row d-flex justify-content-center">
-            <div class="icon"><img src='/img/site/services-logos/SARS _3_.jpg' class="activities-logo"> </div>
-            <h2>Aventura</h2>
-          </div>
-        </div>
-        <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/site/WhatsApp Image 2021-04-06 at 13.27.40.jpeg' class="activities-img"> </div>
-          <h4 class="title"><a href="">Aconcagua</a></h4>
-          <span>AR$ 45000</span>
-        </div>
-        <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon"><img src='/img/site/WhatsApp Image 2021-04-06 at 13.27.40.jpeg' class="activities-img"> </div>
-          <h4 class="title"><a href="">Aconcagua</a></h4>
-          <span>AR$ 45000</span>
-        </div>
-        <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="300">
-          <div class="icon"><img src='/img/site/WhatsApp Image 2021-04-06 at 13.27.40.jpeg' class="activities-img"> </div>
-          <h4 class="title"><a href="">Aconcagua</a></h4>
-          <span>AR$ 45000</span>
+          <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
+          <h4><?= Bootstrap4Html::a('MENDOZA AVENTURA', Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f']), ['class' => 'title']); ?></h4>
+          <span>AR$ 15000</span>
         </div>
       </div>
     </div>
