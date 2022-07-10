@@ -1097,7 +1097,7 @@ section {
     vertical-align: middle;
 }
 
-.service .price-box {
+.price-box {
     background-color: #fe5000;
     color: #FFF;
     padding: 5px;
@@ -2212,4 +2212,31 @@ span.detail {
     padding-top: 5px;
     font-size: 13px;
     color: #444444;
+}
+
+
+/*--------------------------------------------------------------
+# Combo
+--------------------------------------------------------------*/
+
+h1.combo-title {
+    padding-top: 20px;
+    text-align: center;
+    color: #fe5000;
+}
+
+img.combo-service-img {
+    max-height: 100%;
+    max-height: 300px;
+}
+
+.btn.btn-combo-service {
+    background-color: #fe5000;
+    color: white;
+    height: 45px;
+}
+
+.btn.btn-combo-service:hover {
+    background-color: #cc4303;
+    color: black;
 }

@@ -1,7 +1,6 @@
 <?php
 
 use yii\bootstrap4\Html as Bootstrap4Html;
-use yii\helpers\Html;
 use yii\helpers\Url;
 
 $this->title = 'SARS Turismo';
@@ -57,7 +56,7 @@ $this->title = 'SARS Turismo';
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
           <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('MENDOZA CLASICA', Url::to(['service/view', 'id' => '9a8be6b3-065a-3ce2-9ff9-4d4ecdd130c3']), ['class' => 'title']); ?></h4>
+          <h4><?= Bootstrap4Html::a('MENDOZA CLASICA', Url::to(['combo/view']), ['class' => 'title']); ?></h4>
           <span>AR$ 12000</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
@@ -67,7 +66,7 @@ $this->title = 'SARS Turismo';
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
           <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('MENDOZA NATURAL', Url::to(['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782']), ['class' => 'title']); ?></h4>
+          <h4><?= Bootstrap4Html::a('MENDOZA NATURAL', Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569']), ['class' => 'title']); ?></h4>
           <span>AR$ 7000</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">

@@ -97,7 +97,7 @@ Icon::map($this);
                     ['label' => 'Parque Acuatico Cacheuta', 'url' =>  Url::to(['service/view', 'id' => 'ccd5af14-1c86-3359-9708-25e20edc66dc'])],
                     ['label' => 'Hotel Spa Termas de Cacheuta', 'url' =>  Url::to(['service/view', 'id' => '535b85c7-0f11-398c-8bda-4666b46dd564'])],
                     ['label' => 'Valle de Uco', 'url' =>  Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
-                    ['label' => 'Villavicencio', 'url' =>  Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                    ['label' => 'Villavicencio', 'url' =>  Url::to(['service/view', 'id' => 'f3f7d803-c98a-3ade-bf2f-6dbfcc2462f5'])],
                 ]
             ],
             [
@@ -235,6 +235,18 @@ Icon::map($this);
                     ],
                 ],
                 'linkOptions' => ['class' => 'institution']
+            ],
+            [
+                'label' => 'COMBOS',
+                'url' => 'javascript:void(0)',
+                'items' => [
+                    ['label' => 'Mendoza Clásica', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    ['label' => 'Mendoza Express', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    ['label' => 'Mendoza Natural', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    ['label' => 'Mendoza Aventura', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    ['label' => 'Vino Mendoza', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    ['label' => 'Mendoza Premium', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                ],
             ],
             [
                 'label' => 'INSTITUCIONAL',
