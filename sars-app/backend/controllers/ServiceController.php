@@ -58,11 +58,11 @@ class ServiceController extends Controller
      */
     public function actionView($id)
     {
-        $model = $this->findModel($id);
-        $aImages = ServiceManager::getImages($model);
+        $oService  = ServiceManager::findService($id);
+        $aImages = ServiceManager::getImages($oService);
 
         return $this->render('view', [
-            'model' => $model,
+            'model' => $oService,
             'images' => $aImages
         ]);
     }

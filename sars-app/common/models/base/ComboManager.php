@@ -22,7 +22,7 @@ class ComboManager
                 $where['enabled'] = true;
             }
 
-            return Combo::findOne($where);
+            return Combo::find()->where($where)->one();
         } catch (\Exception $ex) {
             throw $ex;
         }

@@ -56,7 +56,10 @@ class ServiceManager
                 $where['enabled'] = true;
             }
 
-            return Service::find()->where($where)->all();
+            if (is_array($service_id) == true) {
+                return Service::find()->where($where)->all();
+            }
+            return Service::find()->where($where)->one();
         } catch (\Throwable $th) {
             throw $th;
         }
