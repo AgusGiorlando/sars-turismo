@@ -53,24 +53,20 @@ $this->title = 'SARS Turismo';
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
           <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('MENDOZA CLASICA', Url::to(['combo/view']), ['class' => 'title']); ?></h4>
+          <h4><?= Bootstrap4Html::a('MENDOZA CLASICA', Url::to(['combo/view', 'id' => 'a4481f0f-008f-11ed-896c-005056817490']), ['class' => 'title']); ?></h4>
           <span>AR$ 12000</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
           <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('MENDOZA EXPRESS', Url::to(['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a']), ['class' => 'title']); ?></h4>
+          <h4><?= Bootstrap4Html::a('MENDOZA EXPRESS', Url::to(['combo/view', 'id' => 'cbbb47d5-008f-11ed-896c-005056817490']), ['class' => 'title']); ?></h4>
           <span>AR$ 6800</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
           <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('MENDOZA NATURAL', Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569']), ['class' => 'title']); ?></h4>
+          <h4><?= Bootstrap4Html::a('MENDOZA NATURAL', Url::to(['combo/view', 'id' => '0f94faa5-0090-11ed-896c-005056817490']), ['class' => 'title']); ?></h4>
           <span>AR$ 7000</span>
         </div>
-        <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
-          <h4><?= Bootstrap4Html::a('MENDOZA AVENTURA', Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f']), ['class' => 'title']); ?></h4>
-          <span>AR$ 15000</span>
-        </div>
+
       </div>
     </div>
 </div>

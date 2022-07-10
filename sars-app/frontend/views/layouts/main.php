@@ -240,12 +240,14 @@ Icon::map($this);
                 'label' => 'COMBOS',
                 'url' => 'javascript:void(0)',
                 'items' => [
-                    ['label' => 'Mendoza Clásica', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
-                    ['label' => 'Mendoza Express', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
-                    ['label' => 'Mendoza Natural', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    ['label' => 'Mendoza Clásica', 'url' => Url::to(['combo/view', 'id' => 'a4481f0f-008f-11ed-896c-005056817490'])],
+                    ['label' => 'Mendoza Express', 'url' => Url::to(['combo/view', 'id' => 'cbbb47d5-008f-11ed-896c-005056817490'])],
+                    ['label' => 'Mendoza Natural', 'url' => Url::to(['combo/view', 'id' => '0f94faa5-0090-11ed-896c-005056817490'])],
+                    /*
                     ['label' => 'Mendoza Aventura', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
                     ['label' => 'Vino Mendoza', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
                     ['label' => 'Mendoza Premium', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    */
                 ],
             ],
             [
