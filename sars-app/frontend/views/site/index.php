@@ -30,9 +30,6 @@ $this->title = 'SARS Turismo';
           <div class="carousel-item" data-bs-interval="150">
             <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_6.jpg">
           </div>
-          <div class="carousel-item" data-bs-interval="150">
-            <img class="d-block w-100 carousel-img" src="/img/site/home-carousel/carousel_7.jpg">
-          </div>
         </div>
         <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

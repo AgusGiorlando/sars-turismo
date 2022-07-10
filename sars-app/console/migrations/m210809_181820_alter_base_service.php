@@ -11,7 +11,7 @@ class m210809_181820_alter_base_service extends Migration
      * {@inheritdoc}
      */
     public function safeUp()
-    {
+    {/*
         // ALTERS
         $this->alterColumn('base_service', 'includes', $this->char(255));
         $this->alterColumn('base_service', 'type', $this->char(36));
@@ -24,6 +24,7 @@ class m210809_181820_alter_base_service extends Migration
         $this->addColumn('base_service', 'not_includes', $this->char(255));
         $this->addColumn('base_service', 'start', $this->char(255));
         $this->addColumn('base_service', 'return', $this->char(255));
+        */
     }
 
     /**
