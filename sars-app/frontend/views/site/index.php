@@ -44,25 +44,22 @@ $this->title = 'SARS Turismo';
 
     <!--TOURS PROMOCIONADOS-->
     <div class="activities-menu" data-aos="fade-up">
+      <div class="row d-flex justify-content-center">
+        <h1>Combos</h1>
+      </div>
       <div class="row row-orange d-flex justify-content-center">
-        <div class="col-md-2 d-flex category">
-          <div class="row d-flex justify-content-center">
-            <div class="icon"><img src='/img/site/services-logos/SARS _2_.jpg' class="activities-logo"> </div>
-            <h2>Combos</h2>
-          </div>
-        </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
+          <div class="icon"><img src='/img/site/services-logos/SARS _2_.jpg' class="activities-img"> </div>
           <h4><?= Bootstrap4Html::a('MENDOZA CLASICA', Url::to(['combo/view', 'id' => 'a4481f0f-008f-11ed-896c-005056817490']), ['class' => 'title']); ?></h4>
           <span>AR$ 12000</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
+          <div class="icon"><img src='/img/site/services-logos/SARS _5_.jpg' class="activities-img"> </div>
           <h4><?= Bootstrap4Html::a('MENDOZA EXPRESS', Url::to(['combo/view', 'id' => 'cbbb47d5-008f-11ed-896c-005056817490']), ['class' => 'title']); ?></h4>
           <span>AR$ 6800</span>
         </div>
         <div class="col-sm-2 icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><img src='/img/site/home/home2.jpg' class="activities-img"> </div>
+          <div class="icon"><img src='/img/site/services-logos/SARS _10_.jpg' class="activities-img"> </div>
           <h4><?= Bootstrap4Html::a('MENDOZA NATURAL', Url::to(['combo/view', 'id' => '0f94faa5-0090-11ed-896c-005056817490']), ['class' => 'title']); ?></h4>
           <span>AR$ 7000</span>
         </div>
