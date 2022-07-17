@@ -376,6 +376,12 @@ h6 {
 
 /* Mobile Navigation */
 
+.scrollable {
+    height: 390px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
 .mobile-nav-toggle {
     position: fixed;
     top: 18px;

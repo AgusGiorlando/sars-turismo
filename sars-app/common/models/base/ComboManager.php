@@ -31,7 +31,7 @@ class ComboManager
     public static function getAllServices($oCombo)
     {
         try {
-            $aServices = ServiceManager::findService($oCombo->service_ids);
+            $aServices = ServiceManager::findService(json_decode($oCombo->service_ids));
             return $aServices;
         } catch (\Exception $ex) {
             throw $ex;

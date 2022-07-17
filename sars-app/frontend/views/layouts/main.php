@@ -314,6 +314,10 @@ Icon::map($this);
 
 <script>
     $(document).ready(function() {
+        $('[data-toggle=collapse]').on('click', function(){
+           $('.multimenu-bigdrop').toggleClass('scrollable');
+        });
+
         $('[data-toggle="popover"]').popover('show');
         $('body').on('click', function(e) {
             $('[data-toggle=popover]').each(function() {
