@@ -377,7 +377,7 @@ h6 {
 /* Mobile Navigation */
 
 .scrollable {
-    height: 390px;
+    height: 500px;
     overflow: hidden;
     overflow-y: scroll;
 }
