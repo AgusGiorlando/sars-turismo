@@ -100,6 +100,7 @@ Icon::map($this);
                     ['label' => 'Villavicencio', 'url' =>  Url::to(['service/view', 'id' => 'f3f7d803-c98a-3ade-bf2f-6dbfcc2462f5'])],
                 ]
             ],
+            /*
             [
                 'label' => 'INNOVADORAS',
                 'url' => 'javascript:void(0)',
@@ -115,6 +116,8 @@ Icon::map($this);
                     ['label' => 'Villavicencio Park', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
                 ]
             ],
+            */
+            /*
             [
                 'label' => 'ENOTURISMO, GASTRONOMIA & MARIDAJES',
                 'url' => 'javascript:void(0)',
@@ -156,6 +159,8 @@ Icon::map($this);
                     ],
                 ],
             ],
+            */
+            /*
             [
                 'label' => 'NATURALEZA & AVENTURA',
                 'url' => 'javascript:void(0)',
@@ -236,6 +241,7 @@ Icon::map($this);
                 ],
                 'linkOptions' => ['class' => 'institution']
             ],
+            */
             [
                 'label' => 'COMBOS',
                 'url' => 'javascript:void(0)',
