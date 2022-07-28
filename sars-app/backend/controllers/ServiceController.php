@@ -158,6 +158,7 @@ class ServiceController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $aCategories = Category::findAll(['enabled' => true]);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -165,6 +166,7 @@ class ServiceController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'categories' => $aCategories
         ]);
     }
 
