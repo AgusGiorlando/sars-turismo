@@ -4,12 +4,13 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap4\NavBar;
+use yii\bootstrap5\NavBar;
+use yii\bootstrap5\Nav;
+use yii\helpers\Url;
+use kkartik\bs5dropdown\Dropdown;
 use frontend\assets\MainAsset;
 use common\widgets\Alert;
 use kartik\icons\Icon;
-use yii\bootstrap4\Nav;
-use yii\helpers\Url;
 
 MainAsset::register($this);
 
@@ -127,12 +128,12 @@ Icon::map($this);
                     ],
 
                 ];
-
-
                 if (count($menuItems)) {
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav'],
                         'items' => $menuItems,
+                        'dropdownClass' => \kartik\bs5dropdown\Dropdown::class
+
                     ]);
                 }
                 ?>
@@ -211,6 +212,7 @@ Icon::map($this);
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav'],
                         'items' => $menuItems,
+                        'dropdownClass' => \kartik\bs5dropdown\Dropdown::class
                     ]);
                 }
                 ?>
