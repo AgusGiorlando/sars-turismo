@@ -37,15 +37,21 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+      /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        // 'assetManager' => [
-        //     'enableSourceMaps' => true,
-        // ],
+        */
+        'menuhelper' => [
+            'class' => 'buttflattery\multimenu\helpers\MenuHelper',
+            'model' => 'buttflattery\multimenu\models\Menu',
+        ],
+        'assetManager' => [
+            'forceCopy' => true,
+        ],
         'view' => [ 
             'theme' => [ 
                 'basePath' => '@app/themes/main', 
@@ -55,6 +61,7 @@ return [
                 ], 
             ], 
         ], 
+
     ],
     'params' => $params,
 ];

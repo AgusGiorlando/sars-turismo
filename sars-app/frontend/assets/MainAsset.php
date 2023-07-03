@@ -3,17 +3,17 @@
 namespace frontend\assets;
 
 use yii\web\AssetBundle;
-
 /**
  * Main frontend application asset bundle.
  */
 class MainAsset extends AssetBundle
 {
     public $sourcePath = __DIR__ . '/../themes/main';
-    public $publishOptions = ['forceCopy' => true];
+    // public $publishOptions = ['forceCopy' => true];
 
 
     public $css = [
+        'lightbox/lightbox.css',
         'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i',
         'vendor/bootstrap/css/bootstrap.min.css',
         'vendor/icofont/icofont.min.css',
@@ -22,9 +22,10 @@ class MainAsset extends AssetBundle
         'vendor/venobox/venobox.css',
         'vendor/aos/aos.css',
         'css/style.css',
-        'css/lightbox.min.css'
+        'css/menu.css',
     ];
     public $js = [
+        'lightbox/lightbox.js',
         'vendor/jquery/jquery.min.js',
         'vendor/bootstrap/js/bootstrap.bundle.min.js',
         'vendor/jquery.easing/jquery.easing.min.js',
@@ -33,8 +34,7 @@ class MainAsset extends AssetBundle
         'vendor/isotope-layout/isotope.pkgd.min.js',
         'vendor/venobox/venobox.min.js',
         'vendor/aos/aos.js',
-        'js/main.js',
-        'js/lightbox-plus-jquery.min.js'
+        'js/main.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

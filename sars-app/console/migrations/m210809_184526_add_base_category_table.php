@@ -12,6 +12,7 @@ class m210809_184526_add_base_category_table extends Migration
      */
     public function safeUp()
     {
+        /*
         $this->createTable('base_category',[
             'id' => $this->char(36)->notNull(),
             'name' => $this->char(255)->notNull(),
@@ -19,6 +20,7 @@ class m210809_184526_add_base_category_table extends Migration
         ]);
 
         $this->addPrimaryKey('PK_category', 'base_category', 'id');
+        */
 
     }
 

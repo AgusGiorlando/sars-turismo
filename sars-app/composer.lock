@@ -118,6 +118,42 @@
             ]
         },
         {
+            "name": "buttflattery/yii2-multimenu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/buttflattery/yii2-multimenu.git",
+                "reference": "ed2a07b2f2f77efa29c31003ef4e8a6aa11354af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/buttflattery/yii2-multimenu/zipball/ed2a07b2f2f77efa29c31003ef4e8a6aa11354af",
+                "reference": "ed2a07b2f2f77efa29c31003ef4e8a6aa11354af",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "buttflattery\\multimenu\\": "//src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "omer aslam",
+                    "email": "buttflattery@hotmail.com"
+                }
+            ],
+            "description": "A Yii2 widget that creates a navigation menu based on the yii\\widgets\\Menu, and provides you with multiple layout options Big Drop, Left Menu and a Sticky drop-up footer menu .",
+            "time": "2020-05-13T18:34:34+00:00"
+        },
+        {
             "name": "cebe/markdown",
             "version": "1.2.1",
             "source": {
@@ -586,8 +622,7 @@
                     "name": "Kartik Visweswaran",
                     "email": "kartikv2@gmail.com",
                     "homepage": "http://www.krajee.com/"
-                }
-            ],
+                }  
             "description": "Enhanced Bootstrap 4 dropdown widget for Yii2 with nested submenu support",
             "homepage": "https://github.com/kartik-v/yii2-bootstrap5-dropdown",
             "keywords": [
@@ -1050,7 +1085,7 @@
                     "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
-            ],
+            ],        "reference": "59a8d271f00dd0e4c2e518104cc7963f655a1aa8",
             "time": "2022-11-03T14:55:06+00:00"
         },
         {
@@ -1318,7 +1353,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/869329b1e9894268a8a61dabb69153029b7a8c97",
-                "reference": "869329b1e9894268a8a61dabb69153029b7a8c97",
+                "reference": "869329b1e9894268a8a61dabb69153029b7a8c97"
                 "shasum": ""
             },
             "require": {
@@ -2788,7 +2823,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-08T13:26:56+00:00"
+            "time": "2023-03-08T13
         },
         {
             "name": "phar-io/manifest",
@@ -5023,7 +5058,7 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
+                "branch-alias"
                     "dev-main": "1.27-dev"
                 },
                 "thanks": {
@@ -5350,7 +5385,11 @@
             "conflict": {
                 "symfony/translation-contracts": "<2.5"
             },
+            "conflict": {
+                "symfony/translation-contracts": ">=3.0"
+            },
             "require-dev": {
+        "symfony/var-exporter": "^4.4|^5.0|^6.0"
                 "symfony/error-handler": "^5.4|^6.0",
                 "symfony/http-client": "^5.4|^6.0",
                 "symfony/intl": "^6.2",
@@ -5536,6 +5575,7 @@
                 }
             ],
             "time": "2021-07-28T10:34:58+00:00"
+          "reference": "84d20d738b0698298f851fcb6fc25e748d759223",
         },
         {
             "name": "yiisoft/yii2-debug",

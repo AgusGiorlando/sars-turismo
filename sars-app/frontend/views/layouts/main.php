@@ -4,17 +4,20 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+
 use yii\bootstrap5\NavBar;
 use yii\bootstrap5\Nav;
 use yii\helpers\Url;
 use kkartik\bs5dropdown\Dropdown;
 use frontend\assets\MainAsset;
+use frontend\assets\MenuAsset;
 use common\widgets\Alert;
 use kartik\icons\Icon;
 
 MainAsset::register($this);
-
+MenuAsset::register($this);
 Icon::map($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -30,6 +33,36 @@ Icon::map($this);
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <?php $this->registerCsrfMetaTags() ?>
     <title>SARS Turismo</title>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '551858156557860');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" src="https://www.facebook.com/tr?id=551858156557860&ev=PageView
+&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
     <?php $this->head() ?>
 </head>
 
@@ -52,71 +85,79 @@ Icon::map($this);
                 <a href="<?= Yii::$app->params['tripadvisorUrl'] ?>" class="social-links"><i class="fab fa-tripadvisor fa-xs"></i></a>
             </div>
         </div>
-        <div class="row nav-menu">
-            <div class="container d-flex align-items-center justify-content-between">
-                <?php
-                NavBar::begin([
-                    // 'brandLabel' => Html::img('/img/site/logo.jpg', ['class' => 'logo', 'alt' => Yii::$app->name]),
-                    // 'brandUrl' => Yii::$app->homeUrl,
-                    'options' => [
-                        'id' => "mainNav",
-                        'class' => 'navbar nav-menu d-sm-block navbar-expand-sm',
-                    ],
-                    'containerOptions' => [
-                        'class' => 'nav-menu'
-                    ],
-                ]);
-
-                $menuItems = [
+        <?php
+        $items = [
+            [
+                'label' => 'TRADICIONALES',
+                'url' => 'javascript:void(0)',
+                'items' => [
+                    ['label' => 'Alta Montaña', 'url' =>  Url::to(['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a'])],
+                    ['label' => 'Alta Montaña por Villavicencio', 'url' =>  Url::to(['service/view', 'id' => '59c04ac5-4910-3951-8557-c78e52cf841c'])],
+                    ['label' => 'Bodega 1/2 dia Tradicional', 'url' =>  Url::to(['service/view', 'id' => 'd62c66ef-e3e4-35c8-9a8b-40d83d234c12'])],
+                    ['label' => 'Cañón de Atuel', 'url' =>  Url::to(['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782'])],
+                    ['label' => 'City Tour', 'url' =>  Url::to(['service/view', 'id' => '9a8be6b3-065a-3ce2-9ff9-4d4ecdd130c3'])],
+                    ['label' => 'Villavicencio', 'url' =>  Url::to(['service/view', 'id' => 'f3f7d803-c98a-3ade-bf2f-6dbfcc2462f5'])],
+                    ['label' => 'Parque Acuatico Cacheuta', 'url' =>  Url::to(['service/view', 'id' => 'ccd5af14-1c86-3359-9708-25e20edc66dc'])],
+                    ['label' => 'Hotel Spa Termas de Cacheuta', 'url' =>  Url::to(['service/view', 'id' => '535b85c7-0f11-398c-8bda-4666b46dd564'])],
+                    ['label' => 'Valle de Uco', 'url' =>  Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                    ['label' => 'Villavicencio', 'url' =>  Url::to(['service/view', 'id' => 'f3f7d803-c98a-3ade-bf2f-6dbfcc2462f5'])],
+                ]
+            ],
+            /*
+            [
+                'label' => 'INNOVADORAS',
+                'url' => 'javascript:void(0)',
+                'items' => [
+                    ['label' => 'Arte & Naturaleza “Parque de las Artes Marañón”', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                    ['label' => 'Walking City Tour', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                    ['label' => 'La gesta del vino', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                    ['label' => 'Ciudad fantasmal de Paramillos', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                    ['label' => 'Winebeetle', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                    ['label' => 'Cerro Aconcagua “Trekking & Paisajismo”', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                    ['label' => 'Valle de Uco alta gama “Catedrales del Vino”', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                    ['label' => 'Valle de Uco “Cordón del Plata por Vallecitos y La Carrera”', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                    ['label' => 'Villavicencio Park', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                ]
+            ],
+            */
+            /*
+            [
+                'label' => 'ENOTURISMO, GASTRONOMIA & MARIDAJES',
+                'url' => 'javascript:void(0)',
+                'items' => [
                     [
-                        'label' => 'ENOTURISMO, GASTRONOMIA & MARIDAJES',
+                        'label' => 'Bodegas',
+                        'url' => 'javascript:void(0)',
                         'items' => [
-                            ['label' => 'Bodegas medio dia', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Bodegas premium', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Malbec alta gama', 'url' => ['service/view', 'id' => '17ec7d2c-ff84-3bda-887b-e2c56e2fe8e3'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'La gesta del vino', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco alta gama', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco “Cordón del Plata por Vallecitos y La Carrera” ', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Bike por los viñedos', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Entre viñedos y olivos', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Experiencias en bodega Vistalba', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Winebeetle', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Experiencias en bodega Santa Julia & Olivicola Zuccardi', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cooking class para niños en bodega Santa Julia & Olivicola Zuccardi', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cabalgata por los Viñedos en Bodega Renacer', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Almuerzos & Cenas en restaurantes de bodegas', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Almuerzos & Cenas en restaurantes centricos', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Sunsets', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Bodegas medio dia', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Bodegas premium', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Experiencias en bodega Santa Julia & Olivicola Zuccardi', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Malbec alta gama', 'url' =>  Url::to(['service/view', 'id' => '17ec7d2c-ff84-3bda-887b-e2c56e2fe8e3'])],
+                            ['label' => 'La gesta del vino', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Valle de Uco', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Valle de Uco alta gama', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Cooking class para niños en bodega Santa Julia & Olivicola Zuccardi', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Valle de Uco “Cordón del Plata por Vallecitos y La Carrera” ', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Experiencias en bodega Vistalba', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
                         ]
                     ],
                     [
-                        'label' => 'INNOVADORAS',
+                        'label' => 'Restaurantes',
+                        'url' => 'javascript:void(0)',
                         'items' => [
-                            ['label' => 'Arte & Naturaleza “Parque de las Artes Marañón”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Walking City Tour', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'La gesta del vino', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Ciudad fantasmal de Paramillos', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Winebeetle', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cerro Aconcagua “Trekking & Paisajismo”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco alta gama “Catedrales del Vino”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco “Cordón del Plata por Vallecitos y La Carrera”', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Villavicencio Park', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Almuerzos & Cenas en restaurantes de bodegas', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Almuerzos & Cenas en restaurantes centricos', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Sunsets', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
                         ]
                     ],
                     [
-                        'label' => 'TRADICIONALES',
+                        'label' => 'Otros',
+                        'url' => 'javascript:void(0)',
                         'items' => [
-                            ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Alta Montaña por Villavicencio', 'url' => ['service/view', 'id' => '59c04ac5-4910-3951-8557-c78e52cf841c'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Bodega 1/2 dia Tradicional', 'url' => ['service/view', 'id' => 'd62c66ef-e3e4-35c8-9a8b-40d83d234c12'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cañón de Atuel', 'url' => ['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'City Tour', 'url' => ['service/view', 'id' => '9a8be6b3-065a-3ce2-9ff9-4d4ecdd130c3'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => 'f3f7d803-c98a-3ade-bf2f-6dbfcc2462f5'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Parque Acuatico Cacheuta', 'url' => ['service/view', 'id' => 'ccd5af14-1c86-3359-9708-25e20edc66dc'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Hotel Spa Termas de Cacheuta', 'url' => ['service/view', 'id' => '535b85c7-0f11-398c-8bda-4666b46dd564'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Valle de Uco', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Villavicencio', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Bike por los viñedos', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Cabalgata por los Viñedos en Bodega Renacer', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Entre viñedos y olivos', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                            ['label' => 'Winebeetle', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
                         ]
                     ],
                     [
@@ -128,6 +169,7 @@ Icon::map($this);
                     ],
 
                 ];
+                */
                 if (count($menuItems)) {
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav'],
@@ -160,53 +202,129 @@ Icon::map($this);
                 $menuItems = [
                     [
                         'label' => 'AGUA',
+                        'url' => 'javascript:void(0)',
                         'items' => [
-                            ['label' => 'Rafting Rio Mendoza', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Rafting Cerro Negro', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Kayak de travesia dique Potrerillos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Kayak full day dique Potrerillos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Kayak half day estación aforadora Rio Mendoza', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Stand Up Paddle circuito Potrerillos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Rafting Rio Mendoza', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Rafting Cerro Negro', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Kayak de travesia dique Potrerillos', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Kayak full day dique Potrerillos', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Kayak half day estación aforadora Rio Mendoza', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Stand Up Paddle circuito Potrerillos', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
                         ]
                     ],
                     [
                         'label' => 'AIRE',
+                        'url' => 'javascript:void(0)',
                         'items' => [
-                            ['label' => 'Parapente', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Vuelo en Globo “VIÑEDOS y MONTAÑAS 360”', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Paracaidismo', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Canopy base Potrerillos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Canopy adrenalina lago Potrerillos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Arborismo  Cacheuta', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Villavicencio Park', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Parapente', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Vuelo en Globo “VIÑEDOS y MONTAÑAS 360”', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Paracaidismo', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Canopy base Potrerillos', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Canopy adrenalina lago Potrerillos', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Arborismo  Cacheuta', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                            ['label' => 'Villavicencio Park', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
                         ]
                     ],
                     [
                         'label' => 'TIERRA',
+                        'url' => 'javascript:void(0)',
                         'items' => [
-                            ['label' => 'Cerro Aconcagua “Trekking & Paisajismo”', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Bike por los Viñedos', 'url' => ['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Winebeetle', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Trekking full day Cerro Cabras', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Trekking full day Cerro Arenales', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Trekking con RAPPEL Cascada de la Quebrada del Salto', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Trekking sin RAPPEL Cascada de la Quebrada del Salto o Cerro Cocodrilo', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Trekking circuito trasandino', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Escalada en roca full day', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Escalada en roca medio dia', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Mountain Bike Rucahue Potrerillos', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Mountain Bike en los valles de Potrerillos', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cabalgata atardecer', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cabalgata criolla', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cabalgata medio dia', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cabalgata luna llena', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cabalgata full day', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cabalgata por los viñedos Bodega Renacer', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
-                            ['label' => 'Cabalgata 2', 'url' => ['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            [
+                                'label' => 'Trekking',
+                                'url' => 'javascript:void(0)',
+                                'items' => [
+                                    ['label' => 'Cerro Aconcagua “Trekking & Paisajismo”', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                                    ['label' => 'Trekking full day Cerro Cabras', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Trekking full day Cerro Arenales', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Trekking con RAPPEL Cascada de la Quebrada del Salto', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Trekking sin RAPPEL Cascada de la Quebrada del Salto o Cerro Cocodrilo', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Trekking circuito trasandino', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                ]
+                            ],
+                            [
+                                'label' => 'Cabalgata',
+                                'url' => 'javascript:void(0)',
+                                'items' => [
+                                    ['label' => 'Cabalgata atardecer', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Cabalgata criolla', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Cabalgata medio dia', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Cabalgata luna llena', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Cabalgata full day', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Cabalgata por los viñedos Bodega Renacer', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                ]
+                            ],
+                            [
+                                'label' => 'Escalada',
+                                'url' => 'javascript:void(0)',
+                                'items' => [
+                                    ['label' => 'Escalada en roca full day', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Escalada en roca medio dia', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                ]
+                            ],
+                            [
+                                'label' => 'Bike',
+                                'url' => 'javascript:void(0)',
+                                'items' => [
+                                    ['label' => 'Bike por los Viñedos', 'url' => Url::to(['service/view', 'id' => '2ec187b3-6e7c-3c16-a6a0-49bcf69b942f'])],
+                                    ['label' => 'Winebeetle', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Mountain Bike Rucahue Potrerillos', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                    ['label' => 'Mountain Bike en los valles de Potrerillos', 'url' => Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
+                                ]
+                            ]
                         ]
                     ],
-                ];
+                ],
+                'linkOptions' => ['class' => 'institution']
+            ],
+            */
+            [
+                'label' => 'COMBOS',
+                'url' => 'javascript:void(0)',
+                'items' => [
+                    ['label' => 'Mendoza Clásica', 'url' => Url::to(['combo/view', 'id' => 'a4481f0f-008f-11ed-896c-005056817490'])],
+                    ['label' => 'Mendoza Express', 'url' => Url::to(['combo/view', 'id' => 'cbbb47d5-008f-11ed-896c-005056817490'])],
+                    ['label' => 'Mendoza Natural', 'url' => Url::to(['combo/view', 'id' => '0f94faa5-0090-11ed-896c-005056817490'])],
+                    /*
+                    ['label' => 'Mendoza Aventura', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    ['label' => 'Vino Mendoza', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    ['label' => 'Mendoza Premium', 'url' => Url::to(['combo/view', 'id' => '18f0365b-ff17-11ec-a227-2cd05ae0e569'])],
+                    */
+                ],
+            ],
+            [
+                'label' => 'INSTITUCIONAL',
+                'url' => 'javascript:void(0)',
+                'items' => [
+                    ['label' => 'Sobre Nosotros', 'url' => Url::to(['/site/about'])],
+                    ['label' => 'Condiciones Generales', 'url' => Url::to(['/site/conditions'])],
+                ],
+                'linkOptions' => ['class' => 'institution']
+            ],
+        ];
 
+        echo MultiMenu::widget(
+            [
+                'activeCssClass' => '',
+                'items' => $items,
+                'layoutTemplate' => '{multimenu}',
+                'enableIcons' => false,
+                'brandUrl' => false,
+                'brandLabel' => '',
+                'activateParents' => false,
+                'containerCssClasses' => 'menu-custom',
+                'multimenuOptions' => [
+                    'mobileView' => true,
+                    'enableWavesPlugin' => false,
+                    'mobileBreakPoint' => 720,
+                    //Tema
+                    'theme' => MultiMenu::THEME_BIGDROP,
+                    'themeColorFile' => \frontend\assets\MenuAsset::class,
+                    'enableTransitionEffects' => true,
+                    'transitionEffect' => 'zoomInRight',
+                    'transitionDelay' => 'slower',
+                ],
+            ]
+        );
 
                 if (count($menuItems)) {
                     echo Nav::widget([
@@ -249,6 +367,10 @@ Icon::map($this);
 
 <script>
     $(document).ready(function() {
+        $('[data-toggle=collapse]').on('click', function(){
+           $('.multimenu-bigdrop').toggleClass('scrollable');
+        });
+
         $('[data-toggle="popover"]').popover('show');
         $('body').on('click', function(e) {
             $('[data-toggle=popover]').each(function() {
