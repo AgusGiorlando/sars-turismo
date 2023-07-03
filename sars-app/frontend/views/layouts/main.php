@@ -4,12 +4,15 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+
+use yii\bootstrap5\NavBar;
+use yii\bootstrap5\Nav;
+use yii\helpers\Url;
+use kkartik\bs5dropdown\Dropdown;
 use frontend\assets\MainAsset;
 use frontend\assets\MenuAsset;
 use common\widgets\Alert;
 use kartik\icons\Icon;
-use yii\helpers\Url;
-use buttflattery\multimenu\MultiMenu;
 
 MainAsset::register($this);
 MenuAsset::register($this);
@@ -157,14 +160,46 @@ Icon::map($this);
                             ['label' => 'Winebeetle', 'url' =>  Url::to(['service/view', 'id' => 'f78d155f-4a30-3553-8f7b-291b5d71f038'])],
                         ]
                     ],
-                ],
-            ],
-            */
-            /*
-            [
-                'label' => 'NATURALEZA & AVENTURA',
-                'url' => 'javascript:void(0)',
-                'items' => [
+                    [
+                        'label' => 'INSTITUCIONAL', 'url' => ['/site/about'],
+                        'items' => [
+                            ['label' => 'Sobre Nosotros', 'url' => ['/site/about'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Condiciones Generales', 'url' => ['/site/conditions'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                        ]
+                    ],
+
+                ];
+                */
+                if (count($menuItems)) {
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav'],
+                        'items' => $menuItems,
+                        'dropdownClass' => \kartik\bs5dropdown\Dropdown::class
+
+                    ]);
+                }
+                ?>
+                <?php
+                NavBar::end();
+                ?>
+            </div>
+        </div>
+        <div class="row nat-adv-menu">
+            <div class="container d-flex align-items-center justify-content-between">
+                <?php
+                NavBar::begin([
+                    'brandLabel' => 'NATURALEZA & AVENTURA',
+                    // 'brandUrl' => Yii::$app->homeUrl,
+                    'options' => [
+                        'id' => "mainNav",
+                        'class' => 'navbar nat-adv-menu d-md-block navbar-expand',
+                    ],
+                    'containerOptions' => [
+                        'class' => 'nat-adv-menu'
+                    ],
+                ]);
+
+                $menuItems = [
                     [
                         'label' => 'AGUA',
                         'url' => 'javascript:void(0)',
@@ -291,7 +326,19 @@ Icon::map($this);
             ]
         );
 
-        ?>
+                if (count($menuItems)) {
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav'],
+                        'items' => $menuItems,
+                        'dropdownClass' => \kartik\bs5dropdown\Dropdown::class
+                    ]);
+                }
+                ?>
+                <?php
+                NavBar::end();
+                ?>
+            </div>
+        </div>
     </header> <!-- END HEADER -->
     <div>
         <?= Alert::widget() ?>

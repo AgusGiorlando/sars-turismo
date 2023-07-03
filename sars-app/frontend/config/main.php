@@ -37,7 +37,7 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+      /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -45,22 +45,23 @@ return [
             ],
         ],
         */
-        'view' => [
-            'theme' => [
-                'basePath' => '@app/themes/main',
-                'baseUrl' => '@web/themes/main',
-                'pathMap' => [
-                    '@app/views' => '@app/themes/main',
-                ],
-            ],
-        ],
         'menuhelper' => [
             'class' => 'buttflattery\multimenu\helpers\MenuHelper',
             'model' => 'buttflattery\multimenu\models\Menu',
         ],
         'assetManager' => [
             'forceCopy' => true,
-        ]
+        ],
+        'view' => [ 
+            'theme' => [ 
+                'basePath' => '@app/themes/main', 
+                'baseUrl' => '@web/themes/main', 
+                'pathMap' => [ 
+                    '@app/views' => '@app/themes/main', 
+                ], 
+            ], 
+        ], 
+
     ],
     'params' => $params,
 ];
