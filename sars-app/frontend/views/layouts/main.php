@@ -107,7 +107,7 @@ Icon::map($this);
                     [
                         'label' => 'TRADICIONALES',
                         'items' => [
-                            ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => 'af53895d-6d09-3e29-a2c3-381d21242e8a'], 'linkOptions' => ['class' => 'nav-dropdown']],
+                            ['label' => 'Alta Montaña', 'url' => ['service/view', 'id' => '4c96f701-f838-30ee-9c43-83ef9c076295'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Alta Montaña por Villavicencio', 'url' => ['service/view', 'id' => '59c04ac5-4910-3951-8557-c78e52cf841c'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Bodega 1/2 dia Tradicional', 'url' => ['service/view', 'id' => 'd62c66ef-e3e4-35c8-9a8b-40d83d234c12'], 'linkOptions' => ['class' => 'nav-dropdown']],
                             ['label' => 'Cañón de Atuel', 'url' => ['service/view', 'id' => '3aa0bb36-53c1-300f-9bb1-e854a086d782'], 'linkOptions' => ['class' => 'nav-dropdown']],
@@ -228,17 +228,15 @@ Icon::map($this);
         <a id="wp-icon" href='https://api.whatsapp.com/send?phone=<?= Yii::$app->params['contactPhoneNumber'] ?>' data-toggle="popover" data-content="Escribinos aqui cualquier consulta..." class="wp-icon" style="display: inline;"><i class="bx bxl-whatsapp"></i></a>
     </div>
 
-    <footer class="footer">
-        <section id="footer" class="footer">
+    <footer class="footer" id="footer">
             <div class="container d-md-flex py-4">
-                <div class="mr-md-auto text-center text-md-left">
+                <div class="mr-md-auto text-md-left">
                     <h4><?= Yii::$app->name; ?></h4>
                     <div class="copyright">
                         <?= Yii::powered() ?> - Copyright &copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?>
                     </div>
                 </div>
             </div>
-        </section>
     </footer>
 
     <?php $this->endBody() ?>

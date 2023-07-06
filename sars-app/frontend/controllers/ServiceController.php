@@ -22,8 +22,11 @@ class ServiceController extends \yii\web\Controller
 
     public function actionView($id)
     {
-        try {
+        try {            
             $oService = ServiceManager::findService($id);
+            if (empty($oService) == true) {
+                throw new \Exception("No se encuentra el tour solicitado");
+            }
             $aImages = ServiceManager::getImages($oService);
 
             return $this->render('view', [

@@ -98,7 +98,7 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
             </div>
         </div>
         <!-- RESERVA -->
-        <div class="row booking">
+        <div class="row booking text-center">
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adultos (+18)</label><br>
@@ -122,7 +122,7 @@ $wp_message = sprintf('Hola! Quisera reservar para el tour %s', $oService->name)
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
                         <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div> -->
-                <button type="button" class="btn btn-success btn-lg align-center w-100" onclick="sendWspMessage()">Reserva por whatsapp</button>
+                <button type="button" class="btn btn-success btn-lg align-center w-25" onclick="sendWspMessage()">Reserva por whatsapp</button>
             </form>
         </div>
         <!-- The Modal/Lightbox -->
